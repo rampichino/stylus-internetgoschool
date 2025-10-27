@@ -59,7 +59,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Screenshots
 
-[![Theme preview screenshot](screenshots/screenshot.png)](screenshots/screenshot.png)
+[![Theme preview screenshot](images/screenshot.png)](images/screenshot.png)
 
 ---
 
