@@ -2,6 +2,9 @@
 
 A custom style theme for [internetgoschool.com](https://internetgoschool.com)
 
+[![Theme preview screenshot](images/screenshot.png)](image/screenshot.png)
+
+
 > **⚠️ DISCLAIMER**: This is an **unofficial** user-created style modification for Internet Go School. It is **not affiliated with, endorsed by, or officially supported** by internetgoschool.com or its developers. This style is developed and maintained for personal use.
 
 ## Features
@@ -56,10 +59,6 @@ Feel free to submit issues and enhancement requests!
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-## Screenshots
-
-[![Theme preview screenshot](images/screenshot.png)](images/screenshot.png)
 
 ---
 
