@@ -1,0 +1,640 @@
+@-moz-document domain("internetgoschool.com") {
+    
+    /* GENERIC */
+    h1 {
+        color: #064559;
+        font-weight: normal;
+        margin-top: 5px;
+    }
+    
+    h3 {
+        color: #005E7C;
+        font-weight: normal;
+        text-shadow: 1px 1px 5px #005e7c30;
+    }
+   
+    /* MAIN MENU */
+    nav .nav__main-menu.nav__main-menu {
+        background-color: #68A691;   
+        height: 55px;
+        border-bottom: 0.25px solid #000000E6; /* black with 90% opacity */
+    }
+    
+    .active-main.active-main.selected-main {
+        background-color:#005E7C;        
+    }
+   
+    .nav__main-menu__container ul li:hover {
+        background-color: #005E7C80 !important;
+    }  
+    
+    .active-main.active-main {
+        background-color:#005E7C;             
+    }
+    
+    .selected-main.selected-main {
+       background-color:#005E7C;          
+    }
+    
+    .nav__main-menu__container.nav__main-menu__container {
+        justify-content: center;       
+    }
+    
+    /* BODY */
+    body, html {
+          background-color: #d8e9d4;
+          background-image: url("https://github.com/rampichino/stylus-internetgoschool/blob/main/images/turquoise_gradient.png?raw=true");
+          background-repeat: no-repeat;     /* prevent tiling */
+          background-size: cover;           /* scale to cover the whole element */
+          background-position: center;      /* keep image centered */
+          background-attachment: fixed;     /* makes it stay fixed while scrolling */
+    }
+    
+    /* LECTURES VIEWER */
+    div.view-port.view-port {    
+       background-color: #d8e9d4;
+    }        
+    
+    div.control-bar__body.control-bar__body {        
+        background-color: #d8e9d4;a
+    }
+    
+    .link.link {
+        color:#005E7C;
+        font-weight: 500;
+        font-size: 22px;
+    }
+    
+    .white.node:hover {
+        background: white !important;
+    }
+    
+    .black.node:hover {
+        background: black !important;
+    }
+    
+    .setup.node:hover {
+        background: #fdf3d3 !important;
+    }
+        
+    .focus {
+        background: #0000 !important;
+        border-radius: 15px;
+    }
+    
+    /* PROBLEMS VIEWER */
+    .p-page.p-page {
+         background-color: #d8e9d4;
+    }
+    
+    .page {
+        padding-top: 1.2rem;
+    }   
+    
+    .nav-buttons {
+         background-color: #68A691;            
+    }
+    
+    .comments.comments {
+       font-weight:normal;
+       font-size: 24px;        
+    }
+     
+    .header a {
+        color: #000000BF;
+    }
+
+    /* PROBLEMS VIEWER BUTTONS*/   
+    .btn.btn-secondary.btn-sm.btn-block:hover,
+    .btn.btn-secondary.btn-block:hover,
+    .btn.btn-secondary:hover {
+
+        background-color: #c66a51 !important;
+    }
+            
+    .btn.btn-secondary.btn-sm.nav-buttons:hover {
+      background-color: #568977 !important;
+    }
+    
+    .btn.btn-success.btn-sm.btn-block {
+        background-color: #68a691;
+    }
+    
+    .btn.btn-success.btn-sm.btn-block:hover {
+        background-color: #568977;
+    }
+            
+    .btn.btn-outline-primary.btn-sm.btn-block.stretch:hover,
+    .btn.btn-outline-primary.btn-sm.btn-block:hover {
+     background-color: #d3c1a0 !important;
+    }    
+        
+    .btn.btn-outline-primary.btn-sm.btn-block.stretch,
+    .btn.btn-outline-primary.btn-sm.btn-block
+    {
+        border: none;      
+        background-color: #f9c99f80 !important;
+    }
+           
+    .btn.btn-sm.btn-outline-primary {
+        border: none;      
+        background-color: #005e7c6E !important;
+    }         
+        
+    .btn.btn-secondary.btn-sm.btn-block,
+    .btn.btn-info.btn-sm.btn-block,
+    .btn.btn-warning.btn-sm.btn-block,
+    .btn.btn-success.btn-sm.btn-block,
+    .btn.btn-secondary.btn-sm.nav-buttons,
+    .btn.btn-outline-primary.btn-sm.btn-block.stretch,
+    .btn.btn-outline-primary.btn-sm.btn-block,
+    .btn.btn-sm.btn-outline-primary {
+        color: #00000080;
+        font-weight: 500;     
+    }
+        
+    .stone-container.stone-container {
+        background-color: #005e7c82;
+    }   
+    
+    .bright-color.bright-color {
+        color: #00000091;
+        font-weight: 500;   
+    }
+    
+    /*GENERAL BUTTON SHADOW */
+    /* Base shadow */
+    .btn.btn-sm.btn-block,
+    .btn.btn-sm.nav-buttons,
+    .btn.btn-sm.btn-outline-primary,
+    .btn.btn-outline-success,
+    .btn.btn-outline-secondary.btn-sm,
+    .btn.btn-primary.btn-block,
+    .btn.btn-secondary.btn-block,
+    .btn.btn-success.btn-block,
+    .btn.btn-info.btn-sm.btn-block,
+    .btn.btn-success.btn-sm,
+    .btn.btn-info.btn-block {
+      box-shadow: 0 2px 6px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.08);
+      transition: box-shadow .2s ease, transform .1s ease;
+    }
+
+    /* Lift on hover/focus */
+    .btn.btn-sm.btn-block:hover,
+    .btn.btn-sm.nav-buttons:hover,
+    .btn.btn-sm.btn-block:focus,
+    .btn.btn-sm.nav-buttons:focus,
+    .btn.btn-sm.btn-outline-primary:hover,
+    .btn.btn-sm.btn-outline-primary:focus,
+    .btn.btn-outline-success:focus,
+    .btn.btn-outline-success:hover,
+    .btn.btn-outline-secondary.btn-sm:hover,
+    .btn.btn-outline-secondary.btn-sm:focus,
+    .btn.btn-primary.btn-block:hover,
+    .btn.btn-primary.btn-block:focus,
+    .btn.btn-secondary.btn-block:hover,
+    .btn.btn-secondary.btn-block:focus,
+    .btn.btn-success.btn-block:hover,
+    .btn.btn-success.btn-block:focus,
+    .btn.btn-info.btn-sm.btn-block:hover,
+    .btn.btn-info.btn-sm.btn-block:focus,
+    .btn.btn-success.btn-sm:hover,
+    .btn.btn-success.btn-sm:focus,
+    .btn.btn-info.btn-block:hover,
+    .btn.btn-info.btn-block:focus {
+      box-shadow: 0 6px 16px rgba(0,0,0,.20), 0 3px 6px rgba(0,0,0,.12);
+      transform: translateY(-1px);
+      outline: 0;
+    }
+
+    /* Pressed look */
+    .btn.btn-sm.btn-block:active,
+    .btn.btn-sm.nav-buttons:active,
+    .btn.btn-sm.btn-outline-primary:active,
+    .btn.btn-outline-success:active,
+    .btn.btn-outline-secondary.btn-sm:active,
+    .btn.btn-primary.btn-block:active,
+    .btn.btn-secondary.btn-block:active,
+    .btn.btn-success.btn-block:active,
+    .btn.btn-info.btn-sm.btn-block:active,
+    .btn.btn-success.btn-sm:active,
+    .btn.btn-info.btn-block:active {
+      box-shadow: inset 0 2px 4px rgba(0,0,0,.2); 
+      transform: translateY(0);
+    }             
+    
+   /* PROBLEMS DISCUSSIONS */
+    .d-card.d-card {
+      margin-bottom: 100px;
+      width: 600px;
+      height: auto;
+      background-color: #FFFFFFBF; 
+      border: 1px solid #005E7C80;
+      border-radius: 15px;
+    }
+               
+    div.d-card__buttons-area.d-card__buttons-area {
+        margin-top: 200px;    
+        padding: 5px 0;
+        background-color: #FFFFFFBF; 
+    }
+    
+    .title-area .link.link {
+        color: black;
+    }
+    
+    .disc-container > div > section {
+        display: flex;
+    }
+        
+    .btn.btn-success.btn-sm {
+        background-color: #568977;
+        color: #0000008c;
+        font-weight: 600;
+    }
+    
+    .title-area > div > .link, 
+    .title-area > .link {
+        color:#003d50 !important;
+    }    
+        
+    /* LECTURES MENU */
+    .name-cell {
+        color: #005E7C;
+    }
+    
+     .icon-green {
+        color: #4f9e83 !important;
+    }
+    
+    .badge-secondary,
+    .badge-success,
+    .badge-primary {
+        font-size: 14px !important;
+        color: #fff;                      /* fully opaque for contrast */
+        font-weight: 600;
+        text-shadow:
+            -0.5px -0.5px 0 rgba(0,0,0,.35),
+            0.5px -0.5px 0 rgba(0,0,0,.35),
+            -0.5px  0.5px 0 rgba(0,0,0,.35),
+            0.5px  0.5px 0 rgba(0,0,0,.35); /* crisp 1px outline */
+    }
+    
+    .badge-secondary {
+        background-color: #B88E8D;
+    }    
+    
+    .badge-primary {
+        background-color: #005e7c82;
+    }   
+
+    /* alternate backgrounds */
+    .level-tree1.level-tree1:nth-child(odd),
+    .level-tree2.level-tree2:nth-child(odd),
+    .level-tree3.level-tree3:nth-child(odd) { 
+        background-color: #C4DDB6; }
+    
+    .level-tree1.level-tree1:nth-child(even),
+    .level-tree2.level-tree2:nth-child(even),
+    .level-tree3.level-tree3:nth-child(even) { 
+        background-color: #c4ddb6bd; }
+    
+    .level-tree1.level-tree1:hover,
+    .level-tree2.level-tree2:hover,
+    .level-tree3.level-tree3:hover { 
+      background-color: #f0ee75cf !important;
+    }
+    
+    .level-leaf {
+      background-color: #f0ee7585 !important;
+    }
+    
+    .level-leaf:hover { 
+      background-color: #c4ddb6bd !important;
+    }
+    
+    
+                
+    /* PROBLEMS STREAK */    
+    .msg-text.msg-text {
+        color: #68A691;  
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    
+    .vday {
+        margin-top: 20px;
+        font-size: 1.2rem;
+    }
+    
+    /* DASHBOARD */
+    .outer-container.outer-container {
+      background-color: rgba(255, 255, 255, 0.95); /* replaces opacity */
+      border: 1px solid #005E7C80;
+      border-radius: 5px;
+      box-shadow:
+        0 1px 1px rgba(0, 0, 0, 0.05),
+        0 6px 16px rgba(0, 0, 0, 0.10),
+        0 20px 40px rgba(0, 0, 0, 0.08);
+      transition: box-shadow 200ms ease, transform 200ms ease;
+    }
+    
+    
+    .outer-container > .header {
+        margin-bottom: 20px;
+    }
+
+    .mt-4 {
+        display: none;
+    }
+    
+    .icon.icon--bigger.svg-inline--fa.fa-user-edit.fa-w-20 {
+        color: #825e8b !important;
+     }
+    
+    .icon.svg-inline--fa.fa-fast-forward.fa-w-16 {
+        color: rgba(51, 105, 255, .88) !important;
+    }
+    
+    .icon.svg-inline--fa.fa-search.fa-w-16 {
+        color: rgba(51, 105, 255, .93) !important;
+    }
+    
+    .progress-bar.bg-secondary.text-body {
+        background-color: #F2F090 !important;
+    }
+    
+    .new-area > .smaller,
+    .learn-area > .smaller,
+    .review-area > .smaller {
+        font-size: 0;
+    }
+     
+    .new-area > .smaller::before {
+        content: "New \A problems";
+    }
+    
+    .learn-area > .smaller::before {
+        content: "Learning \A problems";
+    }
+    
+    .review-area > .smaller::before {
+        content: "Review \A problems";
+    }
+    
+    .new-area > .smaller::before,
+    .learn-area > .smaller::before,
+    .review-area > .smaller::before {
+        white-space: pre;  
+        font-size: 15px;
+        color: rgba(0, 0, 0, .71);
+    }
+    
+    
+    /* LEADERBOARD */
+    
+    /* Base */
+    .tabs__tab {
+      background: #E2E7E780;
+      border: 0.5px solid #00000020;
+      border-radius: 5px 5px 0 0 !important;
+      padding: 3px 12px;
+      transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
+    }
+    
+    li.tabs__tab.active{
+      border: 0.5px solid #0003 !important;
+      background: #0000001f;
+      color:#000000d4 !important;
+    }
+
+    /* Hover (subtle) */
+    .tabs__tab:hover {
+      background: #E2E7E7;
+      box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    }
+
+    /* Active (simple) */
+    .tabs__tab.active,
+    .tabs__tab[aria-selected="true"] {
+      background: #fff;
+      border-color: #00000033;
+      font-weight: 600;
+    }
+
+    /* Accessible focus */
+    .tabs__tab:focus-visible {
+      outline: 2px solid #00000033;
+      outline-offset: 2px;
+    }
+    
+    /* Base row styling */
+    .outer-container .inner-container > .li {
+      border: 1px solid #0000001a;     /* light border */
+      border-radius: 6px;
+      padding: 3px 12px;
+      margin: 6px 0;
+      display: grid;
+      grid-template-columns: 36px 1fr auto; /* number | name | points */
+      align-items: center;
+    }
+
+    /* Zebra striping */
+    .outer-container .inner-container > .li:nth-of-type(odd)  { background: #00000008; }
+    .outer-container .inner-container > .li:nth-of-type(even) { background: #00000012; }
+
+    /* Hover effect (optional) */
+    .outer-container .inner-container > .li:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    }
+
+    a.name-cell{
+        text-decoration: none;
+        font-style: italic;
+        font-weight: 500;
+    }
+    
+    a:hover.name-cell{
+        color: #005E7C;
+    }    
+    
+    /* LOGO DASHBOARD */
+    .nav-logo img[src^="data:image/"] {
+      opacity: 0 !important;
+    }
+
+    .nav-logo {
+      position: relative !important;
+    }
+
+    .nav-logo::after {
+      content: "";
+      position: absolute;
+      inset: 0;  /* fill the container */
+      background: url("https://github.com/rampichino/stylus-internetgoschool/blob/main/images/go-logo_IGS.png?raw=true") no-repeat center center;
+      background-size: contain;
+      pointer-events: none; /* so it doesn’t block clicks */
+    }
+
+    /* PROBLEMS STREAK IMAGES */    
+    /* Hide all num/*.png images but keep layout */
+    img[src*="/num/"] {
+      display: none;
+    }
+
+    /* Map filenames to numbers */
+    *:has(> img[src*="/num/000.png"])::after { content: "😞 day streak"; }
+    *:has(> img[src*="/num/001.png"])::after { content: "1 day streak!"; }
+    *:has(> img[src*="/num/002.png"])::after { content: "2 day streak!"; }
+    *:has(> img[src*="/num/003.png"])::after { content: "3 day streak!"; }
+    *:has(> img[src*="/num/004.png"])::after { content: "4 day streak!"; }
+    *:has(> img[src*="/num/005.png"])::after { content: "5 day streak!"; }
+    *:has(> img[src*="/num/006.png"])::after { content: "6 day streak!"; }
+    *:has(> img[src*="/num/007.png"])::after { content: "7 day streak!"; }
+    *:has(> img[src*="/num/008.png"])::after { content: "8 day streak!"; }
+    *:has(> img[src*="/num/009.png"])::after { content: "9 day streak!"; }
+    *:has(> img[src*="/num/010.png"])::after { content: "10 day streak!"; }
+    *:has(> img[src*="/num/011.png"])::after { content: "11 day streak!"; }
+    *:has(> img[src*="/num/012.png"])::after { content: "12 day streak!"; }
+    *:has(> img[src*="/num/013.png"])::after { content: "13 day streak!"; }
+    *:has(> img[src*="/num/014.png"])::after { content: "14 day streak!"; }
+    *:has(> img[src*="/num/015.png"])::after { content: "15 day streak!"; }
+    *:has(> img[src*="/num/016.png"])::after { content: "16 day streak!"; }
+    *:has(> img[src*="/num/017.png"])::after { content: "17 day streak!"; }
+    *:has(> img[src*="/num/018.png"])::after { content: "18 day streak!"; }
+    *:has(> img[src*="/num/019.png"])::after { content: "19 day streak!"; }
+    *:has(> img[src*="/num/020.png"])::after { content: "20 day streak!"; }
+    *:has(> img[src*="/num/021.png"])::after { content: "21 day streak!"; }
+    *:has(> img[src*="/num/022.png"])::after { content: "22 day streak!"; }
+    *:has(> img[src*="/num/023.png"])::after { content: "23 day streak!"; }
+    *:has(> img[src*="/num/024.png"])::after { content: "24 day streak!"; }
+    *:has(> img[src*="/num/025.png"])::after { content: "25 day streak!"; }
+    *:has(> img[src*="/num/026.png"])::after { content: "26 day streak!"; }
+    *:has(> img[src*="/num/027.png"])::after { content: "27 day streak!"; }
+    *:has(> img[src*="/num/028.png"])::after { content: "28 day streak!"; }
+    *:has(> img[src*="/num/029.png"])::after { content: "29 day streak!"; }
+    *:has(> img[src*="/num/030.png"])::after { content: "30 day streak!"; }
+        
+    .streak-number:after {
+      font-family: cursive;
+      font-weight: 100;
+      margin-top: 10px;
+      font-size: 50px;
+      font-style: italic;
+      color: #005e7cad;
+      text-shadow: 0px 0px 5px #005e7c30;
+    }    
+         
+    .streak-number { 
+        flex: 1 1 auto; 
+    }   
+    
+    .streak.streak .streak-number.streak-number  {
+      justify-content: flex-start; 
+    }       
+    
+    .streak::before {  
+        opacity: .8; /* adjust to taste */
+        margin-left:40px;
+        font-size:0;
+        content: '.';
+        width: clamp(64px, 10vw, 128px);
+        height: clamp(64px, 10vw, 128px);
+background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23005E7C' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>") center / contain no-repeat;
+        filter: drop-shadow(0 6px 20px rgba(0, 145, 255, .35));
+        pointer-events: none;        
+    }                         
+    
+    /* DAILY GOAL INFO */
+    
+    .greenColored {
+        background-color: #68a691 !important;
+    }
+    
+    .progress-bar {
+        font-size: 20px;
+        color: #0000006E !important;
+        font-weight: 500;
+    }
+    
+    .progress-area.progress {
+       margin-bottom: 20px;
+       border: 1px solid #00000020;
+    }
+    
+    .progress-bar.progress-bar {
+       color: #00000096 !important;   
+       font-weight: 300;
+    }
+    
+    .btn-sm {
+        color: #005E7C;     
+    }
+    
+    .new-area > .border, 
+    .learn-area > .border,
+    .review-area > .border {
+       border-radius: 20px !important;   
+       color: #000000ab;                      /* fully opaque for contrast */
+       font-weight: 500;
+       text-shadow:
+            -0.5px -0.5px 0 rgba(214, 214, 214, .5),
+             0.5px -0.5px 0 rgba(214, 214, 214, .5),
+            -0.5px  0.5px 0 rgba(214, 214, 214, .5),
+             0.5px  0.5px 0 rgba(214, 214, 214, .5); /* light outline for contrast */
+    }
+    
+    .new-area > .border {
+       background-color: #f0ee75cc;
+    }
+    
+    .learn-area > .border {
+       background-color: #68a691cc;
+    }
+    
+    .review-area > .border {
+       background-color: #b88e8dcc;
+    }
+    
+       
+    /* LECTURES TITLE */
+    h3[data-v-be45341a] {
+      font-size: 0; /* hide original text visually */
+    }
+
+    /* add replacement text */
+    h3[data-v-be45341a]::after {
+      content: "Lectures";
+      font-size: 2rem;     /* reset font size */
+      display: block;
+      width: 100%;
+      text-align: center;
+    }    
+   
+   
+    /* DAILY STREAK TITLE */   
+    .diar {
+      display: none;
+    }
+   
+    h1 {
+       font-size: 0;  
+    }  
+    
+    .ct-bar {
+      opacity: 0.7;
+      filter: drop-shadow(0 1px 0 rgba(0,0,0,.25))
+              drop-shadow(0 6px 10px rgba(0,0,0,.18)); /* layered for depth */
+      stroke-linecap: butt; /* crisper shadow on bar ends (optional) */
+    }
+
+    .active-membership.active-membership,
+    .gift-certificate-area > a,
+    .tos-area > ul > li > button {
+        color: white;
+        font-weight: 400;
+
+    }  
+         
+       
+}
