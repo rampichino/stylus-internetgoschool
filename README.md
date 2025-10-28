@@ -2,7 +2,7 @@
 
 A custom style theme for [internetgoschool.com](https://internetgoschool.com)
 
-[![Theme preview screenshot](images/screenshot.png)](images/screenshot.png)
+[![Theme preview screenshot](images/screenshot_new.png)](images/screenshot_new.png)
 
 
 > **⚠️ DISCLAIMER**: This is an **unofficial** user-created style modification for Internet Go School. It is **not affiliated with, endorsed by, or officially supported** by internetgoschool.com or its developers. This style is developed and maintained for personal use.
