@@ -43,7 +43,7 @@
     /* BODY */
     body, html {
           background-color: #d8e9d4;
-          background-image: url("https://github.com/rampichino/stylus-internetgoschool/blob/main/images/turquoise_gradient.png?raw=true");
+          background-image: url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/turquoise_gradient.png");
           background-repeat: no-repeat;     /* prevent tiling */
           background-size: cover;           /* scale to cover the whole element */
           background-position: center;      /* keep image centered */
@@ -471,7 +471,7 @@
       content: "";
       position: absolute;
       inset: 0;  /* fill the container */
-      background: url("https://github.com/rampichino/stylus-internetgoschool/blob/main/images/go-logo_IGS.png?raw=true") no-repeat center center;
+      background: url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/go-logo_IGS.png") no-repeat center center;
       background-size: contain;
       pointer-events: none; /* so it doesn’t block clicks */
     }
