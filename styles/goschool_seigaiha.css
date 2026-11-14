@@ -74,6 +74,11 @@
         --igs-scheme:              light;
         --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c94f3a' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
         --igs-board-filter:        none;
+        --igs-chart-lecture:       #5f6f99;
+        --igs-chart-series-review: #2a8a8f;
+        --igs-chart-learn:         #e0a24f;
+        --igs-chart-new:           #c94f3a;
+        --igs-chart-quick:         #a68bb5;
 
     /* ---------- 2. SITE TOKENS ---------- */
         --page-background-color:            transparent;   /* let the body background show */
@@ -174,11 +179,11 @@
         --goal-met-background-color:        var(--igs-accent-strong);
         --lecture-progress-bar-color:       var(--igs-accent);
 
-        --study-chart-quick-look-color:     var(--igs-new);
-        --study-chart-new-color:            var(--igs-blue);
-        --study-chart-learn-color:          var(--igs-rose);
-        --study-chart-review-color:         var(--igs-chart-review);
-        --study-chart-lecture-color:        var(--igs-accent-dark);
+        --study-chart-quick-look-color:     var(--igs-chart-quick);
+        --study-chart-new-color:            var(--igs-chart-new);
+        --study-chart-learn-color:          var(--igs-chart-learn);
+        --study-chart-review-color:         var(--igs-chart-series-review);
+        --study-chart-lecture-color:        var(--igs-chart-lecture);
 
         --lesson-tree-1-background-color:       var(--igs-surface-2);
         --lesson-tree-1-background-hover-color: var(--igs-hover);
@@ -1812,4 +1817,55 @@
         color: var(--igs-text);
         border: 1px solid var(--igs-border);
     }
+
+    /* STUDY STATS CHART */
+    .ct-chart .ct-grid {
+        stroke: var(--igs-grid);
+        stroke-dasharray: 2 4;
+    }
+
+    .ct-chart .ct-label {
+        color: var(--igs-muted);
+        fill: var(--igs-muted);
+        font-size: 11px;
+    }
+
+    .ct-chart .ct-bar {
+        transition: opacity .15s ease;
+    }
+
+    .ct-chart:hover .ct-bar {
+        opacity: .6;
+    }
+
+    .ct-chart .ct-bar:hover {
+        opacity: 1;
+    }
+
+    /* chart legend (info popup): color swatch + readable text */
+    .info-body > .legend-cell {
+        position: relative;
+        background-color: var(--igs-surface-2) !important;
+        color: var(--igs-text) !important;
+        padding: 2px 8px 2px 26px !important;
+        text-align: left !important;
+        margin-bottom: 3px;
+    }
+
+    .info-body > .legend-cell::before {
+        content: "";
+        position: absolute;
+        left: 7px;
+        top: 50%;
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+        transform: translateY(-50%);
+    }
+
+    .info-body > .quick-look::before     { background-color: var(--study-chart-quick-look-color); }
+    .info-body > .new-problem::before    { background-color: var(--study-chart-new-color); }
+    .info-body > .learn-problem::before  { background-color: var(--study-chart-learn-color); }
+    .info-body > .review-problem::before { background-color: var(--study-chart-review-color); }
+    .info-body > .lecture-minute::before { background-color: var(--study-chart-lecture-color); }
 }
