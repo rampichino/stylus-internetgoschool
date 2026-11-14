@@ -1868,4 +1868,23 @@
     .info-body > .learn-problem::before  { background-color: var(--study-chart-learn-color); }
     .info-body > .review-problem::before { background-color: var(--study-chart-review-color); }
     .info-body > .lecture-minute::before { background-color: var(--study-chart-lecture-color); }
+
+    /* SOLID FILLS: the site paints these with --page-background-color,
+       which the themes make transparent so the page background shows */
+    .grid-container > .node.setup {
+        background-color: var(--igs-surface-2);
+        border-color: var(--igs-border-strong);
+        color: var(--igs-text);
+    }
+
+    .grid-container > .node.setup:hover,
+    .grid-container > .node.setup.focus {
+        background-color: var(--sgf-tree-node-focus-color);
+    }
+
+    .own-stone-note,
+    .members-only {
+        background-color: var(--igs-surface) !important;
+        color: var(--igs-text);
+    }
 }
