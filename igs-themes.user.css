@@ -1,0 +1,2547 @@
+/* ==UserStyle==
+@name           Internet Go School Themes
+@namespace      github.com/rampichino/stylus-internetgoschool
+@version        2.0.0
+@description    Six themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Dark mode, Midnight board) with automatic day/night switching.
+@author         rampichino
+@homepageURL    https://github.com/rampichino/stylus-internetgoschool
+@supportURL     https://github.com/rampichino/stylus-internetgoschool/issues
+@updateURL      https://raw.githubusercontent.com/rampichino/stylus-internetgoschool/main/igs-themes.user.css
+@license        MIT
+@preprocessor   uso
+
+@advanced dropdown mode "Day / night switching" {
+    auto "Follow my system light/dark setting*" <<<EOT
+(prefers-color-scheme: dark)
+    EOT;
+    day "Always use the day theme" <<<EOT
+not all
+    EOT;
+    night "Always use the night theme" <<<EOT
+all
+    EOT;
+}
+
+@advanced dropdown dayTheme "Day theme" {
+    green "Classic green*" <<<EOT
+        --igs-bg:                  #d8e9d4;
+        --igs-bg-glow:             #d8e9d4;
+        --igs-surface:             rgba(255, 255, 255, .95);
+        --igs-surface-2:           #C4DDB6;
+        --igs-surface-3:           #d2e6c7;
+        --igs-border:              #8fb3bf;
+        --igs-border-strong:       #6a9aa8;
+        --igs-nav:                 #68A691;
+        --igs-text:                #1f2b2b;
+        --igs-text-strong:         #000000;
+        --igs-muted:               #4d5c5c;
+        --igs-on-accent:           #ffffff;
+        --igs-heading:             #005E7C;
+        --igs-accent:              #005E7C;
+        --igs-accent-strong:       #005E7C;
+        --igs-accent-dark:         #004a62;
+        --igs-hover:               #f0ee75cf;
+        --igs-new:                 #f0ee75;
+        --igs-learn:               #68a691;
+        --igs-review:              #b88e8d;
+        --igs-blue:                #3f8aa0;
+        --igs-rose:                #B88E8D;
+        --igs-green:               #4f9e83;
+        --igs-coral:               #c66a51;
+        --igs-danger:              #c66a51;
+        --igs-error-bg:            #fbd9d0;
+        --igs-error-text:          #9b3a22;
+        --igs-stone-bg:            #005e7c82;
+        --igs-glow:                #005e7c30;
+        --igs-grid:                #00000018;
+        --igs-shadow-color:        rgba(0, 0, 0, .2);
+        --igs-card-shadow:         0 1px 1px rgba(0,0,0,.05), 0 6px 16px rgba(0,0,0,.10), 0 20px 40px rgba(0,0,0,.08);
+        --igs-btn-shadow:          0 2px 6px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.08);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(0,0,0,.20), 0 3px 6px rgba(0,0,0,.12);
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/turquoise_gradient.png");
+        --igs-logo-filter:         none;
+        --igs-heading-font:        inherit;
+        --igs-streak-font:         cursive;
+        --igs-on-fill:             #ffffff;
+        --igs-alert:               #d0331a;
+        --igs-nav-text:            #0b2e28;
+        --igs-nav-text-hover:      #ffffff;
+        --igs-nav-hover:           #005E7C80;
+        --igs-focus:               #005e7c55;
+        --igs-green-hover:         #568977;
+        --igs-danger-hover:        #b05a43;
+        --igs-blue-hover:          #2f7388;
+        --igs-new-hover:           #e2df5c;
+        --igs-light-btn:           #ffffff99;
+        --igs-ok-bg:               #e3f4d7;
+        --igs-chart-review:        #68a691;
+        --igs-leaf:                #f5f3a8;
+        --igs-selected:            #cfe5ec;
+        --igs-progress-extra:      #f0ee75;
+        --igs-progress-extra-text: rgba(0, 0, 0, .65);
+        --igs-secondary:           #B88E8D;
+        --igs-secondary-hover:     #a07574;
+        --igs-ppage-bg:            #d8e9d4;
+        --igs-scheme:              light;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23005E7C' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        none;
+    EOT;
+    kaya "Kaya wood" <<<EOT
+        --igs-bg:                  #ead3a6;
+        --igs-bg-glow:             #d9a95f;
+        --igs-surface:             #fbf3e4;
+        --igs-surface-2:           #f4e7cf;
+        --igs-surface-3:           #efdfc2;
+        --igs-border:              #dcc69e;
+        --igs-border-strong:       #c9a875;
+        --igs-nav:                 #2b1d14;
+        --igs-text:                #2b1d14;
+        --igs-text-strong:         #1a120c;
+        --igs-muted:               #6b5640;
+        --igs-on-accent:           #fff6ea;
+        --igs-heading:             #2b1d14;
+        --igs-accent:              #9e2b25;
+        --igs-accent-strong:       #9e2b25;
+        --igs-accent-dark:         #7f211c;
+        --igs-hover:               #f6d9a6;
+        --igs-new:                 #e9c46a;
+        --igs-learn:               #a3b18a;
+        --igs-review:              #d08c7a;
+        --igs-blue:                #2b1d14;
+        --igs-rose:                #9e2b25;
+        --igs-green:               #5a7a3a;
+        --igs-coral:               #b5523a;
+        --igs-danger:              #9e2b25;
+        --igs-error-bg:            #f6d5cc;
+        --igs-error-text:          #7f211c;
+        --igs-stone-bg:            #2b1d1440;
+        --igs-glow:                rgba(158, 43, 37, .22);
+        --igs-grid:                #2b1d1422;
+        --igs-shadow-color:        rgba(60, 35, 10, .3);
+        --igs-card-shadow:         0 2px 0 rgba(0,0,0,.06), 0 10px 24px rgba(60,35,10,.18);
+        --igs-btn-shadow:          0 2px 6px rgba(60,35,10,.2), 0 1px 2px rgba(60,35,10,.12);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(60,35,10,.28), 0 3px 6px rgba(60,35,10,.16);
+        --igs-bg-image:            none;
+        --igs-logo-filter:         invert(1) sepia(.4);
+        --igs-heading-font:        Georgia, "Times New Roman", serif;
+        --igs-streak-font:         Georgia, "Times New Roman", serif;
+        --igs-on-fill:             #fff6ea;
+        --igs-alert:               #b3261e;
+        --igs-nav-text:            #e9d6b8;
+        --igs-nav-text-hover:      #fff6ea;
+        --igs-nav-hover:           #9e2b2599;
+        --igs-focus:               #9e2b2555;
+        --igs-green-hover:         #4a6630;
+        --igs-danger-hover:        #7f211c;
+        --igs-blue-hover:          #4a3526;
+        --igs-new-hover:           #ddb550;
+        --igs-light-btn:           #fff6ea99;
+        --igs-ok-bg:               #e6edd8;
+        --igs-chart-review:        #5a7a3a;
+        --igs-leaf:                #f6e6c4;
+        --igs-selected:            #f1dcb0;
+        --igs-progress-extra:      #8a6a3a;
+        --igs-progress-extra-text: var(--igs-on-fill);
+        --igs-secondary:           #b5523a;
+        --igs-secondary-hover:     #9a4430;
+        --igs-ppage-bg:            var(--igs-surface-3);
+        --igs-scheme:              light;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239e2b25' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        none;
+    EOT;
+    momiji "Momiji" <<<EOT
+        --igs-bg:                  #efdfcc;
+        --igs-bg-glow:             #e3c9a8;
+        --igs-surface:             #fdf7f0;
+        --igs-surface-2:           #f6e8d8;
+        --igs-surface-3:           #f1e0cc;
+        --igs-border:              #e0c6a8;
+        --igs-border-strong:       #cba67c;
+        --igs-nav:                 #3b1f17;
+        --igs-text:                #33201a;
+        --igs-text-strong:         #1f120d;
+        --igs-muted:               #7f6253;
+        --igs-on-accent:           #fff4ea;
+        --igs-heading:             #9c3f14;
+        --igs-accent:              #b84d1a;
+        --igs-accent-strong:       #b84d1a;
+        --igs-accent-dark:         #93390f;
+        --igs-hover:               #f3d6b8;
+        --igs-new:                 #d9a03f;
+        --igs-learn:               #8a9a4f;
+        --igs-review:              #c46a4a;
+        --igs-blue:                #6d7f3a;
+        --igs-rose:                #9c3f14;
+        --igs-green:               #6d7f3a;
+        --igs-coral:               #c4561f;
+        --igs-danger:              #a3301c;
+        --igs-error-bg:            #f6d5cc;
+        --igs-error-text:          #7f211c;
+        --igs-stone-bg:            #3b1f1740;
+        --igs-glow:                rgba(196, 86, 31, .22);
+        --igs-grid:                #3b1f1722;
+        --igs-shadow-color:        rgba(80, 40, 10, .3);
+        --igs-card-shadow:         0 2px 0 rgba(0,0,0,.05), 0 10px 24px rgba(80,40,10,.16);
+        --igs-btn-shadow:          0 2px 6px rgba(80,40,10,.2), 0 1px 2px rgba(80,40,10,.12);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(80,40,10,.28), 0 3px 6px rgba(80,40,10,.16);
+        --igs-bg-image:            none;
+        --igs-logo-filter:         invert(1) sepia(.3);
+        --igs-heading-font:        Georgia, "Times New Roman", serif;
+        --igs-streak-font:         Georgia, "Times New Roman", serif;
+        --igs-on-fill:             #fff4ea;
+        --igs-alert:               #b3261e;
+        --igs-nav-text:            #efd9c4;
+        --igs-nav-text-hover:      #fff4ea;
+        --igs-nav-hover:           #c4561f99;
+        --igs-focus:               #c4561f55;
+        --igs-green-hover:         #5a6a2e;
+        --igs-danger-hover:        #861f10;
+        --igs-blue-hover:          #5a6a2e;
+        --igs-new-hover:           #c98f30;
+        --igs-light-btn:           #fff4ea99;
+        --igs-ok-bg:               #e8ecd6;
+        --igs-chart-review:        #6d7f3a;
+        --igs-leaf:                #f8ead8;
+        --igs-selected:            #f0d8bc;
+        --igs-progress-extra:      #a3703f;
+        --igs-progress-extra-text: var(--igs-on-fill);
+        --igs-secondary:           #8f6a55;
+        --igs-secondary-hover:     #7a5846;
+        --igs-ppage-bg:            var(--igs-surface-3);
+        --igs-scheme:              light;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b84d1a' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        none;
+    EOT;
+    seigaiha "Seigaiha sea" <<<EOT
+        --igs-bg:                  #d9ecf0;
+        --igs-bg-glow:             #c4e2e8;
+        --igs-surface:             #fbfeff;
+        --igs-surface-2:           #e8f4f7;
+        --igs-surface-3:           #e0eff3;
+        --igs-border:              #bcdbe2;
+        --igs-border-strong:       #94c3ce;
+        --igs-nav:                 #0f4c5c;
+        --igs-text:                #123a45;
+        --igs-text-strong:         #0a2830;
+        --igs-muted:               #557883;
+        --igs-on-accent:           #fff6f3;
+        --igs-heading:             #0f4c5c;
+        --igs-accent:              #c94f3a;
+        --igs-accent-strong:       #c94f3a;
+        --igs-accent-dark:         #a63f2d;
+        --igs-hover:               #cfe8ee;
+        --igs-new:                 #e0a24f;
+        --igs-learn:               #4fa3a8;
+        --igs-review:              #d97a6a;
+        --igs-blue:                #1f6f84;
+        --igs-rose:                #c94f3a;
+        --igs-green:               #2a8a8f;
+        --igs-coral:               #d4553f;
+        --igs-danger:              #b3392a;
+        --igs-error-bg:            #f8dcd6;
+        --igs-error-text:          #8a2b1e;
+        --igs-stone-bg:            #0f4c5c40;
+        --igs-glow:                rgba(201, 79, 58, .2);
+        --igs-grid:                #0f4c5c22;
+        --igs-shadow-color:        rgba(15, 76, 92, .25);
+        --igs-card-shadow:         0 2px 0 rgba(0,0,0,.04), 0 8px 22px rgba(15,76,92,.14);
+        --igs-btn-shadow:          0 2px 6px rgba(15,76,92,.2), 0 1px 2px rgba(15,76,92,.12);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(15,76,92,.28), 0 3px 6px rgba(15,76,92,.16);
+        --igs-bg-image:            linear-gradient(180deg, #e4f2f5 0%, var(--igs-bg) 100%);
+        --igs-logo-filter:         invert(1);
+        --igs-heading-font:        inherit;
+        --igs-streak-font:         cursive;
+        --igs-on-fill:             #fff6f3;
+        --igs-alert:               #b3261e;
+        --igs-nav-text:            #d6eef2;
+        --igs-nav-text-hover:      #ffffff;
+        --igs-nav-hover:           #ffffff22;
+        --igs-focus:               #c94f3a55;
+        --igs-green-hover:         #237479;
+        --igs-danger-hover:        #962f22;
+        --igs-blue-hover:          #185a6b;
+        --igs-new-hover:           #d18f3a;
+        --igs-light-btn:           #ffffffaa;
+        --igs-ok-bg:               #dcefe9;
+        --igs-chart-review:        #2a8a8f;
+        --igs-leaf:                #eef7f9;
+        --igs-selected:            #d3eaf0;
+        --igs-progress-extra:      #6fb3bb;
+        --igs-progress-extra-text: #0f3a45;
+        --igs-secondary:           #6f98a2;
+        --igs-secondary-hover:     #5c8590;
+        --igs-ppage-bg:            var(--igs-surface-3);
+        --igs-scheme:              light;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c94f3a' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        none;
+    EOT;
+    dark "Dark mode" <<<EOT
+        --igs-bg:                  #14191b;
+        --igs-bg-glow:             #1d3a3f;
+        --igs-surface:             #1c2427;
+        --igs-surface-2:           #222c30;
+        --igs-surface-3:           #1f282b;
+        --igs-border:              #2c383c;
+        --igs-border-strong:       #3a484c;
+        --igs-nav:                 #0f1416;
+        --igs-text:                #dfe7e8;
+        --igs-text-strong:         #f2f7f7;
+        --igs-muted:               #93a3a6;
+        --igs-on-accent:           #0b1214;
+        --igs-heading:             #7fd1c4;
+        --igs-accent:              #5cc2b1;
+        --igs-accent-strong:       #2f8f86;
+        --igs-accent-dark:         #24736c;
+        --igs-hover:               #2d3e3a;
+        --igs-new:                 #8c8a3a;
+        --igs-learn:               #3a7f6e;
+        --igs-review:              #7f5958;
+        --igs-blue:                #3c7f93;
+        --igs-rose:                #9a6b6a;
+        --igs-green:               #3f8f6e;
+        --igs-coral:               #e38b72;
+        --igs-danger:              #b0604c;
+        --igs-error-bg:            #3a2422;
+        --igs-error-text:          #ff9a8a;
+        --igs-stone-bg:            #2f8f8682;
+        --igs-glow:                #7fd1c433;
+        --igs-grid:                #ffffff26;
+        --igs-shadow-color:        rgba(0, 0, 0, .5);
+        --igs-card-shadow:         0 1px 1px rgba(0,0,0,.2), 0 6px 16px rgba(0,0,0,.3), 0 20px 40px rgba(0,0,0,.25);
+        --igs-btn-shadow:          0 2px 6px rgba(0,0,0,.35), 0 1px 2px rgba(0,0,0,.25);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(0,0,0,.45), 0 3px 6px rgba(0,0,0,.3);
+        --igs-bg-image:            radial-gradient(1400px 600px at 50% -10%, var(--igs-bg-glow) 0%, var(--igs-bg) 60%);
+        --igs-logo-filter:         invert(1);
+        --igs-heading-font:        inherit;
+        --igs-streak-font:         cursive;
+        --igs-on-fill:             #f2f7f7;
+        --igs-alert:               #ff7a6b;
+        --igs-nav-text:            #b9c6c8;
+        --igs-nav-text-hover:      #ffffff;
+        --igs-nav-hover:           #2f8f8666;
+        --igs-focus:               #5cc2b166;
+        --igs-green-hover:         #357a5e;
+        --igs-danger-hover:        #c66a51;
+        --igs-blue-hover:          #4a93a8;
+        --igs-new-hover:           #a3a045;
+        --igs-light-btn:           #ffffff14;
+        --igs-ok-bg:               #1a2e28;
+        --igs-chart-review:        #3f9c84;
+        --igs-leaf:                #1a2a27;
+        --igs-selected:            #24363a;
+        --igs-progress-extra:      #8c8a3a;
+        --igs-progress-extra-text: var(--igs-on-fill);
+        --igs-secondary:           #7f5958;
+        --igs-secondary-hover:     #9a6b6a;
+        --igs-ppage-bg:            transparent;
+        --igs-scheme:              dark;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237fd1c4' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        brightness(.82);
+    EOT;
+    midnight "Midnight board" <<<EOT
+        --igs-bg:                  #0f1626;
+        --igs-bg-glow:             #1c2a4a;
+        --igs-surface:             #18223a;
+        --igs-surface-2:           #1f2b47;
+        --igs-surface-3:           #1b2640;
+        --igs-border:              #2b3858;
+        --igs-border-strong:       #3a4a70;
+        --igs-nav:                 #0a0f1c;
+        --igs-text:                #d6deec;
+        --igs-text-strong:         #f1f4fa;
+        --igs-muted:               #8f9bb5;
+        --igs-on-accent:           #141a26;
+        --igs-heading:             #e9c77f;
+        --igs-accent:              #d9a441;
+        --igs-accent-strong:       #d0993a;
+        --igs-accent-dark:         #9a7226;
+        --igs-hover:               #24345a;
+        --igs-new:                 #d9b45a;
+        --igs-learn:               #6fb79a;
+        --igs-review:              #c98a8a;
+        --igs-blue:                #6f8fd0;
+        --igs-rose:                #c98a8a;
+        --igs-green:               #5fae8a;
+        --igs-coral:               #e8a07a;
+        --igs-danger:              #e07a62;
+        --igs-error-bg:            #3a2228;
+        --igs-error-text:          #ff9a8a;
+        --igs-stone-bg:            #d9a44166;
+        --igs-glow:                #e9c77f33;
+        --igs-grid:                #ffffff22;
+        --igs-shadow-color:        rgba(0, 0, 0, .5);
+        --igs-card-shadow:         0 1px 1px rgba(0,0,0,.2), 0 6px 16px rgba(0,0,0,.3), 0 20px 40px rgba(0,0,0,.25);
+        --igs-btn-shadow:          0 2px 6px rgba(0,0,0,.35), 0 1px 2px rgba(0,0,0,.25);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(0,0,0,.45), 0 3px 6px rgba(0,0,0,.3);
+        --igs-bg-image:            radial-gradient(1400px 600px at 50% -10%, var(--igs-bg-glow) 0%, var(--igs-bg) 60%);
+        --igs-logo-filter:         invert(1);
+        --igs-heading-font:        inherit;
+        --igs-streak-font:         Georgia, "Times New Roman", serif;
+        --igs-on-fill:             #141a26;
+        --igs-alert:               #ff8a73;
+        --igs-nav-text:            #c9d2e3;
+        --igs-nav-text-hover:      #ffffff;
+        --igs-nav-hover:           #d9a44144;
+        --igs-focus:               #d9a44166;
+        --igs-green-hover:         #74c09d;
+        --igs-danger-hover:        #ec8e77;
+        --igs-blue-hover:          #86a2dc;
+        --igs-new-hover:           #e6c26c;
+        --igs-light-btn:           #ffffff14;
+        --igs-ok-bg:               #1a2e2a;
+        --igs-chart-review:        #5fae8a;
+        --igs-leaf:                #1a2540;
+        --igs-selected:            #253356;
+        --igs-progress-extra:      #b89a4a;
+        --igs-progress-extra-text: var(--igs-on-fill);
+        --igs-secondary:           #8f9bc4;
+        --igs-secondary-hover:     #a3aed2;
+        --igs-ppage-bg:            transparent;
+        --igs-scheme:              dark;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e9c77f' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        brightness(.82);
+    EOT;
+}
+
+@advanced dropdown nightTheme "Night theme" {
+    green "Classic green" <<<EOT
+        --igs-bg:                  #d8e9d4;
+        --igs-bg-glow:             #d8e9d4;
+        --igs-surface:             rgba(255, 255, 255, .95);
+        --igs-surface-2:           #C4DDB6;
+        --igs-surface-3:           #d2e6c7;
+        --igs-border:              #8fb3bf;
+        --igs-border-strong:       #6a9aa8;
+        --igs-nav:                 #68A691;
+        --igs-text:                #1f2b2b;
+        --igs-text-strong:         #000000;
+        --igs-muted:               #4d5c5c;
+        --igs-on-accent:           #ffffff;
+        --igs-heading:             #005E7C;
+        --igs-accent:              #005E7C;
+        --igs-accent-strong:       #005E7C;
+        --igs-accent-dark:         #004a62;
+        --igs-hover:               #f0ee75cf;
+        --igs-new:                 #f0ee75;
+        --igs-learn:               #68a691;
+        --igs-review:              #b88e8d;
+        --igs-blue:                #3f8aa0;
+        --igs-rose:                #B88E8D;
+        --igs-green:               #4f9e83;
+        --igs-coral:               #c66a51;
+        --igs-danger:              #c66a51;
+        --igs-error-bg:            #fbd9d0;
+        --igs-error-text:          #9b3a22;
+        --igs-stone-bg:            #005e7c82;
+        --igs-glow:                #005e7c30;
+        --igs-grid:                #00000018;
+        --igs-shadow-color:        rgba(0, 0, 0, .2);
+        --igs-card-shadow:         0 1px 1px rgba(0,0,0,.05), 0 6px 16px rgba(0,0,0,.10), 0 20px 40px rgba(0,0,0,.08);
+        --igs-btn-shadow:          0 2px 6px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.08);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(0,0,0,.20), 0 3px 6px rgba(0,0,0,.12);
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/turquoise_gradient.png");
+        --igs-logo-filter:         none;
+        --igs-heading-font:        inherit;
+        --igs-streak-font:         cursive;
+        --igs-on-fill:             #ffffff;
+        --igs-alert:               #d0331a;
+        --igs-nav-text:            #0b2e28;
+        --igs-nav-text-hover:      #ffffff;
+        --igs-nav-hover:           #005E7C80;
+        --igs-focus:               #005e7c55;
+        --igs-green-hover:         #568977;
+        --igs-danger-hover:        #b05a43;
+        --igs-blue-hover:          #2f7388;
+        --igs-new-hover:           #e2df5c;
+        --igs-light-btn:           #ffffff99;
+        --igs-ok-bg:               #e3f4d7;
+        --igs-chart-review:        #68a691;
+        --igs-leaf:                #f5f3a8;
+        --igs-selected:            #cfe5ec;
+        --igs-progress-extra:      #f0ee75;
+        --igs-progress-extra-text: rgba(0, 0, 0, .65);
+        --igs-secondary:           #B88E8D;
+        --igs-secondary-hover:     #a07574;
+        --igs-ppage-bg:            #d8e9d4;
+        --igs-scheme:              light;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23005E7C' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        none;
+    EOT;
+    kaya "Kaya wood" <<<EOT
+        --igs-bg:                  #ead3a6;
+        --igs-bg-glow:             #d9a95f;
+        --igs-surface:             #fbf3e4;
+        --igs-surface-2:           #f4e7cf;
+        --igs-surface-3:           #efdfc2;
+        --igs-border:              #dcc69e;
+        --igs-border-strong:       #c9a875;
+        --igs-nav:                 #2b1d14;
+        --igs-text:                #2b1d14;
+        --igs-text-strong:         #1a120c;
+        --igs-muted:               #6b5640;
+        --igs-on-accent:           #fff6ea;
+        --igs-heading:             #2b1d14;
+        --igs-accent:              #9e2b25;
+        --igs-accent-strong:       #9e2b25;
+        --igs-accent-dark:         #7f211c;
+        --igs-hover:               #f6d9a6;
+        --igs-new:                 #e9c46a;
+        --igs-learn:               #a3b18a;
+        --igs-review:              #d08c7a;
+        --igs-blue:                #2b1d14;
+        --igs-rose:                #9e2b25;
+        --igs-green:               #5a7a3a;
+        --igs-coral:               #b5523a;
+        --igs-danger:              #9e2b25;
+        --igs-error-bg:            #f6d5cc;
+        --igs-error-text:          #7f211c;
+        --igs-stone-bg:            #2b1d1440;
+        --igs-glow:                rgba(158, 43, 37, .22);
+        --igs-grid:                #2b1d1422;
+        --igs-shadow-color:        rgba(60, 35, 10, .3);
+        --igs-card-shadow:         0 2px 0 rgba(0,0,0,.06), 0 10px 24px rgba(60,35,10,.18);
+        --igs-btn-shadow:          0 2px 6px rgba(60,35,10,.2), 0 1px 2px rgba(60,35,10,.12);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(60,35,10,.28), 0 3px 6px rgba(60,35,10,.16);
+        --igs-bg-image:            none;
+        --igs-logo-filter:         invert(1) sepia(.4);
+        --igs-heading-font:        Georgia, "Times New Roman", serif;
+        --igs-streak-font:         Georgia, "Times New Roman", serif;
+        --igs-on-fill:             #fff6ea;
+        --igs-alert:               #b3261e;
+        --igs-nav-text:            #e9d6b8;
+        --igs-nav-text-hover:      #fff6ea;
+        --igs-nav-hover:           #9e2b2599;
+        --igs-focus:               #9e2b2555;
+        --igs-green-hover:         #4a6630;
+        --igs-danger-hover:        #7f211c;
+        --igs-blue-hover:          #4a3526;
+        --igs-new-hover:           #ddb550;
+        --igs-light-btn:           #fff6ea99;
+        --igs-ok-bg:               #e6edd8;
+        --igs-chart-review:        #5a7a3a;
+        --igs-leaf:                #f6e6c4;
+        --igs-selected:            #f1dcb0;
+        --igs-progress-extra:      #8a6a3a;
+        --igs-progress-extra-text: var(--igs-on-fill);
+        --igs-secondary:           #b5523a;
+        --igs-secondary-hover:     #9a4430;
+        --igs-ppage-bg:            var(--igs-surface-3);
+        --igs-scheme:              light;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239e2b25' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        none;
+    EOT;
+    momiji "Momiji" <<<EOT
+        --igs-bg:                  #efdfcc;
+        --igs-bg-glow:             #e3c9a8;
+        --igs-surface:             #fdf7f0;
+        --igs-surface-2:           #f6e8d8;
+        --igs-surface-3:           #f1e0cc;
+        --igs-border:              #e0c6a8;
+        --igs-border-strong:       #cba67c;
+        --igs-nav:                 #3b1f17;
+        --igs-text:                #33201a;
+        --igs-text-strong:         #1f120d;
+        --igs-muted:               #7f6253;
+        --igs-on-accent:           #fff4ea;
+        --igs-heading:             #9c3f14;
+        --igs-accent:              #b84d1a;
+        --igs-accent-strong:       #b84d1a;
+        --igs-accent-dark:         #93390f;
+        --igs-hover:               #f3d6b8;
+        --igs-new:                 #d9a03f;
+        --igs-learn:               #8a9a4f;
+        --igs-review:              #c46a4a;
+        --igs-blue:                #6d7f3a;
+        --igs-rose:                #9c3f14;
+        --igs-green:               #6d7f3a;
+        --igs-coral:               #c4561f;
+        --igs-danger:              #a3301c;
+        --igs-error-bg:            #f6d5cc;
+        --igs-error-text:          #7f211c;
+        --igs-stone-bg:            #3b1f1740;
+        --igs-glow:                rgba(196, 86, 31, .22);
+        --igs-grid:                #3b1f1722;
+        --igs-shadow-color:        rgba(80, 40, 10, .3);
+        --igs-card-shadow:         0 2px 0 rgba(0,0,0,.05), 0 10px 24px rgba(80,40,10,.16);
+        --igs-btn-shadow:          0 2px 6px rgba(80,40,10,.2), 0 1px 2px rgba(80,40,10,.12);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(80,40,10,.28), 0 3px 6px rgba(80,40,10,.16);
+        --igs-bg-image:            none;
+        --igs-logo-filter:         invert(1) sepia(.3);
+        --igs-heading-font:        Georgia, "Times New Roman", serif;
+        --igs-streak-font:         Georgia, "Times New Roman", serif;
+        --igs-on-fill:             #fff4ea;
+        --igs-alert:               #b3261e;
+        --igs-nav-text:            #efd9c4;
+        --igs-nav-text-hover:      #fff4ea;
+        --igs-nav-hover:           #c4561f99;
+        --igs-focus:               #c4561f55;
+        --igs-green-hover:         #5a6a2e;
+        --igs-danger-hover:        #861f10;
+        --igs-blue-hover:          #5a6a2e;
+        --igs-new-hover:           #c98f30;
+        --igs-light-btn:           #fff4ea99;
+        --igs-ok-bg:               #e8ecd6;
+        --igs-chart-review:        #6d7f3a;
+        --igs-leaf:                #f8ead8;
+        --igs-selected:            #f0d8bc;
+        --igs-progress-extra:      #a3703f;
+        --igs-progress-extra-text: var(--igs-on-fill);
+        --igs-secondary:           #8f6a55;
+        --igs-secondary-hover:     #7a5846;
+        --igs-ppage-bg:            var(--igs-surface-3);
+        --igs-scheme:              light;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b84d1a' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        none;
+    EOT;
+    seigaiha "Seigaiha sea" <<<EOT
+        --igs-bg:                  #d9ecf0;
+        --igs-bg-glow:             #c4e2e8;
+        --igs-surface:             #fbfeff;
+        --igs-surface-2:           #e8f4f7;
+        --igs-surface-3:           #e0eff3;
+        --igs-border:              #bcdbe2;
+        --igs-border-strong:       #94c3ce;
+        --igs-nav:                 #0f4c5c;
+        --igs-text:                #123a45;
+        --igs-text-strong:         #0a2830;
+        --igs-muted:               #557883;
+        --igs-on-accent:           #fff6f3;
+        --igs-heading:             #0f4c5c;
+        --igs-accent:              #c94f3a;
+        --igs-accent-strong:       #c94f3a;
+        --igs-accent-dark:         #a63f2d;
+        --igs-hover:               #cfe8ee;
+        --igs-new:                 #e0a24f;
+        --igs-learn:               #4fa3a8;
+        --igs-review:              #d97a6a;
+        --igs-blue:                #1f6f84;
+        --igs-rose:                #c94f3a;
+        --igs-green:               #2a8a8f;
+        --igs-coral:               #d4553f;
+        --igs-danger:              #b3392a;
+        --igs-error-bg:            #f8dcd6;
+        --igs-error-text:          #8a2b1e;
+        --igs-stone-bg:            #0f4c5c40;
+        --igs-glow:                rgba(201, 79, 58, .2);
+        --igs-grid:                #0f4c5c22;
+        --igs-shadow-color:        rgba(15, 76, 92, .25);
+        --igs-card-shadow:         0 2px 0 rgba(0,0,0,.04), 0 8px 22px rgba(15,76,92,.14);
+        --igs-btn-shadow:          0 2px 6px rgba(15,76,92,.2), 0 1px 2px rgba(15,76,92,.12);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(15,76,92,.28), 0 3px 6px rgba(15,76,92,.16);
+        --igs-bg-image:            linear-gradient(180deg, #e4f2f5 0%, var(--igs-bg) 100%);
+        --igs-logo-filter:         invert(1);
+        --igs-heading-font:        inherit;
+        --igs-streak-font:         cursive;
+        --igs-on-fill:             #fff6f3;
+        --igs-alert:               #b3261e;
+        --igs-nav-text:            #d6eef2;
+        --igs-nav-text-hover:      #ffffff;
+        --igs-nav-hover:           #ffffff22;
+        --igs-focus:               #c94f3a55;
+        --igs-green-hover:         #237479;
+        --igs-danger-hover:        #962f22;
+        --igs-blue-hover:          #185a6b;
+        --igs-new-hover:           #d18f3a;
+        --igs-light-btn:           #ffffffaa;
+        --igs-ok-bg:               #dcefe9;
+        --igs-chart-review:        #2a8a8f;
+        --igs-leaf:                #eef7f9;
+        --igs-selected:            #d3eaf0;
+        --igs-progress-extra:      #6fb3bb;
+        --igs-progress-extra-text: #0f3a45;
+        --igs-secondary:           #6f98a2;
+        --igs-secondary-hover:     #5c8590;
+        --igs-ppage-bg:            var(--igs-surface-3);
+        --igs-scheme:              light;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c94f3a' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        none;
+    EOT;
+    dark "Dark mode*" <<<EOT
+        --igs-bg:                  #14191b;
+        --igs-bg-glow:             #1d3a3f;
+        --igs-surface:             #1c2427;
+        --igs-surface-2:           #222c30;
+        --igs-surface-3:           #1f282b;
+        --igs-border:              #2c383c;
+        --igs-border-strong:       #3a484c;
+        --igs-nav:                 #0f1416;
+        --igs-text:                #dfe7e8;
+        --igs-text-strong:         #f2f7f7;
+        --igs-muted:               #93a3a6;
+        --igs-on-accent:           #0b1214;
+        --igs-heading:             #7fd1c4;
+        --igs-accent:              #5cc2b1;
+        --igs-accent-strong:       #2f8f86;
+        --igs-accent-dark:         #24736c;
+        --igs-hover:               #2d3e3a;
+        --igs-new:                 #8c8a3a;
+        --igs-learn:               #3a7f6e;
+        --igs-review:              #7f5958;
+        --igs-blue:                #3c7f93;
+        --igs-rose:                #9a6b6a;
+        --igs-green:               #3f8f6e;
+        --igs-coral:               #e38b72;
+        --igs-danger:              #b0604c;
+        --igs-error-bg:            #3a2422;
+        --igs-error-text:          #ff9a8a;
+        --igs-stone-bg:            #2f8f8682;
+        --igs-glow:                #7fd1c433;
+        --igs-grid:                #ffffff26;
+        --igs-shadow-color:        rgba(0, 0, 0, .5);
+        --igs-card-shadow:         0 1px 1px rgba(0,0,0,.2), 0 6px 16px rgba(0,0,0,.3), 0 20px 40px rgba(0,0,0,.25);
+        --igs-btn-shadow:          0 2px 6px rgba(0,0,0,.35), 0 1px 2px rgba(0,0,0,.25);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(0,0,0,.45), 0 3px 6px rgba(0,0,0,.3);
+        --igs-bg-image:            radial-gradient(1400px 600px at 50% -10%, var(--igs-bg-glow) 0%, var(--igs-bg) 60%);
+        --igs-logo-filter:         invert(1);
+        --igs-heading-font:        inherit;
+        --igs-streak-font:         cursive;
+        --igs-on-fill:             #f2f7f7;
+        --igs-alert:               #ff7a6b;
+        --igs-nav-text:            #b9c6c8;
+        --igs-nav-text-hover:      #ffffff;
+        --igs-nav-hover:           #2f8f8666;
+        --igs-focus:               #5cc2b166;
+        --igs-green-hover:         #357a5e;
+        --igs-danger-hover:        #c66a51;
+        --igs-blue-hover:          #4a93a8;
+        --igs-new-hover:           #a3a045;
+        --igs-light-btn:           #ffffff14;
+        --igs-ok-bg:               #1a2e28;
+        --igs-chart-review:        #3f9c84;
+        --igs-leaf:                #1a2a27;
+        --igs-selected:            #24363a;
+        --igs-progress-extra:      #8c8a3a;
+        --igs-progress-extra-text: var(--igs-on-fill);
+        --igs-secondary:           #7f5958;
+        --igs-secondary-hover:     #9a6b6a;
+        --igs-ppage-bg:            transparent;
+        --igs-scheme:              dark;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237fd1c4' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        brightness(.82);
+    EOT;
+    midnight "Midnight board" <<<EOT
+        --igs-bg:                  #0f1626;
+        --igs-bg-glow:             #1c2a4a;
+        --igs-surface:             #18223a;
+        --igs-surface-2:           #1f2b47;
+        --igs-surface-3:           #1b2640;
+        --igs-border:              #2b3858;
+        --igs-border-strong:       #3a4a70;
+        --igs-nav:                 #0a0f1c;
+        --igs-text:                #d6deec;
+        --igs-text-strong:         #f1f4fa;
+        --igs-muted:               #8f9bb5;
+        --igs-on-accent:           #141a26;
+        --igs-heading:             #e9c77f;
+        --igs-accent:              #d9a441;
+        --igs-accent-strong:       #d0993a;
+        --igs-accent-dark:         #9a7226;
+        --igs-hover:               #24345a;
+        --igs-new:                 #d9b45a;
+        --igs-learn:               #6fb79a;
+        --igs-review:              #c98a8a;
+        --igs-blue:                #6f8fd0;
+        --igs-rose:                #c98a8a;
+        --igs-green:               #5fae8a;
+        --igs-coral:               #e8a07a;
+        --igs-danger:              #e07a62;
+        --igs-error-bg:            #3a2228;
+        --igs-error-text:          #ff9a8a;
+        --igs-stone-bg:            #d9a44166;
+        --igs-glow:                #e9c77f33;
+        --igs-grid:                #ffffff22;
+        --igs-shadow-color:        rgba(0, 0, 0, .5);
+        --igs-card-shadow:         0 1px 1px rgba(0,0,0,.2), 0 6px 16px rgba(0,0,0,.3), 0 20px 40px rgba(0,0,0,.25);
+        --igs-btn-shadow:          0 2px 6px rgba(0,0,0,.35), 0 1px 2px rgba(0,0,0,.25);
+        --igs-btn-shadow-hover:    0 6px 16px rgba(0,0,0,.45), 0 3px 6px rgba(0,0,0,.3);
+        --igs-bg-image:            radial-gradient(1400px 600px at 50% -10%, var(--igs-bg-glow) 0%, var(--igs-bg) 60%);
+        --igs-logo-filter:         invert(1);
+        --igs-heading-font:        inherit;
+        --igs-streak-font:         Georgia, "Times New Roman", serif;
+        --igs-on-fill:             #141a26;
+        --igs-alert:               #ff8a73;
+        --igs-nav-text:            #c9d2e3;
+        --igs-nav-text-hover:      #ffffff;
+        --igs-nav-hover:           #d9a44144;
+        --igs-focus:               #d9a44166;
+        --igs-green-hover:         #74c09d;
+        --igs-danger-hover:        #ec8e77;
+        --igs-blue-hover:          #86a2dc;
+        --igs-new-hover:           #e6c26c;
+        --igs-light-btn:           #ffffff14;
+        --igs-ok-bg:               #1a2e2a;
+        --igs-chart-review:        #5fae8a;
+        --igs-leaf:                #1a2540;
+        --igs-selected:            #253356;
+        --igs-progress-extra:      #b89a4a;
+        --igs-progress-extra-text: var(--igs-on-fill);
+        --igs-secondary:           #8f9bc4;
+        --igs-secondary-hover:     #a3aed2;
+        --igs-ppage-bg:            transparent;
+        --igs-scheme:              dark;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e9c77f' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        brightness(.82);
+    EOT;
+}
+==/UserStyle== */
+@-moz-document domain("internetgoschool.com") {
+
+    /* =========================================================
+       INTERNET GO SCHOOL THEMES
+       Pick the day and night themes in Stylus: click the gear icon
+       next to this style (or "Configure" in the Stylus manager).
+
+       1. THEME PALETTE   - filled in from the theme you pick
+       2. SITE TOKENS     - maps the palette onto the site's own
+                            color variables, so every page follows
+       3. COMPONENTS      - extra touches (logo, streak, buttons...)
+       ========================================================= */
+
+    /* ---------- 1. THEME PALETTE ---------- */
+    html:root {
+/*[[dayTheme]]*/
+
+    /* ---------- 2. SITE TOKENS ---------- */
+        --page-background-color:            transparent;   /* let the body background show */
+        --page-text-color:                  var(--igs-text);
+        --page-text-muted-color:            var(--igs-muted);
+        --page-text-strong-color:           var(--igs-text-strong);
+        --page-text-inverse-color:          var(--igs-on-accent);
+        --page-text-inverse-soft-color:     var(--igs-on-accent);
+        --page-text-accent-color:           var(--igs-coral);
+        --page-text-accent-soft-color:      var(--igs-coral);
+        --page-text-success-color:          var(--igs-accent);
+        --page-text-error-color:            var(--igs-alert);
+        --page-text-alert-color:            var(--igs-alert);
+        --page-text-body-color:             var(--igs-text);
+        --page-text-highlight-color:        var(--igs-heading);
+        --page-divider-color:               var(--igs-border-strong);
+
+        --pane-background-color:            var(--igs-surface);
+        --pane-border-color:                var(--igs-border);
+        --pane-shadow-color:                var(--igs-shadow-color);
+
+        --input-background-color:           var(--igs-surface-2);
+        --input-border-color:               var(--igs-border-strong);
+        --link-text-color:                  var(--igs-heading);
+        --heading-1-text-color:             var(--igs-heading);
+        --heading-2-text-color:             var(--igs-heading);
+
+        --nav-background-color:             var(--igs-nav);
+        --nav-text-color:                   var(--igs-nav-text);
+        --nav-background-hover-color:       var(--igs-nav-hover);
+        --nav-text-hover-color:             var(--igs-nav-text-hover);
+        --nav-background-current-color:     var(--igs-accent-strong);
+        --nav-text-current-color:           var(--igs-on-accent);
+        --nav-text-current-strong-color:    var(--igs-on-accent);
+        --nav-divider-color:                var(--igs-border);
+        --nav-menu-background-color:        var(--igs-surface);
+        --nav-menu-border-color:            var(--igs-border);
+        --nav-menu-background-hover-color:  var(--igs-hover);
+        --nav-menu-background-current-color: var(--igs-accent-strong);
+        --nav-menu-text-current-color:      var(--igs-on-accent);
+        --nav-menu-divider-color:           var(--igs-border);
+
+        --button-link-text-color:              var(--igs-heading);
+        --button-link-focus-ring-color:        var(--igs-focus);
+        --button-primary-background-color:     var(--igs-accent-strong);
+        --button-primary-background-hover-color: var(--igs-accent-dark);
+        --button-primary-text-color:           var(--igs-on-fill);
+        --button-primary-focus-ring-color:     var(--igs-focus);
+        --button-secondary-background-color:   var(--igs-secondary);
+        --button-secondary-background-hover-color: var(--igs-secondary-hover);
+        --button-secondary-text-color:         var(--igs-on-fill);
+        --button-secondary-focus-ring-color:   var(--igs-focus);
+        --button-success-background-color:     var(--igs-green);
+        --button-success-background-hover-color: var(--igs-green-hover);
+        --button-success-text-color:           var(--igs-on-fill);
+        --button-success-focus-ring-color:     var(--igs-focus);
+        --button-danger-background-color:      var(--igs-danger);
+        --button-danger-background-hover-color: var(--igs-danger-hover);
+        --button-danger-text-color:            var(--igs-on-fill);
+        --button-danger-focus-ring-color:      var(--igs-focus);
+        --button-info-background-color:        var(--igs-blue);
+        --button-info-background-hover-color:  var(--igs-blue-hover);
+        --button-info-text-color:              var(--igs-on-fill);
+        --button-info-text-hover-color:        var(--igs-on-fill);
+        --button-info-focus-ring-color:        var(--igs-focus);
+        --button-warning-background-color:     var(--igs-new);
+        --button-warning-background-hover-color: var(--igs-new-hover);
+        --button-warning-text-color:           var(--igs-on-fill);
+        --button-warning-focus-ring-color:     var(--igs-focus);
+        --button-light-background-color:       var(--igs-light-btn);
+        --button-white-background-color:       var(--igs-surface-2);
+        --button-white-text-color:             var(--igs-text);
+        --button-white-focus-ring-color:       var(--igs-border-strong);
+
+        --table-row-divider-color:          var(--igs-border);
+        --table-heading-text-color:         var(--igs-heading);
+        --tabs-line-color:                  var(--igs-border);
+        --tab-border-color:                 var(--igs-border);
+        --tab-border-active-color:          var(--igs-accent-strong);
+        --switch-track-color:               var(--igs-border-strong);
+        --switch-track-on-color:            var(--igs-accent-strong);
+        --tooltip-background-color:         var(--igs-nav);
+        --tooltip-text-color:               var(--igs-nav-text);
+        --info-icon-color:                  var(--igs-accent);
+        --info-icon-hover-color:            var(--igs-heading);
+        --info-panel-background-color:      var(--igs-surface);
+        --info-panel-text-color:            var(--igs-text);
+        --info-panel-border-color:          var(--igs-border);
+        --info-panel-shadow-color:          var(--igs-shadow-color);
+        --notice-ok-border-color:           var(--igs-green);
+        --notice-ok-background-color:       var(--igs-ok-bg);
+        --notice-error-border-color:        var(--igs-danger);
+        --notice-error-background-color:    var(--igs-error-bg);
+        --notice-error-text-color:          var(--igs-error-text);
+        --spinner-color:                    var(--igs-accent);
+        --progress-bar-fill-color:          var(--igs-accent-strong);
+        --comment-background-color:         var(--igs-surface-2);
+        --goal-met-background-color:        var(--igs-accent-strong);
+        --lecture-progress-bar-color:       var(--igs-accent);
+
+        --study-chart-quick-look-color:     var(--igs-new);
+        --study-chart-new-color:            var(--igs-blue);
+        --study-chart-learn-color:          var(--igs-rose);
+        --study-chart-review-color:         var(--igs-chart-review);
+        --study-chart-lecture-color:        var(--igs-accent-dark);
+
+        --lesson-tree-1-background-color:       var(--igs-surface-2);
+        --lesson-tree-1-background-hover-color: var(--igs-hover);
+        --lesson-tree-2-background-color:       var(--igs-surface-3);
+        --lesson-tree-2-background-hover-color: var(--igs-hover);
+        --lesson-tree-3-background-color:       var(--igs-surface);
+        --lesson-tree-3-background-hover-color: var(--igs-hover);
+        --lesson-tree-leaf-background-color:    var(--igs-leaf);
+        --lesson-tree-leaf-background-hover-color: var(--igs-hover);
+        --lesson-list-tool-icon-color:          var(--igs-heading);
+        --lesson-list-filter-icon-active-color: var(--igs-coral);
+        --lesson-list-done-icon-color:          var(--igs-accent);
+
+        --toast-background-color:           var(--igs-surface);
+        --toast-text-color:                 var(--igs-text);
+        --toast-link-hover-color:           var(--igs-heading);
+        --toast-shadow-color:               var(--igs-shadow-color);
+        --toast-close-color:                var(--igs-muted);
+        --toast-close-focus-ring-color:     var(--igs-border-strong);
+
+        --sgf-tree-node-focus-color:        var(--igs-accent);
+        --sgf-tree-line-color:              var(--igs-green);
+        --problem-nav-stone-background-color: var(--igs-accent-strong);
+
+        --card-list-divider-color:              var(--igs-border);
+        --card-list-item-border-color:          var(--igs-border);
+        --card-list-item-border-hover-color:    var(--igs-border-strong);
+        --card-list-item-border-in-book-color:  var(--igs-accent);
+        --card-list-item-text-in-book-color:    var(--igs-heading);
+        --card-list-item-background-selected-color: var(--igs-selected);
+        --deck-list-divider-color:          var(--igs-border);
+        --deck-tile-border-color:           var(--igs-green);
+        --deck-tile-border-private-color:   var(--igs-rose);
+
+        color-scheme: var(--igs-scheme);
+    }
+
+    /* night theme: used when the system is in dark mode (see "Day / night switching") */
+    @media /*[[mode]]*/ {
+        html:root {
+/*[[nightTheme]]*/
+        }
+    }
+
+    /* ---------- 3. COMPONENTS ---------- */
+
+    /* GENERIC */
+    html, body {
+        color: var(--igs-text);
+    }
+
+    h1 {
+        color: var(--igs-heading);
+        font-weight: normal;
+        margin-top: 5px;
+    }
+
+    h3 {
+        color: var(--igs-heading);
+        font-family: var(--igs-heading-font);
+        font-weight: normal;
+        text-shadow: 0 0 8px var(--igs-glow);
+    }
+
+    /* BODY */
+    body, html {
+        background-color: var(--igs-bg);
+        background-image: var(--igs-bg-image);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    /* MAIN MENU */
+    nav .nav__main-menu.nav__main-menu {
+        height: var(--nav-height, 3.5rem);   /* match the site, so drop-downs sit flush */
+        box-sizing: border-box;
+        border-bottom: 0;
+        box-shadow: 0 1px 0 var(--igs-border);   /* line under the bar that takes no space */
+    }
+
+    .nav__main-menu__container ul,
+    .nav__main-menu__container ul li {
+        height: 100%;
+    }
+
+    .nav__main-menu__container.nav__main-menu__container {
+        justify-content: center;
+    }
+
+    .active-main.active-main .lucide-icon {
+        color: var(--igs-on-accent) !important;
+    }
+
+    /* drop-down menus */
+    .nav__sub-menu {
+        background-color: var(--igs-surface) !important;
+        color: var(--igs-text);
+        border-color: var(--igs-border) !important;
+    }
+
+    .nav__sub-menu li,
+    .nav__sub-menu a,
+    .nav__sub-menu .lucide-icon {
+        color: var(--igs-text) !important;
+    }
+
+    .nav__sub-menu li {
+        border-color: var(--igs-border) !important;
+        transition: background-color .15s ease;
+    }
+
+    .nav__sub-menu li:hover {
+        background-color: var(--igs-hover) !important;
+    }
+
+    .nav__sub-menu li:hover,
+    .nav__sub-menu li:hover a {
+        color: var(--igs-text-strong) !important;
+    }
+
+    /* CARDS: dashboard boxes, lesson panes, comments, popups */
+    .outer-container.outer-container {
+        background-color: var(--igs-surface);
+        color: var(--igs-text);
+        border: 1px solid var(--igs-border);
+        border-radius: 10px;
+        box-shadow:
+            var(--igs-card-shadow);
+    }
+
+    section.pane {
+        background-color: var(--igs-surface) !important;
+        color: var(--igs-text);
+        border-color: var(--igs-border) !important;
+    }
+
+    .comment-cont {
+        background-color: var(--igs-surface-2) !important;
+        color: var(--igs-text) !important;
+        border-color: var(--igs-border) !important;
+    }
+
+    .comment-cont__header {
+        color: var(--igs-muted) !important;
+    }
+
+    .hover-preview {
+        background-color: var(--igs-surface-2) !important;
+        color: var(--igs-text) !important;
+        border: 1px solid var(--igs-border-strong) !important;
+        box-shadow: var(--igs-card-shadow);
+    }
+
+    /* hover tooltips (e.g. on the "New" / "Review" buttons) */
+    .igs-tooltip,
+    .igs-tooltip * {
+        background-color: var(--tooltip-background-color) !important;
+        color: var(--tooltip-text-color) !important;
+    }
+
+    .igs-tooltip {
+        border-radius: 6px;
+        box-shadow: var(--igs-card-shadow);
+    }
+
+    .outer-container > .header {
+        margin-bottom: 20px;
+    }
+
+    /* small grey captions ("Lectures / Problems / Mine", "Filters", "4 languages") */
+    .legend,
+    .tool-label,
+    .how-many,
+    section.pane small {
+        color: var(--igs-muted) !important;
+    }
+
+    /* LECTURES VIEWER */
+    div.view-port.view-port {
+        background-color: var(--igs-bg);
+    }
+
+    div.control-bar__body.control-bar__body {
+        background-color: var(--igs-surface);
+        color: var(--igs-text);
+    }
+
+    .link.link {
+        color: var(--igs-accent);
+        font-weight: 500;
+        font-size: 22px;
+    }
+
+    .white.node:hover { background: white !important; }
+    .black.node:hover { background: black !important; }
+    .setup.node:hover { background: #fdf3d3 !important; }
+
+    .focus {
+        background: #0000 !important;
+        border-radius: 15px;
+    }
+
+    /* PROBLEMS VIEWER */
+    .p-page.p-page {
+        background-color: var(--igs-ppage-bg);
+    }
+
+    .page {
+        padding-top: 1.2rem;
+    }
+
+    .prog-cont.igs-progress {
+        background-color: var(--igs-surface-2) !important;
+        border: 1px solid var(--igs-border);
+    }
+
+    .prog-cont .text-block {
+        color: var(--igs-text) !important;
+        text-shadow: 0 0 3px var(--igs-surface-2), 0 0 3px var(--igs-surface-2), 0 0 6px var(--igs-surface-2);
+    }
+
+    .comments.comments {
+        font-weight: normal;
+        font-size: 24px;
+        color: var(--igs-text);
+    }
+
+    .header a {
+        color: var(--igs-text);
+    }
+
+    /* Back / Restart / Solution */
+    .igs-btn.nav-buttons {
+        background-color: var(--igs-surface-2) !important;
+        border-color: var(--igs-border) !important;
+        color: var(--igs-text) !important;
+        font-weight: 500;
+    }
+
+    .igs-btn.nav-buttons:hover {
+        background-color: var(--igs-hover) !important;
+    }
+
+    .stone-container.stone-container {
+        background-color: var(--igs-stone-bg);
+    }
+
+    .bright-color.bright-color {
+        color: var(--igs-text);
+        font-weight: 500;
+    }
+
+    /* OUTLINE BUTTONS ("Add Comment", "Show more", "New" / "Review"...) */
+    .igs-btn[class*="igs-btn-outline-"] {
+        color: var(--igs-accent) !important;
+        border-color: var(--igs-accent-strong) !important;
+        background-color: transparent;
+    }
+
+    .igs-btn.igs-btn-outline-secondary,
+    .igs-btn.igs-btn-outline-danger {
+        color: var(--igs-coral) !important;
+        border-color: var(--igs-rose) !important;
+    }
+
+    .igs-btn[class*="igs-btn-outline-"]:hover {
+        background-color: var(--igs-hover) !important;
+        color: var(--igs-text-strong) !important;
+    }
+
+    /* BUTTONS: depth */
+    .igs-btn:not(.igs-btn-link) {
+        box-shadow: var(--igs-btn-shadow);
+        transition: box-shadow .2s ease, transform .1s ease, background-color .15s ease;
+    }
+
+    .igs-btn:not(.igs-btn-link):hover,
+    .igs-btn:not(.igs-btn-link):focus-visible {
+        box-shadow: var(--igs-btn-shadow-hover);
+        transform: translateY(-1px);
+    }
+
+    .igs-btn:not(.igs-btn-link):active {
+        box-shadow: inset 0 2px 4px var(--igs-shadow-color);
+        transform: translateY(0);
+    }
+
+    /* PROBLEMS DISCUSSIONS */
+    .d-card.d-card {
+        margin-bottom: 100px;
+        width: 600px;
+        height: auto;
+        background-color: var(--igs-surface);
+        color: var(--igs-text);
+        border: 1px solid var(--igs-border);
+        border-radius: 15px;
+    }
+
+    div.d-card__buttons-area.d-card__buttons-area {
+        margin-top: 200px;
+        padding: 5px 0;
+        background-color: var(--igs-surface);
+    }
+
+    .title-area .link.link {
+        color: var(--igs-text);
+    }
+
+    .disc-container > div > section {
+        display: flex;
+    }
+
+    .title-area > div > .link,
+    .title-area > .link {
+        color: var(--igs-heading) !important;
+    }
+
+    /* LECTURES MENU */
+    .igs-border,
+    .filters-area {
+        border-color: var(--igs-border-strong) !important;
+    }
+
+    .vue-slider-rail {
+        background-color: var(--igs-border-strong) !important;
+    }
+
+    .vue-slider-process {
+        background-color: var(--igs-accent-strong) !important;
+    }
+
+    .vue-slider-dot-handle {
+        background-color: var(--igs-text) !important;
+        border-color: var(--igs-accent) !important;
+    }
+
+    .lesson-container_error {
+        background-color: var(--igs-error-bg) !important;
+        color: var(--igs-error-text) !important;
+    }
+
+    .level-tree1, .level-tree2, .level-tree3, .level-leaf,
+    .level-leaf .lesson-name-textbox,
+    .lesson-name-textbox {
+        color: var(--igs-text) !important;
+    }
+
+    .name-cell {
+        color: var(--igs-heading);
+    }
+
+    .icon-green {
+        color: var(--igs-accent) !important;
+    }
+
+    .igs-badge {
+        font-size: 13px !important;
+        color: var(--igs-on-fill) !important;
+        font-weight: 600;
+    }
+
+    .igs-badge-primary   { background-color: var(--igs-blue) !important; }
+    .igs-badge-secondary { background-color: var(--igs-rose) !important; }
+    .igs-badge-success   { background-color: var(--igs-green) !important; }
+
+    /* PROBLEMS STREAK */
+    .msg-text.msg-text {
+        color: var(--igs-accent);
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .vday {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        color: var(--igs-muted);
+    }
+
+    /* DASHBOARD - "I have" counters */
+    .youhave-area > h4 {
+        display: none;
+    }
+
+    .new-area > .smaller,
+    .learn-area > .smaller,
+    .review-area > .smaller {
+        font-size: 0 !important;   /* hide the site's own label; the replacement is in ::before */
+    }
+
+    .new-area > .smaller::before    { content: "New \A problems"; }
+    .learn-area > .smaller::before  { content: "Learning \A problems"; }
+    .review-area > .smaller::before { content: "Review \A problems"; }
+
+    .new-area > .smaller::before,
+    .learn-area > .smaller::before,
+    .review-area > .smaller::before {
+        white-space: pre;
+        font-size: 15px;
+        color: var(--igs-muted);
+    }
+
+    .new-area > .igs-border,
+    .learn-area > .igs-border,
+    .review-area > .igs-border {
+        border-radius: 20px !important;
+        border-color: transparent !important;
+        color: var(--igs-text-strong);
+        font-weight: 500;
+    }
+
+    .new-area > .igs-border    { background-color: var(--igs-new); }
+    .learn-area > .igs-border  { background-color: var(--igs-learn); }
+    .review-area > .igs-border { background-color: var(--igs-review); }
+
+    /* DAILY GOAL */
+    .progress-area.igs-progress {
+        margin-bottom: 20px;
+        background-color: var(--igs-surface-2);
+        border: 1px solid var(--igs-border);
+    }
+
+    .progress-area .igs-progress-bar {
+        color: var(--igs-on-fill) !important;
+    }
+
+    .progress-area .igs-bg-success   { background-color: var(--igs-accent-strong) !important; }
+    .progress-area .igs-bg-secondary {
+        background-color: var(--igs-progress-extra) !important;
+        color: var(--igs-progress-extra-text) !important;
+    }
+
+    .greenColored {
+        background-color: var(--igs-accent-strong) !important;
+        color: var(--igs-on-fill) !important;
+    }
+
+    /* STUDY STATS CHART */
+    .ct-label {
+        color: var(--igs-muted) !important;
+        fill: var(--igs-muted) !important;
+    }
+
+    .ct-grid {
+        stroke: var(--igs-grid) !important;
+    }
+
+    .ct-bar {
+        opacity: 0.9;
+    }
+
+    /* LEADERBOARD */
+    .tabs__tab {
+        background: var(--igs-surface-3);
+        color: var(--igs-muted) !important;
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 5px 5px 0 0 !important;
+        padding: 3px 12px;
+        transition: background-color .15s ease;
+    }
+
+    .tabs__tab:hover {
+        background: var(--igs-hover);
+        color: var(--igs-text) !important;
+    }
+
+    li.tabs__tab.active,
+    .tabs__tab[aria-selected="true"] {
+        background: var(--igs-surface-2);
+        border-color: var(--igs-accent-strong) !important;
+        color: var(--igs-text) !important;
+        font-weight: 600;
+    }
+
+    .tabs__tab:focus-visible {
+        outline: 2px solid var(--igs-accent);
+        outline-offset: 2px;
+    }
+
+    .outer-container .inner-container > .li {
+        border: 1px solid var(--igs-border);
+        border-radius: 6px;
+        padding: 3px 12px;
+        margin: 6px 0;
+        display: grid;
+        grid-template-columns: 36px 1fr auto;
+        align-items: center;
+        color: var(--igs-muted);
+    }
+
+    .outer-container .inner-container > .li:nth-of-type(odd)  { background: var(--igs-surface-2); }
+    .outer-container .inner-container > .li:nth-of-type(even) { background: var(--igs-surface-3); }
+
+    a.name-cell {
+        text-decoration: none;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    a:hover.name-cell {
+        color: var(--igs-accent);
+    }
+
+    /* LOGO */
+    .nav-logo img[src^="data:image/"] {
+        opacity: 0 !important;
+    }
+
+    .nav-logo {
+        position: relative !important;
+    }
+
+    .nav-logo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/go-logo_IGS.png") no-repeat center center;
+        background-size: contain;
+        filter: var(--igs-logo-filter);
+        pointer-events: none;
+    }
+
+    /* PROBLEMS STREAK IMAGES */
+    img[src*="/num/"] {
+        display: none;
+    }
+
+    *:has(> img[src*="/num/000.png"])::after { content: "No streak yet"; }
+    *:has(> img[src*="/num/001.png"])::after { content: "1 day streak!"; }
+    *:has(> img[src*="/num/002.png"])::after { content: "2 day streak!"; }
+    *:has(> img[src*="/num/003.png"])::after { content: "3 day streak!"; }
+    *:has(> img[src*="/num/004.png"])::after { content: "4 day streak!"; }
+    *:has(> img[src*="/num/005.png"])::after { content: "5 day streak!"; }
+    *:has(> img[src*="/num/006.png"])::after { content: "6 day streak!"; }
+    *:has(> img[src*="/num/007.png"])::after { content: "1 week streak!"; }
+    *:has(> img[src*="/num/008.png"])::after { content: "8 day streak!"; }
+    *:has(> img[src*="/num/009.png"])::after { content: "9 day streak!"; }
+    *:has(> img[src*="/num/010.png"])::after { content: "10 day streak!"; }
+    *:has(> img[src*="/num/011.png"])::after { content: "11 day streak!"; }
+    *:has(> img[src*="/num/012.png"])::after { content: "12 day streak!"; }
+    *:has(> img[src*="/num/013.png"])::after { content: "13 day streak!"; }
+    *:has(> img[src*="/num/014.png"])::after { content: "2 week streak!"; }
+    *:has(> img[src*="/num/015.png"])::after { content: "15 day streak!"; }
+    *:has(> img[src*="/num/016.png"])::after { content: "16 day streak!"; }
+    *:has(> img[src*="/num/017.png"])::after { content: "17 day streak!"; }
+    *:has(> img[src*="/num/018.png"])::after { content: "18 day streak!"; }
+    *:has(> img[src*="/num/019.png"])::after { content: "19 day streak!"; }
+    *:has(> img[src*="/num/020.png"])::after { content: "20 day streak!"; }
+    *:has(> img[src*="/num/021.png"])::after { content: "21 day streak!"; }
+    *:has(> img[src*="/num/022.png"])::after { content: "22 day streak!"; }
+    *:has(> img[src*="/num/023.png"])::after { content: "23 day streak!"; }
+    *:has(> img[src*="/num/024.png"])::after { content: "24 day streak!"; }
+    *:has(> img[src*="/num/025.png"])::after { content: "25 day streak!"; }
+    *:has(> img[src*="/num/026.png"])::after { content: "26 day streak!"; }
+    *:has(> img[src*="/num/027.png"])::after { content: "27 day streak!"; }
+    *:has(> img[src*="/num/028.png"])::after { content: "28 day streak!"; }
+    *:has(> img[src*="/num/029.png"])::after { content: "29 day streak!"; }
+    *:has(> img[src*="/num/030.png"])::after { content: "1 month streak!"; }
+    *:has(> img[src*="/num/031.png"])::after { content: "31 day streak!"; }
+    *:has(> img[src*="/num/032.png"])::after { content: "32 day streak!"; }
+    *:has(> img[src*="/num/033.png"])::after { content: "33 day streak!"; }
+    *:has(> img[src*="/num/034.png"])::after { content: "34 day streak!"; }
+    *:has(> img[src*="/num/035.png"])::after { content: "35 day streak!"; }
+    *:has(> img[src*="/num/036.png"])::after { content: "36 day streak!"; }
+    *:has(> img[src*="/num/037.png"])::after { content: "37 day streak!"; }
+    *:has(> img[src*="/num/038.png"])::after { content: "38 day streak!"; }
+    *:has(> img[src*="/num/039.png"])::after { content: "39 day streak!"; }
+    *:has(> img[src*="/num/040.png"])::after { content: "40 day streak!"; }
+    *:has(> img[src*="/num/041.png"])::after { content: "41 day streak!"; }
+    *:has(> img[src*="/num/042.png"])::after { content: "42 day streak!"; }
+    *:has(> img[src*="/num/043.png"])::after { content: "43 day streak!"; }
+    *:has(> img[src*="/num/044.png"])::after { content: "44 day streak!"; }
+    *:has(> img[src*="/num/045.png"])::after { content: "45 day streak!"; }
+    *:has(> img[src*="/num/046.png"])::after { content: "46 day streak!"; }
+    *:has(> img[src*="/num/047.png"])::after { content: "47 day streak!"; }
+    *:has(> img[src*="/num/048.png"])::after { content: "48 day streak!"; }
+    *:has(> img[src*="/num/049.png"])::after { content: "49 day streak!"; }
+    *:has(> img[src*="/num/050.png"])::after { content: "50 day streak!"; }
+    *:has(> img[src*="/num/051.png"])::after { content: "51 day streak!"; }
+    *:has(> img[src*="/num/052.png"])::after { content: "52 day streak!"; }
+    *:has(> img[src*="/num/053.png"])::after { content: "53 day streak!"; }
+    *:has(> img[src*="/num/054.png"])::after { content: "54 day streak!"; }
+    *:has(> img[src*="/num/055.png"])::after { content: "55 day streak!"; }
+    *:has(> img[src*="/num/056.png"])::after { content: "56 day streak!"; }
+    *:has(> img[src*="/num/057.png"])::after { content: "57 day streak!"; }
+    *:has(> img[src*="/num/058.png"])::after { content: "58 day streak!"; }
+    *:has(> img[src*="/num/059.png"])::after { content: "59 day streak!"; }
+    *:has(> img[src*="/num/060.png"])::after { content: "60 day streak!"; }
+    *:has(> img[src*="/num/061.png"])::after { content: "61 day streak!"; }
+    *:has(> img[src*="/num/062.png"])::after { content: "62 day streak!"; }
+    *:has(> img[src*="/num/063.png"])::after { content: "63 day streak!"; }
+    *:has(> img[src*="/num/064.png"])::after { content: "64 day streak!"; }
+    *:has(> img[src*="/num/065.png"])::after { content: "65 day streak!"; }
+    *:has(> img[src*="/num/066.png"])::after { content: "66 day streak!"; }
+    *:has(> img[src*="/num/067.png"])::after { content: "67 day streak!"; }
+    *:has(> img[src*="/num/068.png"])::after { content: "68 day streak!"; }
+    *:has(> img[src*="/num/069.png"])::after { content: "69 day streak!"; }
+    *:has(> img[src*="/num/070.png"])::after { content: "70 day streak!"; }
+    *:has(> img[src*="/num/071.png"])::after { content: "71 day streak!"; }
+    *:has(> img[src*="/num/072.png"])::after { content: "72 day streak!"; }
+    *:has(> img[src*="/num/073.png"])::after { content: "73 day streak!"; }
+    *:has(> img[src*="/num/074.png"])::after { content: "74 day streak!"; }
+    *:has(> img[src*="/num/075.png"])::after { content: "75 day streak!"; }
+    *:has(> img[src*="/num/076.png"])::after { content: "76 day streak!"; }
+    *:has(> img[src*="/num/077.png"])::after { content: "77 day streak!"; }
+    *:has(> img[src*="/num/078.png"])::after { content: "78 day streak!"; }
+    *:has(> img[src*="/num/079.png"])::after { content: "79 day streak!"; }
+    *:has(> img[src*="/num/080.png"])::after { content: "80 day streak!"; }
+    *:has(> img[src*="/num/081.png"])::after { content: "81 day streak!"; }
+    *:has(> img[src*="/num/082.png"])::after { content: "82 day streak!"; }
+    *:has(> img[src*="/num/083.png"])::after { content: "83 day streak!"; }
+    *:has(> img[src*="/num/084.png"])::after { content: "84 day streak!"; }
+    *:has(> img[src*="/num/085.png"])::after { content: "85 day streak!"; }
+    *:has(> img[src*="/num/086.png"])::after { content: "86 day streak!"; }
+    *:has(> img[src*="/num/087.png"])::after { content: "87 day streak!"; }
+    *:has(> img[src*="/num/088.png"])::after { content: "88 day streak!"; }
+    *:has(> img[src*="/num/089.png"])::after { content: "89 day streak!"; }
+    *:has(> img[src*="/num/090.png"])::after { content: "90 day streak!"; }
+    *:has(> img[src*="/num/091.png"])::after { content: "91 day streak!"; }
+    *:has(> img[src*="/num/092.png"])::after { content: "92 day streak!"; }
+    *:has(> img[src*="/num/093.png"])::after { content: "93 day streak!"; }
+    *:has(> img[src*="/num/094.png"])::after { content: "94 day streak!"; }
+    *:has(> img[src*="/num/095.png"])::after { content: "95 day streak!"; }
+    *:has(> img[src*="/num/096.png"])::after { content: "96 day streak!"; }
+    *:has(> img[src*="/num/097.png"])::after { content: "97 day streak!"; }
+    *:has(> img[src*="/num/098.png"])::after { content: "98 day streak!"; }
+    *:has(> img[src*="/num/099.png"])::after { content: "99 day streak!"; }
+    *:has(> img[src*="/num/100.png"])::after { content: "100 days in a row!"; }
+    *:has(> img[src*="/num/101.png"])::after { content: "101 day streak!"; }
+    *:has(> img[src*="/num/102.png"])::after { content: "102 day streak!"; }
+    *:has(> img[src*="/num/103.png"])::after { content: "103 day streak!"; }
+    *:has(> img[src*="/num/104.png"])::after { content: "104 day streak!"; }
+    *:has(> img[src*="/num/105.png"])::after { content: "105 day streak!"; }
+    *:has(> img[src*="/num/106.png"])::after { content: "106 day streak!"; }
+    *:has(> img[src*="/num/107.png"])::after { content: "107 day streak!"; }
+    *:has(> img[src*="/num/108.png"])::after { content: "108 day streak!"; }
+    *:has(> img[src*="/num/109.png"])::after { content: "109 day streak!"; }
+    *:has(> img[src*="/num/110.png"])::after { content: "110 day streak!"; }
+    *:has(> img[src*="/num/111.png"])::after { content: "111 day streak!"; }
+    *:has(> img[src*="/num/112.png"])::after { content: "112 day streak!"; }
+    *:has(> img[src*="/num/113.png"])::after { content: "113 day streak!"; }
+    *:has(> img[src*="/num/114.png"])::after { content: "114 day streak!"; }
+    *:has(> img[src*="/num/115.png"])::after { content: "115 day streak!"; }
+    *:has(> img[src*="/num/116.png"])::after { content: "116 day streak!"; }
+    *:has(> img[src*="/num/117.png"])::after { content: "117 day streak!"; }
+    *:has(> img[src*="/num/118.png"])::after { content: "118 day streak!"; }
+    *:has(> img[src*="/num/119.png"])::after { content: "119 day streak!"; }
+    *:has(> img[src*="/num/120.png"])::after { content: "120 day streak!"; }
+    *:has(> img[src*="/num/121.png"])::after { content: "121 day streak!"; }
+    *:has(> img[src*="/num/122.png"])::after { content: "122 day streak!"; }
+    *:has(> img[src*="/num/123.png"])::after { content: "123 day streak!"; }
+    *:has(> img[src*="/num/124.png"])::after { content: "124 day streak!"; }
+    *:has(> img[src*="/num/125.png"])::after { content: "125 day streak!"; }
+    *:has(> img[src*="/num/126.png"])::after { content: "126 day streak!"; }
+    *:has(> img[src*="/num/127.png"])::after { content: "127 day streak!"; }
+    *:has(> img[src*="/num/128.png"])::after { content: "128 day streak!"; }
+    *:has(> img[src*="/num/129.png"])::after { content: "129 day streak!"; }
+    *:has(> img[src*="/num/130.png"])::after { content: "130 day streak!"; }
+    *:has(> img[src*="/num/131.png"])::after { content: "131 day streak!"; }
+    *:has(> img[src*="/num/132.png"])::after { content: "132 day streak!"; }
+    *:has(> img[src*="/num/133.png"])::after { content: "133 day streak!"; }
+    *:has(> img[src*="/num/134.png"])::after { content: "134 day streak!"; }
+    *:has(> img[src*="/num/135.png"])::after { content: "135 day streak!"; }
+    *:has(> img[src*="/num/136.png"])::after { content: "136 day streak!"; }
+    *:has(> img[src*="/num/137.png"])::after { content: "137 day streak!"; }
+    *:has(> img[src*="/num/138.png"])::after { content: "138 day streak!"; }
+    *:has(> img[src*="/num/139.png"])::after { content: "139 day streak!"; }
+    *:has(> img[src*="/num/140.png"])::after { content: "140 day streak!"; }
+    *:has(> img[src*="/num/141.png"])::after { content: "141 day streak!"; }
+    *:has(> img[src*="/num/142.png"])::after { content: "142 day streak!"; }
+    *:has(> img[src*="/num/143.png"])::after { content: "143 day streak!"; }
+    *:has(> img[src*="/num/144.png"])::after { content: "144 day streak!"; }
+    *:has(> img[src*="/num/145.png"])::after { content: "145 day streak!"; }
+    *:has(> img[src*="/num/146.png"])::after { content: "146 day streak!"; }
+    *:has(> img[src*="/num/147.png"])::after { content: "147 day streak!"; }
+    *:has(> img[src*="/num/148.png"])::after { content: "148 day streak!"; }
+    *:has(> img[src*="/num/149.png"])::after { content: "149 day streak!"; }
+    *:has(> img[src*="/num/150.png"])::after { content: "150 day streak!"; }
+    *:has(> img[src*="/num/151.png"])::after { content: "151 day streak!"; }
+    *:has(> img[src*="/num/152.png"])::after { content: "152 day streak!"; }
+    *:has(> img[src*="/num/153.png"])::after { content: "153 day streak!"; }
+    *:has(> img[src*="/num/154.png"])::after { content: "154 day streak!"; }
+    *:has(> img[src*="/num/155.png"])::after { content: "155 day streak!"; }
+    *:has(> img[src*="/num/156.png"])::after { content: "156 day streak!"; }
+    *:has(> img[src*="/num/157.png"])::after { content: "157 day streak!"; }
+    *:has(> img[src*="/num/158.png"])::after { content: "158 day streak!"; }
+    *:has(> img[src*="/num/159.png"])::after { content: "159 day streak!"; }
+    *:has(> img[src*="/num/160.png"])::after { content: "160 day streak!"; }
+    *:has(> img[src*="/num/161.png"])::after { content: "161 day streak!"; }
+    *:has(> img[src*="/num/162.png"])::after { content: "162 day streak!"; }
+    *:has(> img[src*="/num/163.png"])::after { content: "163 day streak!"; }
+    *:has(> img[src*="/num/164.png"])::after { content: "164 day streak!"; }
+    *:has(> img[src*="/num/165.png"])::after { content: "165 day streak!"; }
+    *:has(> img[src*="/num/166.png"])::after { content: "166 day streak!"; }
+    *:has(> img[src*="/num/167.png"])::after { content: "167 day streak!"; }
+    *:has(> img[src*="/num/168.png"])::after { content: "168 day streak!"; }
+    *:has(> img[src*="/num/169.png"])::after { content: "169 day streak!"; }
+    *:has(> img[src*="/num/170.png"])::after { content: "170 day streak!"; }
+    *:has(> img[src*="/num/171.png"])::after { content: "171 day streak!"; }
+    *:has(> img[src*="/num/172.png"])::after { content: "172 day streak!"; }
+    *:has(> img[src*="/num/173.png"])::after { content: "173 day streak!"; }
+    *:has(> img[src*="/num/174.png"])::after { content: "174 day streak!"; }
+    *:has(> img[src*="/num/175.png"])::after { content: "175 day streak!"; }
+    *:has(> img[src*="/num/176.png"])::after { content: "176 day streak!"; }
+    *:has(> img[src*="/num/177.png"])::after { content: "177 day streak!"; }
+    *:has(> img[src*="/num/178.png"])::after { content: "178 day streak!"; }
+    *:has(> img[src*="/num/179.png"])::after { content: "179 day streak!"; }
+    *:has(> img[src*="/num/180.png"])::after { content: "180 day streak!"; }
+    *:has(> img[src*="/num/181.png"])::after { content: "181 day streak!"; }
+    *:has(> img[src*="/num/182.png"])::after { content: "182 day streak!"; }
+    *:has(> img[src*="/num/183.png"])::after { content: "183 day streak!"; }
+    *:has(> img[src*="/num/184.png"])::after { content: "184 day streak!"; }
+    *:has(> img[src*="/num/185.png"])::after { content: "185 day streak!"; }
+    *:has(> img[src*="/num/186.png"])::after { content: "186 day streak!"; }
+    *:has(> img[src*="/num/187.png"])::after { content: "187 day streak!"; }
+    *:has(> img[src*="/num/188.png"])::after { content: "188 day streak!"; }
+    *:has(> img[src*="/num/189.png"])::after { content: "189 day streak!"; }
+    *:has(> img[src*="/num/190.png"])::after { content: "190 day streak!"; }
+    *:has(> img[src*="/num/191.png"])::after { content: "191 day streak!"; }
+    *:has(> img[src*="/num/192.png"])::after { content: "192 day streak!"; }
+    *:has(> img[src*="/num/193.png"])::after { content: "193 day streak!"; }
+    *:has(> img[src*="/num/194.png"])::after { content: "194 day streak!"; }
+    *:has(> img[src*="/num/195.png"])::after { content: "195 day streak!"; }
+    *:has(> img[src*="/num/196.png"])::after { content: "196 day streak!"; }
+    *:has(> img[src*="/num/197.png"])::after { content: "197 day streak!"; }
+    *:has(> img[src*="/num/198.png"])::after { content: "198 day streak!"; }
+    *:has(> img[src*="/num/199.png"])::after { content: "199 day streak!"; }
+    *:has(> img[src*="/num/200.png"])::after { content: "200 day streak!"; }
+    *:has(> img[src*="/num/201.png"])::after { content: "201 day streak!"; }
+    *:has(> img[src*="/num/202.png"])::after { content: "202 day streak!"; }
+    *:has(> img[src*="/num/203.png"])::after { content: "203 day streak!"; }
+    *:has(> img[src*="/num/204.png"])::after { content: "204 day streak!"; }
+    *:has(> img[src*="/num/205.png"])::after { content: "205 day streak!"; }
+    *:has(> img[src*="/num/206.png"])::after { content: "206 day streak!"; }
+    *:has(> img[src*="/num/207.png"])::after { content: "207 day streak!"; }
+    *:has(> img[src*="/num/208.png"])::after { content: "208 day streak!"; }
+    *:has(> img[src*="/num/209.png"])::after { content: "209 day streak!"; }
+    *:has(> img[src*="/num/210.png"])::after { content: "210 day streak!"; }
+    *:has(> img[src*="/num/211.png"])::after { content: "211 day streak!"; }
+    *:has(> img[src*="/num/212.png"])::after { content: "212 day streak!"; }
+    *:has(> img[src*="/num/213.png"])::after { content: "213 day streak!"; }
+    *:has(> img[src*="/num/214.png"])::after { content: "214 day streak!"; }
+    *:has(> img[src*="/num/215.png"])::after { content: "215 day streak!"; }
+    *:has(> img[src*="/num/216.png"])::after { content: "216 day streak!"; }
+    *:has(> img[src*="/num/217.png"])::after { content: "217 day streak!"; }
+    *:has(> img[src*="/num/218.png"])::after { content: "218 day streak!"; }
+    *:has(> img[src*="/num/219.png"])::after { content: "219 day streak!"; }
+    *:has(> img[src*="/num/220.png"])::after { content: "220 day streak!"; }
+    *:has(> img[src*="/num/221.png"])::after { content: "221 day streak!"; }
+    *:has(> img[src*="/num/222.png"])::after { content: "222 day streak!"; }
+    *:has(> img[src*="/num/223.png"])::after { content: "223 day streak!"; }
+    *:has(> img[src*="/num/224.png"])::after { content: "224 day streak!"; }
+    *:has(> img[src*="/num/225.png"])::after { content: "225 day streak!"; }
+    *:has(> img[src*="/num/226.png"])::after { content: "226 day streak!"; }
+    *:has(> img[src*="/num/227.png"])::after { content: "227 day streak!"; }
+    *:has(> img[src*="/num/228.png"])::after { content: "228 day streak!"; }
+    *:has(> img[src*="/num/229.png"])::after { content: "229 day streak!"; }
+    *:has(> img[src*="/num/230.png"])::after { content: "230 day streak!"; }
+    *:has(> img[src*="/num/231.png"])::after { content: "231 day streak!"; }
+    *:has(> img[src*="/num/232.png"])::after { content: "232 day streak!"; }
+    *:has(> img[src*="/num/233.png"])::after { content: "233 day streak!"; }
+    *:has(> img[src*="/num/234.png"])::after { content: "234 day streak!"; }
+    *:has(> img[src*="/num/235.png"])::after { content: "235 day streak!"; }
+    *:has(> img[src*="/num/236.png"])::after { content: "236 day streak!"; }
+    *:has(> img[src*="/num/237.png"])::after { content: "237 day streak!"; }
+    *:has(> img[src*="/num/238.png"])::after { content: "238 day streak!"; }
+    *:has(> img[src*="/num/239.png"])::after { content: "239 day streak!"; }
+    *:has(> img[src*="/num/240.png"])::after { content: "240 day streak!"; }
+    *:has(> img[src*="/num/241.png"])::after { content: "241 day streak!"; }
+    *:has(> img[src*="/num/242.png"])::after { content: "242 day streak!"; }
+    *:has(> img[src*="/num/243.png"])::after { content: "243 day streak!"; }
+    *:has(> img[src*="/num/244.png"])::after { content: "244 day streak!"; }
+    *:has(> img[src*="/num/245.png"])::after { content: "245 day streak!"; }
+    *:has(> img[src*="/num/246.png"])::after { content: "246 day streak!"; }
+    *:has(> img[src*="/num/247.png"])::after { content: "247 day streak!"; }
+    *:has(> img[src*="/num/248.png"])::after { content: "248 day streak!"; }
+    *:has(> img[src*="/num/249.png"])::after { content: "249 day streak!"; }
+    *:has(> img[src*="/num/250.png"])::after { content: "250 day streak!"; }
+    *:has(> img[src*="/num/251.png"])::after { content: "251 day streak!"; }
+    *:has(> img[src*="/num/252.png"])::after { content: "252 day streak!"; }
+    *:has(> img[src*="/num/253.png"])::after { content: "253 day streak!"; }
+    *:has(> img[src*="/num/254.png"])::after { content: "254 day streak!"; }
+    *:has(> img[src*="/num/255.png"])::after { content: "255 day streak!"; }
+    *:has(> img[src*="/num/256.png"])::after { content: "256 day streak!"; }
+    *:has(> img[src*="/num/257.png"])::after { content: "257 day streak!"; }
+    *:has(> img[src*="/num/258.png"])::after { content: "258 day streak!"; }
+    *:has(> img[src*="/num/259.png"])::after { content: "259 day streak!"; }
+    *:has(> img[src*="/num/260.png"])::after { content: "260 day streak!"; }
+    *:has(> img[src*="/num/261.png"])::after { content: "261 day streak!"; }
+    *:has(> img[src*="/num/262.png"])::after { content: "262 day streak!"; }
+    *:has(> img[src*="/num/263.png"])::after { content: "263 day streak!"; }
+    *:has(> img[src*="/num/264.png"])::after { content: "264 day streak!"; }
+    *:has(> img[src*="/num/265.png"])::after { content: "265 day streak!"; }
+    *:has(> img[src*="/num/266.png"])::after { content: "266 day streak!"; }
+    *:has(> img[src*="/num/267.png"])::after { content: "267 day streak!"; }
+    *:has(> img[src*="/num/268.png"])::after { content: "268 day streak!"; }
+    *:has(> img[src*="/num/269.png"])::after { content: "269 day streak!"; }
+    *:has(> img[src*="/num/270.png"])::after { content: "270 day streak!"; }
+    *:has(> img[src*="/num/271.png"])::after { content: "271 day streak!"; }
+    *:has(> img[src*="/num/272.png"])::after { content: "272 day streak!"; }
+    *:has(> img[src*="/num/273.png"])::after { content: "273 day streak!"; }
+    *:has(> img[src*="/num/274.png"])::after { content: "274 day streak!"; }
+    *:has(> img[src*="/num/275.png"])::after { content: "275 day streak!"; }
+    *:has(> img[src*="/num/276.png"])::after { content: "276 day streak!"; }
+    *:has(> img[src*="/num/277.png"])::after { content: "277 day streak!"; }
+    *:has(> img[src*="/num/278.png"])::after { content: "278 day streak!"; }
+    *:has(> img[src*="/num/279.png"])::after { content: "279 day streak!"; }
+    *:has(> img[src*="/num/280.png"])::after { content: "280 day streak!"; }
+    *:has(> img[src*="/num/281.png"])::after { content: "281 day streak!"; }
+    *:has(> img[src*="/num/282.png"])::after { content: "282 day streak!"; }
+    *:has(> img[src*="/num/283.png"])::after { content: "283 day streak!"; }
+    *:has(> img[src*="/num/284.png"])::after { content: "284 day streak!"; }
+    *:has(> img[src*="/num/285.png"])::after { content: "285 day streak!"; }
+    *:has(> img[src*="/num/286.png"])::after { content: "286 day streak!"; }
+    *:has(> img[src*="/num/287.png"])::after { content: "287 day streak!"; }
+    *:has(> img[src*="/num/288.png"])::after { content: "288 day streak!"; }
+    *:has(> img[src*="/num/289.png"])::after { content: "289 day streak!"; }
+    *:has(> img[src*="/num/290.png"])::after { content: "290 day streak!"; }
+    *:has(> img[src*="/num/291.png"])::after { content: "291 day streak!"; }
+    *:has(> img[src*="/num/292.png"])::after { content: "292 day streak!"; }
+    *:has(> img[src*="/num/293.png"])::after { content: "293 day streak!"; }
+    *:has(> img[src*="/num/294.png"])::after { content: "294 day streak!"; }
+    *:has(> img[src*="/num/295.png"])::after { content: "295 day streak!"; }
+    *:has(> img[src*="/num/296.png"])::after { content: "296 day streak!"; }
+    *:has(> img[src*="/num/297.png"])::after { content: "297 day streak!"; }
+    *:has(> img[src*="/num/298.png"])::after { content: "298 day streak!"; }
+    *:has(> img[src*="/num/299.png"])::after { content: "299 day streak!"; }
+    *:has(> img[src*="/num/300.png"])::after { content: "300 day streak!"; }
+    *:has(> img[src*="/num/301.png"])::after { content: "301 day streak!"; }
+    *:has(> img[src*="/num/302.png"])::after { content: "302 day streak!"; }
+    *:has(> img[src*="/num/303.png"])::after { content: "303 day streak!"; }
+    *:has(> img[src*="/num/304.png"])::after { content: "304 day streak!"; }
+    *:has(> img[src*="/num/305.png"])::after { content: "305 day streak!"; }
+    *:has(> img[src*="/num/306.png"])::after { content: "306 day streak!"; }
+    *:has(> img[src*="/num/307.png"])::after { content: "307 day streak!"; }
+    *:has(> img[src*="/num/308.png"])::after { content: "308 day streak!"; }
+    *:has(> img[src*="/num/309.png"])::after { content: "309 day streak!"; }
+    *:has(> img[src*="/num/310.png"])::after { content: "310 day streak!"; }
+    *:has(> img[src*="/num/311.png"])::after { content: "311 day streak!"; }
+    *:has(> img[src*="/num/312.png"])::after { content: "312 day streak!"; }
+    *:has(> img[src*="/num/313.png"])::after { content: "313 day streak!"; }
+    *:has(> img[src*="/num/314.png"])::after { content: "314 day streak!"; }
+    *:has(> img[src*="/num/315.png"])::after { content: "315 day streak!"; }
+    *:has(> img[src*="/num/316.png"])::after { content: "316 day streak!"; }
+    *:has(> img[src*="/num/317.png"])::after { content: "317 day streak!"; }
+    *:has(> img[src*="/num/318.png"])::after { content: "318 day streak!"; }
+    *:has(> img[src*="/num/319.png"])::after { content: "319 day streak!"; }
+    *:has(> img[src*="/num/320.png"])::after { content: "320 day streak!"; }
+    *:has(> img[src*="/num/321.png"])::after { content: "321 day streak!"; }
+    *:has(> img[src*="/num/322.png"])::after { content: "322 day streak!"; }
+    *:has(> img[src*="/num/323.png"])::after { content: "323 day streak!"; }
+    *:has(> img[src*="/num/324.png"])::after { content: "324 day streak!"; }
+    *:has(> img[src*="/num/325.png"])::after { content: "325 day streak!"; }
+    *:has(> img[src*="/num/326.png"])::after { content: "326 day streak!"; }
+    *:has(> img[src*="/num/327.png"])::after { content: "327 day streak!"; }
+    *:has(> img[src*="/num/328.png"])::after { content: "328 day streak!"; }
+    *:has(> img[src*="/num/329.png"])::after { content: "329 day streak!"; }
+    *:has(> img[src*="/num/330.png"])::after { content: "330 day streak!"; }
+    *:has(> img[src*="/num/331.png"])::after { content: "331 day streak!"; }
+    *:has(> img[src*="/num/332.png"])::after { content: "332 day streak!"; }
+    *:has(> img[src*="/num/333.png"])::after { content: "333 day streak!"; }
+    *:has(> img[src*="/num/334.png"])::after { content: "334 day streak!"; }
+    *:has(> img[src*="/num/335.png"])::after { content: "335 day streak!"; }
+    *:has(> img[src*="/num/336.png"])::after { content: "336 day streak!"; }
+    *:has(> img[src*="/num/337.png"])::after { content: "337 day streak!"; }
+    *:has(> img[src*="/num/338.png"])::after { content: "338 day streak!"; }
+    *:has(> img[src*="/num/339.png"])::after { content: "339 day streak!"; }
+    *:has(> img[src*="/num/340.png"])::after { content: "340 day streak!"; }
+    *:has(> img[src*="/num/341.png"])::after { content: "341 day streak!"; }
+    *:has(> img[src*="/num/342.png"])::after { content: "342 day streak!"; }
+    *:has(> img[src*="/num/343.png"])::after { content: "343 day streak!"; }
+    *:has(> img[src*="/num/344.png"])::after { content: "344 day streak!"; }
+    *:has(> img[src*="/num/345.png"])::after { content: "345 day streak!"; }
+    *:has(> img[src*="/num/346.png"])::after { content: "346 day streak!"; }
+    *:has(> img[src*="/num/347.png"])::after { content: "347 day streak!"; }
+    *:has(> img[src*="/num/348.png"])::after { content: "348 day streak!"; }
+    *:has(> img[src*="/num/349.png"])::after { content: "349 day streak!"; }
+    *:has(> img[src*="/num/350.png"])::after { content: "350 day streak!"; }
+    *:has(> img[src*="/num/351.png"])::after { content: "351 day streak!"; }
+    *:has(> img[src*="/num/352.png"])::after { content: "352 day streak!"; }
+    *:has(> img[src*="/num/353.png"])::after { content: "353 day streak!"; }
+    *:has(> img[src*="/num/354.png"])::after { content: "354 day streak!"; }
+    *:has(> img[src*="/num/355.png"])::after { content: "355 day streak!"; }
+    *:has(> img[src*="/num/356.png"])::after { content: "356 day streak!"; }
+    *:has(> img[src*="/num/357.png"])::after { content: "357 day streak!"; }
+    *:has(> img[src*="/num/358.png"])::after { content: "358 day streak!"; }
+    *:has(> img[src*="/num/359.png"])::after { content: "359 day streak!"; }
+    *:has(> img[src*="/num/360.png"])::after { content: "360 day streak!"; }
+    *:has(> img[src*="/num/361.png"])::after { content: "361 day streak!"; }
+    *:has(> img[src*="/num/362.png"])::after { content: "362 day streak!"; }
+    *:has(> img[src*="/num/363.png"])::after { content: "363 day streak!"; }
+    *:has(> img[src*="/num/364.png"])::after { content: "364 day streak!"; }
+    *:has(> img[src*="/num/365.png"])::after { content: "1 year streak!"; }
+    *:has(> img[src*="/num/366.png"])::after { content: "366 day streak!"; }
+    *:has(> img[src*="/num/367.png"])::after { content: "367 day streak!"; }
+    *:has(> img[src*="/num/368.png"])::after { content: "368 day streak!"; }
+    *:has(> img[src*="/num/369.png"])::after { content: "369 day streak!"; }
+    *:has(> img[src*="/num/370.png"])::after { content: "370 day streak!"; }
+    *:has(> img[src*="/num/371.png"])::after { content: "371 day streak!"; }
+    *:has(> img[src*="/num/372.png"])::after { content: "372 day streak!"; }
+    *:has(> img[src*="/num/373.png"])::after { content: "373 day streak!"; }
+    *:has(> img[src*="/num/374.png"])::after { content: "374 day streak!"; }
+    *:has(> img[src*="/num/375.png"])::after { content: "375 day streak!"; }
+    *:has(> img[src*="/num/376.png"])::after { content: "376 day streak!"; }
+    *:has(> img[src*="/num/377.png"])::after { content: "377 day streak!"; }
+    *:has(> img[src*="/num/378.png"])::after { content: "378 day streak!"; }
+    *:has(> img[src*="/num/379.png"])::after { content: "379 day streak!"; }
+    *:has(> img[src*="/num/380.png"])::after { content: "380 day streak!"; }
+    *:has(> img[src*="/num/381.png"])::after { content: "381 day streak!"; }
+    *:has(> img[src*="/num/382.png"])::after { content: "382 day streak!"; }
+    *:has(> img[src*="/num/383.png"])::after { content: "383 day streak!"; }
+    *:has(> img[src*="/num/384.png"])::after { content: "384 day streak!"; }
+    *:has(> img[src*="/num/385.png"])::after { content: "385 day streak!"; }
+    *:has(> img[src*="/num/386.png"])::after { content: "386 day streak!"; }
+    *:has(> img[src*="/num/387.png"])::after { content: "387 day streak!"; }
+    *:has(> img[src*="/num/388.png"])::after { content: "388 day streak!"; }
+    *:has(> img[src*="/num/389.png"])::after { content: "389 day streak!"; }
+    *:has(> img[src*="/num/390.png"])::after { content: "390 day streak!"; }
+    *:has(> img[src*="/num/391.png"])::after { content: "391 day streak!"; }
+    *:has(> img[src*="/num/392.png"])::after { content: "392 day streak!"; }
+    *:has(> img[src*="/num/393.png"])::after { content: "393 day streak!"; }
+    *:has(> img[src*="/num/394.png"])::after { content: "394 day streak!"; }
+    *:has(> img[src*="/num/395.png"])::after { content: "395 day streak!"; }
+    *:has(> img[src*="/num/396.png"])::after { content: "396 day streak!"; }
+    *:has(> img[src*="/num/397.png"])::after { content: "397 day streak!"; }
+    *:has(> img[src*="/num/398.png"])::after { content: "398 day streak!"; }
+    *:has(> img[src*="/num/399.png"])::after { content: "399 day streak!"; }
+    *:has(> img[src*="/num/400.png"])::after { content: "400 day streak!"; }
+    *:has(> img[src*="/num/401.png"])::after { content: "401 day streak!"; }
+    *:has(> img[src*="/num/402.png"])::after { content: "402 day streak!"; }
+    *:has(> img[src*="/num/403.png"])::after { content: "403 day streak!"; }
+    *:has(> img[src*="/num/404.png"])::after { content: "404 day streak!"; }
+    *:has(> img[src*="/num/405.png"])::after { content: "405 day streak!"; }
+    *:has(> img[src*="/num/406.png"])::after { content: "406 day streak!"; }
+    *:has(> img[src*="/num/407.png"])::after { content: "407 day streak!"; }
+    *:has(> img[src*="/num/408.png"])::after { content: "408 day streak!"; }
+    *:has(> img[src*="/num/409.png"])::after { content: "409 day streak!"; }
+    *:has(> img[src*="/num/410.png"])::after { content: "410 day streak!"; }
+    *:has(> img[src*="/num/411.png"])::after { content: "411 day streak!"; }
+    *:has(> img[src*="/num/412.png"])::after { content: "412 day streak!"; }
+    *:has(> img[src*="/num/413.png"])::after { content: "413 day streak!"; }
+    *:has(> img[src*="/num/414.png"])::after { content: "414 day streak!"; }
+    *:has(> img[src*="/num/415.png"])::after { content: "415 day streak!"; }
+    *:has(> img[src*="/num/416.png"])::after { content: "416 day streak!"; }
+    *:has(> img[src*="/num/417.png"])::after { content: "417 day streak!"; }
+    *:has(> img[src*="/num/418.png"])::after { content: "418 day streak!"; }
+    *:has(> img[src*="/num/419.png"])::after { content: "419 day streak!"; }
+    *:has(> img[src*="/num/420.png"])::after { content: "420 day streak!"; }
+    *:has(> img[src*="/num/421.png"])::after { content: "421 day streak!"; }
+    *:has(> img[src*="/num/422.png"])::after { content: "422 day streak!"; }
+    *:has(> img[src*="/num/423.png"])::after { content: "423 day streak!"; }
+    *:has(> img[src*="/num/424.png"])::after { content: "424 day streak!"; }
+    *:has(> img[src*="/num/425.png"])::after { content: "425 day streak!"; }
+    *:has(> img[src*="/num/426.png"])::after { content: "426 day streak!"; }
+    *:has(> img[src*="/num/427.png"])::after { content: "427 day streak!"; }
+    *:has(> img[src*="/num/428.png"])::after { content: "428 day streak!"; }
+    *:has(> img[src*="/num/429.png"])::after { content: "429 day streak!"; }
+    *:has(> img[src*="/num/430.png"])::after { content: "430 day streak!"; }
+    *:has(> img[src*="/num/431.png"])::after { content: "431 day streak!"; }
+    *:has(> img[src*="/num/432.png"])::after { content: "432 day streak!"; }
+    *:has(> img[src*="/num/433.png"])::after { content: "433 day streak!"; }
+    *:has(> img[src*="/num/434.png"])::after { content: "434 day streak!"; }
+    *:has(> img[src*="/num/435.png"])::after { content: "435 day streak!"; }
+    *:has(> img[src*="/num/436.png"])::after { content: "436 day streak!"; }
+    *:has(> img[src*="/num/437.png"])::after { content: "437 day streak!"; }
+    *:has(> img[src*="/num/438.png"])::after { content: "438 day streak!"; }
+    *:has(> img[src*="/num/439.png"])::after { content: "439 day streak!"; }
+    *:has(> img[src*="/num/440.png"])::after { content: "440 day streak!"; }
+    *:has(> img[src*="/num/441.png"])::after { content: "441 day streak!"; }
+    *:has(> img[src*="/num/442.png"])::after { content: "442 day streak!"; }
+    *:has(> img[src*="/num/443.png"])::after { content: "443 day streak!"; }
+    *:has(> img[src*="/num/444.png"])::after { content: "444 day streak!"; }
+    *:has(> img[src*="/num/445.png"])::after { content: "445 day streak!"; }
+    *:has(> img[src*="/num/446.png"])::after { content: "446 day streak!"; }
+    *:has(> img[src*="/num/447.png"])::after { content: "447 day streak!"; }
+    *:has(> img[src*="/num/448.png"])::after { content: "448 day streak!"; }
+    *:has(> img[src*="/num/449.png"])::after { content: "449 day streak!"; }
+    *:has(> img[src*="/num/450.png"])::after { content: "450 day streak!"; }
+    *:has(> img[src*="/num/451.png"])::after { content: "451 day streak!"; }
+    *:has(> img[src*="/num/452.png"])::after { content: "452 day streak!"; }
+    *:has(> img[src*="/num/453.png"])::after { content: "453 day streak!"; }
+    *:has(> img[src*="/num/454.png"])::after { content: "454 day streak!"; }
+    *:has(> img[src*="/num/455.png"])::after { content: "455 day streak!"; }
+    *:has(> img[src*="/num/456.png"])::after { content: "456 day streak!"; }
+    *:has(> img[src*="/num/457.png"])::after { content: "457 day streak!"; }
+    *:has(> img[src*="/num/458.png"])::after { content: "458 day streak!"; }
+    *:has(> img[src*="/num/459.png"])::after { content: "459 day streak!"; }
+    *:has(> img[src*="/num/460.png"])::after { content: "460 day streak!"; }
+    *:has(> img[src*="/num/461.png"])::after { content: "461 day streak!"; }
+    *:has(> img[src*="/num/462.png"])::after { content: "462 day streak!"; }
+    *:has(> img[src*="/num/463.png"])::after { content: "463 day streak!"; }
+    *:has(> img[src*="/num/464.png"])::after { content: "464 day streak!"; }
+    *:has(> img[src*="/num/465.png"])::after { content: "465 day streak!"; }
+    *:has(> img[src*="/num/466.png"])::after { content: "466 day streak!"; }
+    *:has(> img[src*="/num/467.png"])::after { content: "467 day streak!"; }
+    *:has(> img[src*="/num/468.png"])::after { content: "468 day streak!"; }
+    *:has(> img[src*="/num/469.png"])::after { content: "469 day streak!"; }
+    *:has(> img[src*="/num/470.png"])::after { content: "470 day streak!"; }
+    *:has(> img[src*="/num/471.png"])::after { content: "471 day streak!"; }
+    *:has(> img[src*="/num/472.png"])::after { content: "472 day streak!"; }
+    *:has(> img[src*="/num/473.png"])::after { content: "473 day streak!"; }
+    *:has(> img[src*="/num/474.png"])::after { content: "474 day streak!"; }
+    *:has(> img[src*="/num/475.png"])::after { content: "475 day streak!"; }
+    *:has(> img[src*="/num/476.png"])::after { content: "476 day streak!"; }
+    *:has(> img[src*="/num/477.png"])::after { content: "477 day streak!"; }
+    *:has(> img[src*="/num/478.png"])::after { content: "478 day streak!"; }
+    *:has(> img[src*="/num/479.png"])::after { content: "479 day streak!"; }
+    *:has(> img[src*="/num/480.png"])::after { content: "480 day streak!"; }
+    *:has(> img[src*="/num/481.png"])::after { content: "481 day streak!"; }
+    *:has(> img[src*="/num/482.png"])::after { content: "482 day streak!"; }
+    *:has(> img[src*="/num/483.png"])::after { content: "483 day streak!"; }
+    *:has(> img[src*="/num/484.png"])::after { content: "484 day streak!"; }
+    *:has(> img[src*="/num/485.png"])::after { content: "485 day streak!"; }
+    *:has(> img[src*="/num/486.png"])::after { content: "486 day streak!"; }
+    *:has(> img[src*="/num/487.png"])::after { content: "487 day streak!"; }
+    *:has(> img[src*="/num/488.png"])::after { content: "488 day streak!"; }
+    *:has(> img[src*="/num/489.png"])::after { content: "489 day streak!"; }
+    *:has(> img[src*="/num/490.png"])::after { content: "490 day streak!"; }
+    *:has(> img[src*="/num/491.png"])::after { content: "491 day streak!"; }
+    *:has(> img[src*="/num/492.png"])::after { content: "492 day streak!"; }
+    *:has(> img[src*="/num/493.png"])::after { content: "493 day streak!"; }
+    *:has(> img[src*="/num/494.png"])::after { content: "494 day streak!"; }
+    *:has(> img[src*="/num/495.png"])::after { content: "495 day streak!"; }
+    *:has(> img[src*="/num/496.png"])::after { content: "496 day streak!"; }
+    *:has(> img[src*="/num/497.png"])::after { content: "497 day streak!"; }
+    *:has(> img[src*="/num/498.png"])::after { content: "498 day streak!"; }
+    *:has(> img[src*="/num/499.png"])::after { content: "499 day streak!"; }
+    *:has(> img[src*="/num/500.png"])::after { content: "500 days in a row!"; }
+    *:has(> img[src*="/num/501.png"])::after { content: "501 day streak!"; }
+    *:has(> img[src*="/num/502.png"])::after { content: "502 day streak!"; }
+    *:has(> img[src*="/num/503.png"])::after { content: "503 day streak!"; }
+    *:has(> img[src*="/num/504.png"])::after { content: "504 day streak!"; }
+    *:has(> img[src*="/num/505.png"])::after { content: "505 day streak!"; }
+    *:has(> img[src*="/num/506.png"])::after { content: "506 day streak!"; }
+    *:has(> img[src*="/num/507.png"])::after { content: "507 day streak!"; }
+    *:has(> img[src*="/num/508.png"])::after { content: "508 day streak!"; }
+    *:has(> img[src*="/num/509.png"])::after { content: "509 day streak!"; }
+    *:has(> img[src*="/num/510.png"])::after { content: "510 day streak!"; }
+    *:has(> img[src*="/num/511.png"])::after { content: "511 day streak!"; }
+    *:has(> img[src*="/num/512.png"])::after { content: "512 day streak!"; }
+    *:has(> img[src*="/num/513.png"])::after { content: "513 day streak!"; }
+    *:has(> img[src*="/num/514.png"])::after { content: "514 day streak!"; }
+    *:has(> img[src*="/num/515.png"])::after { content: "515 day streak!"; }
+    *:has(> img[src*="/num/516.png"])::after { content: "516 day streak!"; }
+    *:has(> img[src*="/num/517.png"])::after { content: "517 day streak!"; }
+    *:has(> img[src*="/num/518.png"])::after { content: "518 day streak!"; }
+    *:has(> img[src*="/num/519.png"])::after { content: "519 day streak!"; }
+    *:has(> img[src*="/num/520.png"])::after { content: "520 day streak!"; }
+    *:has(> img[src*="/num/521.png"])::after { content: "521 day streak!"; }
+    *:has(> img[src*="/num/522.png"])::after { content: "522 day streak!"; }
+    *:has(> img[src*="/num/523.png"])::after { content: "523 day streak!"; }
+    *:has(> img[src*="/num/524.png"])::after { content: "524 day streak!"; }
+    *:has(> img[src*="/num/525.png"])::after { content: "525 day streak!"; }
+    *:has(> img[src*="/num/526.png"])::after { content: "526 day streak!"; }
+    *:has(> img[src*="/num/527.png"])::after { content: "527 day streak!"; }
+    *:has(> img[src*="/num/528.png"])::after { content: "528 day streak!"; }
+    *:has(> img[src*="/num/529.png"])::after { content: "529 day streak!"; }
+    *:has(> img[src*="/num/530.png"])::after { content: "530 day streak!"; }
+    *:has(> img[src*="/num/531.png"])::after { content: "531 day streak!"; }
+    *:has(> img[src*="/num/532.png"])::after { content: "532 day streak!"; }
+    *:has(> img[src*="/num/533.png"])::after { content: "533 day streak!"; }
+    *:has(> img[src*="/num/534.png"])::after { content: "534 day streak!"; }
+    *:has(> img[src*="/num/535.png"])::after { content: "535 day streak!"; }
+    *:has(> img[src*="/num/536.png"])::after { content: "536 day streak!"; }
+    *:has(> img[src*="/num/537.png"])::after { content: "537 day streak!"; }
+    *:has(> img[src*="/num/538.png"])::after { content: "538 day streak!"; }
+    *:has(> img[src*="/num/539.png"])::after { content: "539 day streak!"; }
+    *:has(> img[src*="/num/540.png"])::after { content: "540 day streak!"; }
+    *:has(> img[src*="/num/541.png"])::after { content: "541 day streak!"; }
+    *:has(> img[src*="/num/542.png"])::after { content: "542 day streak!"; }
+    *:has(> img[src*="/num/543.png"])::after { content: "543 day streak!"; }
+    *:has(> img[src*="/num/544.png"])::after { content: "544 day streak!"; }
+    *:has(> img[src*="/num/545.png"])::after { content: "545 day streak!"; }
+    *:has(> img[src*="/num/546.png"])::after { content: "546 day streak!"; }
+    *:has(> img[src*="/num/547.png"])::after { content: "547 day streak!"; }
+    *:has(> img[src*="/num/548.png"])::after { content: "548 day streak!"; }
+    *:has(> img[src*="/num/549.png"])::after { content: "549 day streak!"; }
+    *:has(> img[src*="/num/550.png"])::after { content: "550 day streak!"; }
+    *:has(> img[src*="/num/551.png"])::after { content: "551 day streak!"; }
+    *:has(> img[src*="/num/552.png"])::after { content: "552 day streak!"; }
+    *:has(> img[src*="/num/553.png"])::after { content: "553 day streak!"; }
+    *:has(> img[src*="/num/554.png"])::after { content: "554 day streak!"; }
+    *:has(> img[src*="/num/555.png"])::after { content: "555 day streak!"; }
+    *:has(> img[src*="/num/556.png"])::after { content: "556 day streak!"; }
+    *:has(> img[src*="/num/557.png"])::after { content: "557 day streak!"; }
+    *:has(> img[src*="/num/558.png"])::after { content: "558 day streak!"; }
+    *:has(> img[src*="/num/559.png"])::after { content: "559 day streak!"; }
+    *:has(> img[src*="/num/560.png"])::after { content: "560 day streak!"; }
+    *:has(> img[src*="/num/561.png"])::after { content: "561 day streak!"; }
+    *:has(> img[src*="/num/562.png"])::after { content: "562 day streak!"; }
+    *:has(> img[src*="/num/563.png"])::after { content: "563 day streak!"; }
+    *:has(> img[src*="/num/564.png"])::after { content: "564 day streak!"; }
+    *:has(> img[src*="/num/565.png"])::after { content: "565 day streak!"; }
+    *:has(> img[src*="/num/566.png"])::after { content: "566 day streak!"; }
+    *:has(> img[src*="/num/567.png"])::after { content: "567 day streak!"; }
+    *:has(> img[src*="/num/568.png"])::after { content: "568 day streak!"; }
+    *:has(> img[src*="/num/569.png"])::after { content: "569 day streak!"; }
+    *:has(> img[src*="/num/570.png"])::after { content: "570 day streak!"; }
+    *:has(> img[src*="/num/571.png"])::after { content: "571 day streak!"; }
+    *:has(> img[src*="/num/572.png"])::after { content: "572 day streak!"; }
+    *:has(> img[src*="/num/573.png"])::after { content: "573 day streak!"; }
+    *:has(> img[src*="/num/574.png"])::after { content: "574 day streak!"; }
+    *:has(> img[src*="/num/575.png"])::after { content: "575 day streak!"; }
+    *:has(> img[src*="/num/576.png"])::after { content: "576 day streak!"; }
+    *:has(> img[src*="/num/577.png"])::after { content: "577 day streak!"; }
+    *:has(> img[src*="/num/578.png"])::after { content: "578 day streak!"; }
+    *:has(> img[src*="/num/579.png"])::after { content: "579 day streak!"; }
+    *:has(> img[src*="/num/580.png"])::after { content: "580 day streak!"; }
+    *:has(> img[src*="/num/581.png"])::after { content: "581 day streak!"; }
+    *:has(> img[src*="/num/582.png"])::after { content: "582 day streak!"; }
+    *:has(> img[src*="/num/583.png"])::after { content: "583 day streak!"; }
+    *:has(> img[src*="/num/584.png"])::after { content: "584 day streak!"; }
+    *:has(> img[src*="/num/585.png"])::after { content: "585 day streak!"; }
+    *:has(> img[src*="/num/586.png"])::after { content: "586 day streak!"; }
+    *:has(> img[src*="/num/587.png"])::after { content: "587 day streak!"; }
+    *:has(> img[src*="/num/588.png"])::after { content: "588 day streak!"; }
+    *:has(> img[src*="/num/589.png"])::after { content: "589 day streak!"; }
+    *:has(> img[src*="/num/590.png"])::after { content: "590 day streak!"; }
+    *:has(> img[src*="/num/591.png"])::after { content: "591 day streak!"; }
+    *:has(> img[src*="/num/592.png"])::after { content: "592 day streak!"; }
+    *:has(> img[src*="/num/593.png"])::after { content: "593 day streak!"; }
+    *:has(> img[src*="/num/594.png"])::after { content: "594 day streak!"; }
+    *:has(> img[src*="/num/595.png"])::after { content: "595 day streak!"; }
+    *:has(> img[src*="/num/596.png"])::after { content: "596 day streak!"; }
+    *:has(> img[src*="/num/597.png"])::after { content: "597 day streak!"; }
+    *:has(> img[src*="/num/598.png"])::after { content: "598 day streak!"; }
+    *:has(> img[src*="/num/599.png"])::after { content: "599 day streak!"; }
+    *:has(> img[src*="/num/600.png"])::after { content: "600 day streak!"; }
+    *:has(> img[src*="/num/601.png"])::after { content: "601 day streak!"; }
+    *:has(> img[src*="/num/602.png"])::after { content: "602 day streak!"; }
+    *:has(> img[src*="/num/603.png"])::after { content: "603 day streak!"; }
+    *:has(> img[src*="/num/604.png"])::after { content: "604 day streak!"; }
+    *:has(> img[src*="/num/605.png"])::after { content: "605 day streak!"; }
+    *:has(> img[src*="/num/606.png"])::after { content: "606 day streak!"; }
+    *:has(> img[src*="/num/607.png"])::after { content: "607 day streak!"; }
+    *:has(> img[src*="/num/608.png"])::after { content: "608 day streak!"; }
+    *:has(> img[src*="/num/609.png"])::after { content: "609 day streak!"; }
+    *:has(> img[src*="/num/610.png"])::after { content: "610 day streak!"; }
+    *:has(> img[src*="/num/611.png"])::after { content: "611 day streak!"; }
+    *:has(> img[src*="/num/612.png"])::after { content: "612 day streak!"; }
+    *:has(> img[src*="/num/613.png"])::after { content: "613 day streak!"; }
+    *:has(> img[src*="/num/614.png"])::after { content: "614 day streak!"; }
+    *:has(> img[src*="/num/615.png"])::after { content: "615 day streak!"; }
+    *:has(> img[src*="/num/616.png"])::after { content: "616 day streak!"; }
+    *:has(> img[src*="/num/617.png"])::after { content: "617 day streak!"; }
+    *:has(> img[src*="/num/618.png"])::after { content: "618 day streak!"; }
+    *:has(> img[src*="/num/619.png"])::after { content: "619 day streak!"; }
+    *:has(> img[src*="/num/620.png"])::after { content: "620 day streak!"; }
+    *:has(> img[src*="/num/621.png"])::after { content: "621 day streak!"; }
+    *:has(> img[src*="/num/622.png"])::after { content: "622 day streak!"; }
+    *:has(> img[src*="/num/623.png"])::after { content: "623 day streak!"; }
+    *:has(> img[src*="/num/624.png"])::after { content: "624 day streak!"; }
+    *:has(> img[src*="/num/625.png"])::after { content: "625 day streak!"; }
+    *:has(> img[src*="/num/626.png"])::after { content: "626 day streak!"; }
+    *:has(> img[src*="/num/627.png"])::after { content: "627 day streak!"; }
+    *:has(> img[src*="/num/628.png"])::after { content: "628 day streak!"; }
+    *:has(> img[src*="/num/629.png"])::after { content: "629 day streak!"; }
+    *:has(> img[src*="/num/630.png"])::after { content: "630 day streak!"; }
+    *:has(> img[src*="/num/631.png"])::after { content: "631 day streak!"; }
+    *:has(> img[src*="/num/632.png"])::after { content: "632 day streak!"; }
+    *:has(> img[src*="/num/633.png"])::after { content: "633 day streak!"; }
+    *:has(> img[src*="/num/634.png"])::after { content: "634 day streak!"; }
+    *:has(> img[src*="/num/635.png"])::after { content: "635 day streak!"; }
+    *:has(> img[src*="/num/636.png"])::after { content: "636 day streak!"; }
+    *:has(> img[src*="/num/637.png"])::after { content: "637 day streak!"; }
+    *:has(> img[src*="/num/638.png"])::after { content: "638 day streak!"; }
+    *:has(> img[src*="/num/639.png"])::after { content: "639 day streak!"; }
+    *:has(> img[src*="/num/640.png"])::after { content: "640 day streak!"; }
+    *:has(> img[src*="/num/641.png"])::after { content: "641 day streak!"; }
+    *:has(> img[src*="/num/642.png"])::after { content: "642 day streak!"; }
+    *:has(> img[src*="/num/643.png"])::after { content: "643 day streak!"; }
+    *:has(> img[src*="/num/644.png"])::after { content: "644 day streak!"; }
+    *:has(> img[src*="/num/645.png"])::after { content: "645 day streak!"; }
+    *:has(> img[src*="/num/646.png"])::after { content: "646 day streak!"; }
+    *:has(> img[src*="/num/647.png"])::after { content: "647 day streak!"; }
+    *:has(> img[src*="/num/648.png"])::after { content: "648 day streak!"; }
+    *:has(> img[src*="/num/649.png"])::after { content: "649 day streak!"; }
+    *:has(> img[src*="/num/650.png"])::after { content: "650 day streak!"; }
+    *:has(> img[src*="/num/651.png"])::after { content: "651 day streak!"; }
+    *:has(> img[src*="/num/652.png"])::after { content: "652 day streak!"; }
+    *:has(> img[src*="/num/653.png"])::after { content: "653 day streak!"; }
+    *:has(> img[src*="/num/654.png"])::after { content: "654 day streak!"; }
+    *:has(> img[src*="/num/655.png"])::after { content: "655 day streak!"; }
+    *:has(> img[src*="/num/656.png"])::after { content: "656 day streak!"; }
+    *:has(> img[src*="/num/657.png"])::after { content: "657 day streak!"; }
+    *:has(> img[src*="/num/658.png"])::after { content: "658 day streak!"; }
+    *:has(> img[src*="/num/659.png"])::after { content: "659 day streak!"; }
+    *:has(> img[src*="/num/660.png"])::after { content: "660 day streak!"; }
+    *:has(> img[src*="/num/661.png"])::after { content: "661 day streak!"; }
+    *:has(> img[src*="/num/662.png"])::after { content: "662 day streak!"; }
+    *:has(> img[src*="/num/663.png"])::after { content: "663 day streak!"; }
+    *:has(> img[src*="/num/664.png"])::after { content: "664 day streak!"; }
+    *:has(> img[src*="/num/665.png"])::after { content: "665 day streak!"; }
+    *:has(> img[src*="/num/666.png"])::after { content: "666 day streak!"; }
+    *:has(> img[src*="/num/667.png"])::after { content: "667 day streak!"; }
+    *:has(> img[src*="/num/668.png"])::after { content: "668 day streak!"; }
+    *:has(> img[src*="/num/669.png"])::after { content: "669 day streak!"; }
+    *:has(> img[src*="/num/670.png"])::after { content: "670 day streak!"; }
+    *:has(> img[src*="/num/671.png"])::after { content: "671 day streak!"; }
+    *:has(> img[src*="/num/672.png"])::after { content: "672 day streak!"; }
+    *:has(> img[src*="/num/673.png"])::after { content: "673 day streak!"; }
+    *:has(> img[src*="/num/674.png"])::after { content: "674 day streak!"; }
+    *:has(> img[src*="/num/675.png"])::after { content: "675 day streak!"; }
+    *:has(> img[src*="/num/676.png"])::after { content: "676 day streak!"; }
+    *:has(> img[src*="/num/677.png"])::after { content: "677 day streak!"; }
+    *:has(> img[src*="/num/678.png"])::after { content: "678 day streak!"; }
+    *:has(> img[src*="/num/679.png"])::after { content: "679 day streak!"; }
+    *:has(> img[src*="/num/680.png"])::after { content: "680 day streak!"; }
+    *:has(> img[src*="/num/681.png"])::after { content: "681 day streak!"; }
+    *:has(> img[src*="/num/682.png"])::after { content: "682 day streak!"; }
+    *:has(> img[src*="/num/683.png"])::after { content: "683 day streak!"; }
+    *:has(> img[src*="/num/684.png"])::after { content: "684 day streak!"; }
+    *:has(> img[src*="/num/685.png"])::after { content: "685 day streak!"; }
+    *:has(> img[src*="/num/686.png"])::after { content: "686 day streak!"; }
+    *:has(> img[src*="/num/687.png"])::after { content: "687 day streak!"; }
+    *:has(> img[src*="/num/688.png"])::after { content: "688 day streak!"; }
+    *:has(> img[src*="/num/689.png"])::after { content: "689 day streak!"; }
+    *:has(> img[src*="/num/690.png"])::after { content: "690 day streak!"; }
+    *:has(> img[src*="/num/691.png"])::after { content: "691 day streak!"; }
+    *:has(> img[src*="/num/692.png"])::after { content: "692 day streak!"; }
+    *:has(> img[src*="/num/693.png"])::after { content: "693 day streak!"; }
+    *:has(> img[src*="/num/694.png"])::after { content: "694 day streak!"; }
+    *:has(> img[src*="/num/695.png"])::after { content: "695 day streak!"; }
+    *:has(> img[src*="/num/696.png"])::after { content: "696 day streak!"; }
+    *:has(> img[src*="/num/697.png"])::after { content: "697 day streak!"; }
+    *:has(> img[src*="/num/698.png"])::after { content: "698 day streak!"; }
+    *:has(> img[src*="/num/699.png"])::after { content: "699 day streak!"; }
+    *:has(> img[src*="/num/700.png"])::after { content: "700 day streak!"; }
+    *:has(> img[src*="/num/701.png"])::after { content: "701 day streak!"; }
+    *:has(> img[src*="/num/702.png"])::after { content: "702 day streak!"; }
+    *:has(> img[src*="/num/703.png"])::after { content: "703 day streak!"; }
+    *:has(> img[src*="/num/704.png"])::after { content: "704 day streak!"; }
+    *:has(> img[src*="/num/705.png"])::after { content: "705 day streak!"; }
+    *:has(> img[src*="/num/706.png"])::after { content: "706 day streak!"; }
+    *:has(> img[src*="/num/707.png"])::after { content: "707 day streak!"; }
+    *:has(> img[src*="/num/708.png"])::after { content: "708 day streak!"; }
+    *:has(> img[src*="/num/709.png"])::after { content: "709 day streak!"; }
+    *:has(> img[src*="/num/710.png"])::after { content: "710 day streak!"; }
+    *:has(> img[src*="/num/711.png"])::after { content: "711 day streak!"; }
+    *:has(> img[src*="/num/712.png"])::after { content: "712 day streak!"; }
+    *:has(> img[src*="/num/713.png"])::after { content: "713 day streak!"; }
+    *:has(> img[src*="/num/714.png"])::after { content: "714 day streak!"; }
+    *:has(> img[src*="/num/715.png"])::after { content: "715 day streak!"; }
+    *:has(> img[src*="/num/716.png"])::after { content: "716 day streak!"; }
+    *:has(> img[src*="/num/717.png"])::after { content: "717 day streak!"; }
+    *:has(> img[src*="/num/718.png"])::after { content: "718 day streak!"; }
+    *:has(> img[src*="/num/719.png"])::after { content: "719 day streak!"; }
+    *:has(> img[src*="/num/720.png"])::after { content: "720 day streak!"; }
+    *:has(> img[src*="/num/721.png"])::after { content: "721 day streak!"; }
+    *:has(> img[src*="/num/722.png"])::after { content: "722 day streak!"; }
+    *:has(> img[src*="/num/723.png"])::after { content: "723 day streak!"; }
+    *:has(> img[src*="/num/724.png"])::after { content: "724 day streak!"; }
+    *:has(> img[src*="/num/725.png"])::after { content: "725 day streak!"; }
+    *:has(> img[src*="/num/726.png"])::after { content: "726 day streak!"; }
+    *:has(> img[src*="/num/727.png"])::after { content: "727 day streak!"; }
+    *:has(> img[src*="/num/728.png"])::after { content: "728 day streak!"; }
+    *:has(> img[src*="/num/729.png"])::after { content: "729 day streak!"; }
+    *:has(> img[src*="/num/730.png"])::after { content: "2 year streak!"; }
+    *:has(> img[src*="/num/731.png"])::after { content: "731 day streak!"; }
+    *:has(> img[src*="/num/732.png"])::after { content: "732 day streak!"; }
+    *:has(> img[src*="/num/733.png"])::after { content: "733 day streak!"; }
+    *:has(> img[src*="/num/734.png"])::after { content: "734 day streak!"; }
+    *:has(> img[src*="/num/735.png"])::after { content: "735 day streak!"; }
+    *:has(> img[src*="/num/736.png"])::after { content: "736 day streak!"; }
+    *:has(> img[src*="/num/737.png"])::after { content: "737 day streak!"; }
+    *:has(> img[src*="/num/738.png"])::after { content: "738 day streak!"; }
+    *:has(> img[src*="/num/739.png"])::after { content: "739 day streak!"; }
+    *:has(> img[src*="/num/740.png"])::after { content: "740 day streak!"; }
+    *:has(> img[src*="/num/741.png"])::after { content: "741 day streak!"; }
+    *:has(> img[src*="/num/742.png"])::after { content: "742 day streak!"; }
+    *:has(> img[src*="/num/743.png"])::after { content: "743 day streak!"; }
+    *:has(> img[src*="/num/744.png"])::after { content: "744 day streak!"; }
+    *:has(> img[src*="/num/745.png"])::after { content: "745 day streak!"; }
+    *:has(> img[src*="/num/746.png"])::after { content: "746 day streak!"; }
+    *:has(> img[src*="/num/747.png"])::after { content: "747 day streak!"; }
+    *:has(> img[src*="/num/748.png"])::after { content: "748 day streak!"; }
+    *:has(> img[src*="/num/749.png"])::after { content: "749 day streak!"; }
+    *:has(> img[src*="/num/750.png"])::after { content: "750 day streak!"; }
+    *:has(> img[src*="/num/751.png"])::after { content: "751 day streak!"; }
+    *:has(> img[src*="/num/752.png"])::after { content: "752 day streak!"; }
+    *:has(> img[src*="/num/753.png"])::after { content: "753 day streak!"; }
+    *:has(> img[src*="/num/754.png"])::after { content: "754 day streak!"; }
+    *:has(> img[src*="/num/755.png"])::after { content: "755 day streak!"; }
+    *:has(> img[src*="/num/756.png"])::after { content: "756 day streak!"; }
+    *:has(> img[src*="/num/757.png"])::after { content: "757 day streak!"; }
+    *:has(> img[src*="/num/758.png"])::after { content: "758 day streak!"; }
+    *:has(> img[src*="/num/759.png"])::after { content: "759 day streak!"; }
+    *:has(> img[src*="/num/760.png"])::after { content: "760 day streak!"; }
+    *:has(> img[src*="/num/761.png"])::after { content: "761 day streak!"; }
+    *:has(> img[src*="/num/762.png"])::after { content: "762 day streak!"; }
+    *:has(> img[src*="/num/763.png"])::after { content: "763 day streak!"; }
+    *:has(> img[src*="/num/764.png"])::after { content: "764 day streak!"; }
+    *:has(> img[src*="/num/765.png"])::after { content: "765 day streak!"; }
+    *:has(> img[src*="/num/766.png"])::after { content: "766 day streak!"; }
+    *:has(> img[src*="/num/767.png"])::after { content: "767 day streak!"; }
+    *:has(> img[src*="/num/768.png"])::after { content: "768 day streak!"; }
+    *:has(> img[src*="/num/769.png"])::after { content: "769 day streak!"; }
+    *:has(> img[src*="/num/770.png"])::after { content: "770 day streak!"; }
+    *:has(> img[src*="/num/771.png"])::after { content: "771 day streak!"; }
+    *:has(> img[src*="/num/772.png"])::after { content: "772 day streak!"; }
+    *:has(> img[src*="/num/773.png"])::after { content: "773 day streak!"; }
+    *:has(> img[src*="/num/774.png"])::after { content: "774 day streak!"; }
+    *:has(> img[src*="/num/775.png"])::after { content: "775 day streak!"; }
+    *:has(> img[src*="/num/776.png"])::after { content: "776 day streak!"; }
+    *:has(> img[src*="/num/777.png"])::after { content: "777 day streak!"; }
+    *:has(> img[src*="/num/778.png"])::after { content: "778 day streak!"; }
+    *:has(> img[src*="/num/779.png"])::after { content: "779 day streak!"; }
+    *:has(> img[src*="/num/780.png"])::after { content: "780 day streak!"; }
+    *:has(> img[src*="/num/781.png"])::after { content: "781 day streak!"; }
+    *:has(> img[src*="/num/782.png"])::after { content: "782 day streak!"; }
+    *:has(> img[src*="/num/783.png"])::after { content: "783 day streak!"; }
+    *:has(> img[src*="/num/784.png"])::after { content: "784 day streak!"; }
+    *:has(> img[src*="/num/785.png"])::after { content: "785 day streak!"; }
+    *:has(> img[src*="/num/786.png"])::after { content: "786 day streak!"; }
+    *:has(> img[src*="/num/787.png"])::after { content: "787 day streak!"; }
+    *:has(> img[src*="/num/788.png"])::after { content: "788 day streak!"; }
+    *:has(> img[src*="/num/789.png"])::after { content: "789 day streak!"; }
+    *:has(> img[src*="/num/790.png"])::after { content: "790 day streak!"; }
+    *:has(> img[src*="/num/791.png"])::after { content: "791 day streak!"; }
+    *:has(> img[src*="/num/792.png"])::after { content: "792 day streak!"; }
+    *:has(> img[src*="/num/793.png"])::after { content: "793 day streak!"; }
+    *:has(> img[src*="/num/794.png"])::after { content: "794 day streak!"; }
+    *:has(> img[src*="/num/795.png"])::after { content: "795 day streak!"; }
+    *:has(> img[src*="/num/796.png"])::after { content: "796 day streak!"; }
+    *:has(> img[src*="/num/797.png"])::after { content: "797 day streak!"; }
+    *:has(> img[src*="/num/798.png"])::after { content: "798 day streak!"; }
+    *:has(> img[src*="/num/799.png"])::after { content: "799 day streak!"; }
+    *:has(> img[src*="/num/800.png"])::after { content: "800 day streak!"; }
+    *:has(> img[src*="/num/801.png"])::after { content: "801 day streak!"; }
+    *:has(> img[src*="/num/802.png"])::after { content: "802 day streak!"; }
+    *:has(> img[src*="/num/803.png"])::after { content: "803 day streak!"; }
+    *:has(> img[src*="/num/804.png"])::after { content: "804 day streak!"; }
+    *:has(> img[src*="/num/805.png"])::after { content: "805 day streak!"; }
+    *:has(> img[src*="/num/806.png"])::after { content: "806 day streak!"; }
+    *:has(> img[src*="/num/807.png"])::after { content: "807 day streak!"; }
+    *:has(> img[src*="/num/808.png"])::after { content: "808 day streak!"; }
+    *:has(> img[src*="/num/809.png"])::after { content: "809 day streak!"; }
+    *:has(> img[src*="/num/810.png"])::after { content: "810 day streak!"; }
+    *:has(> img[src*="/num/811.png"])::after { content: "811 day streak!"; }
+    *:has(> img[src*="/num/812.png"])::after { content: "812 day streak!"; }
+    *:has(> img[src*="/num/813.png"])::after { content: "813 day streak!"; }
+    *:has(> img[src*="/num/814.png"])::after { content: "814 day streak!"; }
+    *:has(> img[src*="/num/815.png"])::after { content: "815 day streak!"; }
+    *:has(> img[src*="/num/816.png"])::after { content: "816 day streak!"; }
+    *:has(> img[src*="/num/817.png"])::after { content: "817 day streak!"; }
+    *:has(> img[src*="/num/818.png"])::after { content: "818 day streak!"; }
+    *:has(> img[src*="/num/819.png"])::after { content: "819 day streak!"; }
+    *:has(> img[src*="/num/820.png"])::after { content: "820 day streak!"; }
+    *:has(> img[src*="/num/821.png"])::after { content: "821 day streak!"; }
+    *:has(> img[src*="/num/822.png"])::after { content: "822 day streak!"; }
+    *:has(> img[src*="/num/823.png"])::after { content: "823 day streak!"; }
+    *:has(> img[src*="/num/824.png"])::after { content: "824 day streak!"; }
+    *:has(> img[src*="/num/825.png"])::after { content: "825 day streak!"; }
+    *:has(> img[src*="/num/826.png"])::after { content: "826 day streak!"; }
+    *:has(> img[src*="/num/827.png"])::after { content: "827 day streak!"; }
+    *:has(> img[src*="/num/828.png"])::after { content: "828 day streak!"; }
+    *:has(> img[src*="/num/829.png"])::after { content: "829 day streak!"; }
+    *:has(> img[src*="/num/830.png"])::after { content: "830 day streak!"; }
+    *:has(> img[src*="/num/831.png"])::after { content: "831 day streak!"; }
+    *:has(> img[src*="/num/832.png"])::after { content: "832 day streak!"; }
+    *:has(> img[src*="/num/833.png"])::after { content: "833 day streak!"; }
+    *:has(> img[src*="/num/834.png"])::after { content: "834 day streak!"; }
+    *:has(> img[src*="/num/835.png"])::after { content: "835 day streak!"; }
+    *:has(> img[src*="/num/836.png"])::after { content: "836 day streak!"; }
+    *:has(> img[src*="/num/837.png"])::after { content: "837 day streak!"; }
+    *:has(> img[src*="/num/838.png"])::after { content: "838 day streak!"; }
+    *:has(> img[src*="/num/839.png"])::after { content: "839 day streak!"; }
+    *:has(> img[src*="/num/840.png"])::after { content: "840 day streak!"; }
+    *:has(> img[src*="/num/841.png"])::after { content: "841 day streak!"; }
+    *:has(> img[src*="/num/842.png"])::after { content: "842 day streak!"; }
+    *:has(> img[src*="/num/843.png"])::after { content: "843 day streak!"; }
+    *:has(> img[src*="/num/844.png"])::after { content: "844 day streak!"; }
+    *:has(> img[src*="/num/845.png"])::after { content: "845 day streak!"; }
+    *:has(> img[src*="/num/846.png"])::after { content: "846 day streak!"; }
+    *:has(> img[src*="/num/847.png"])::after { content: "847 day streak!"; }
+    *:has(> img[src*="/num/848.png"])::after { content: "848 day streak!"; }
+    *:has(> img[src*="/num/849.png"])::after { content: "849 day streak!"; }
+    *:has(> img[src*="/num/850.png"])::after { content: "850 day streak!"; }
+    *:has(> img[src*="/num/851.png"])::after { content: "851 day streak!"; }
+    *:has(> img[src*="/num/852.png"])::after { content: "852 day streak!"; }
+    *:has(> img[src*="/num/853.png"])::after { content: "853 day streak!"; }
+    *:has(> img[src*="/num/854.png"])::after { content: "854 day streak!"; }
+    *:has(> img[src*="/num/855.png"])::after { content: "855 day streak!"; }
+    *:has(> img[src*="/num/856.png"])::after { content: "856 day streak!"; }
+    *:has(> img[src*="/num/857.png"])::after { content: "857 day streak!"; }
+    *:has(> img[src*="/num/858.png"])::after { content: "858 day streak!"; }
+    *:has(> img[src*="/num/859.png"])::after { content: "859 day streak!"; }
+    *:has(> img[src*="/num/860.png"])::after { content: "860 day streak!"; }
+    *:has(> img[src*="/num/861.png"])::after { content: "861 day streak!"; }
+    *:has(> img[src*="/num/862.png"])::after { content: "862 day streak!"; }
+    *:has(> img[src*="/num/863.png"])::after { content: "863 day streak!"; }
+    *:has(> img[src*="/num/864.png"])::after { content: "864 day streak!"; }
+    *:has(> img[src*="/num/865.png"])::after { content: "865 day streak!"; }
+    *:has(> img[src*="/num/866.png"])::after { content: "866 day streak!"; }
+    *:has(> img[src*="/num/867.png"])::after { content: "867 day streak!"; }
+    *:has(> img[src*="/num/868.png"])::after { content: "868 day streak!"; }
+    *:has(> img[src*="/num/869.png"])::after { content: "869 day streak!"; }
+    *:has(> img[src*="/num/870.png"])::after { content: "870 day streak!"; }
+    *:has(> img[src*="/num/871.png"])::after { content: "871 day streak!"; }
+    *:has(> img[src*="/num/872.png"])::after { content: "872 day streak!"; }
+    *:has(> img[src*="/num/873.png"])::after { content: "873 day streak!"; }
+    *:has(> img[src*="/num/874.png"])::after { content: "874 day streak!"; }
+    *:has(> img[src*="/num/875.png"])::after { content: "875 day streak!"; }
+    *:has(> img[src*="/num/876.png"])::after { content: "876 day streak!"; }
+    *:has(> img[src*="/num/877.png"])::after { content: "877 day streak!"; }
+    *:has(> img[src*="/num/878.png"])::after { content: "878 day streak!"; }
+    *:has(> img[src*="/num/879.png"])::after { content: "879 day streak!"; }
+    *:has(> img[src*="/num/880.png"])::after { content: "880 day streak!"; }
+    *:has(> img[src*="/num/881.png"])::after { content: "881 day streak!"; }
+    *:has(> img[src*="/num/882.png"])::after { content: "882 day streak!"; }
+    *:has(> img[src*="/num/883.png"])::after { content: "883 day streak!"; }
+    *:has(> img[src*="/num/884.png"])::after { content: "884 day streak!"; }
+    *:has(> img[src*="/num/885.png"])::after { content: "885 day streak!"; }
+    *:has(> img[src*="/num/886.png"])::after { content: "886 day streak!"; }
+    *:has(> img[src*="/num/887.png"])::after { content: "887 day streak!"; }
+    *:has(> img[src*="/num/888.png"])::after { content: "888 day streak!"; }
+    *:has(> img[src*="/num/889.png"])::after { content: "889 day streak!"; }
+    *:has(> img[src*="/num/890.png"])::after { content: "890 day streak!"; }
+    *:has(> img[src*="/num/891.png"])::after { content: "891 day streak!"; }
+    *:has(> img[src*="/num/892.png"])::after { content: "892 day streak!"; }
+    *:has(> img[src*="/num/893.png"])::after { content: "893 day streak!"; }
+    *:has(> img[src*="/num/894.png"])::after { content: "894 day streak!"; }
+    *:has(> img[src*="/num/895.png"])::after { content: "895 day streak!"; }
+    *:has(> img[src*="/num/896.png"])::after { content: "896 day streak!"; }
+    *:has(> img[src*="/num/897.png"])::after { content: "897 day streak!"; }
+    *:has(> img[src*="/num/898.png"])::after { content: "898 day streak!"; }
+    *:has(> img[src*="/num/899.png"])::after { content: "899 day streak!"; }
+    *:has(> img[src*="/num/900.png"])::after { content: "900 day streak!"; }
+    *:has(> img[src*="/num/901.png"])::after { content: "901 day streak!"; }
+    *:has(> img[src*="/num/902.png"])::after { content: "902 day streak!"; }
+    *:has(> img[src*="/num/903.png"])::after { content: "903 day streak!"; }
+    *:has(> img[src*="/num/904.png"])::after { content: "904 day streak!"; }
+    *:has(> img[src*="/num/905.png"])::after { content: "905 day streak!"; }
+    *:has(> img[src*="/num/906.png"])::after { content: "906 day streak!"; }
+    *:has(> img[src*="/num/907.png"])::after { content: "907 day streak!"; }
+    *:has(> img[src*="/num/908.png"])::after { content: "908 day streak!"; }
+    *:has(> img[src*="/num/909.png"])::after { content: "909 day streak!"; }
+    *:has(> img[src*="/num/910.png"])::after { content: "910 day streak!"; }
+    *:has(> img[src*="/num/911.png"])::after { content: "911 day streak!"; }
+    *:has(> img[src*="/num/912.png"])::after { content: "912 day streak!"; }
+    *:has(> img[src*="/num/913.png"])::after { content: "913 day streak!"; }
+    *:has(> img[src*="/num/914.png"])::after { content: "914 day streak!"; }
+    *:has(> img[src*="/num/915.png"])::after { content: "915 day streak!"; }
+    *:has(> img[src*="/num/916.png"])::after { content: "916 day streak!"; }
+    *:has(> img[src*="/num/917.png"])::after { content: "917 day streak!"; }
+    *:has(> img[src*="/num/918.png"])::after { content: "918 day streak!"; }
+    *:has(> img[src*="/num/919.png"])::after { content: "919 day streak!"; }
+    *:has(> img[src*="/num/920.png"])::after { content: "920 day streak!"; }
+    *:has(> img[src*="/num/921.png"])::after { content: "921 day streak!"; }
+    *:has(> img[src*="/num/922.png"])::after { content: "922 day streak!"; }
+    *:has(> img[src*="/num/923.png"])::after { content: "923 day streak!"; }
+    *:has(> img[src*="/num/924.png"])::after { content: "924 day streak!"; }
+    *:has(> img[src*="/num/925.png"])::after { content: "925 day streak!"; }
+    *:has(> img[src*="/num/926.png"])::after { content: "926 day streak!"; }
+    *:has(> img[src*="/num/927.png"])::after { content: "927 day streak!"; }
+    *:has(> img[src*="/num/928.png"])::after { content: "928 day streak!"; }
+    *:has(> img[src*="/num/929.png"])::after { content: "929 day streak!"; }
+    *:has(> img[src*="/num/930.png"])::after { content: "930 day streak!"; }
+    *:has(> img[src*="/num/931.png"])::after { content: "931 day streak!"; }
+    *:has(> img[src*="/num/932.png"])::after { content: "932 day streak!"; }
+    *:has(> img[src*="/num/933.png"])::after { content: "933 day streak!"; }
+    *:has(> img[src*="/num/934.png"])::after { content: "934 day streak!"; }
+    *:has(> img[src*="/num/935.png"])::after { content: "935 day streak!"; }
+    *:has(> img[src*="/num/936.png"])::after { content: "936 day streak!"; }
+    *:has(> img[src*="/num/937.png"])::after { content: "937 day streak!"; }
+    *:has(> img[src*="/num/938.png"])::after { content: "938 day streak!"; }
+    *:has(> img[src*="/num/939.png"])::after { content: "939 day streak!"; }
+    *:has(> img[src*="/num/940.png"])::after { content: "940 day streak!"; }
+    *:has(> img[src*="/num/941.png"])::after { content: "941 day streak!"; }
+    *:has(> img[src*="/num/942.png"])::after { content: "942 day streak!"; }
+    *:has(> img[src*="/num/943.png"])::after { content: "943 day streak!"; }
+    *:has(> img[src*="/num/944.png"])::after { content: "944 day streak!"; }
+    *:has(> img[src*="/num/945.png"])::after { content: "945 day streak!"; }
+    *:has(> img[src*="/num/946.png"])::after { content: "946 day streak!"; }
+    *:has(> img[src*="/num/947.png"])::after { content: "947 day streak!"; }
+    *:has(> img[src*="/num/948.png"])::after { content: "948 day streak!"; }
+    *:has(> img[src*="/num/949.png"])::after { content: "949 day streak!"; }
+    *:has(> img[src*="/num/950.png"])::after { content: "950 day streak!"; }
+    *:has(> img[src*="/num/951.png"])::after { content: "951 day streak!"; }
+    *:has(> img[src*="/num/952.png"])::after { content: "952 day streak!"; }
+    *:has(> img[src*="/num/953.png"])::after { content: "953 day streak!"; }
+    *:has(> img[src*="/num/954.png"])::after { content: "954 day streak!"; }
+    *:has(> img[src*="/num/955.png"])::after { content: "955 day streak!"; }
+    *:has(> img[src*="/num/956.png"])::after { content: "956 day streak!"; }
+    *:has(> img[src*="/num/957.png"])::after { content: "957 day streak!"; }
+    *:has(> img[src*="/num/958.png"])::after { content: "958 day streak!"; }
+    *:has(> img[src*="/num/959.png"])::after { content: "959 day streak!"; }
+    *:has(> img[src*="/num/960.png"])::after { content: "960 day streak!"; }
+    *:has(> img[src*="/num/961.png"])::after { content: "961 day streak!"; }
+    *:has(> img[src*="/num/962.png"])::after { content: "962 day streak!"; }
+    *:has(> img[src*="/num/963.png"])::after { content: "963 day streak!"; }
+    *:has(> img[src*="/num/964.png"])::after { content: "964 day streak!"; }
+    *:has(> img[src*="/num/965.png"])::after { content: "965 day streak!"; }
+    *:has(> img[src*="/num/966.png"])::after { content: "966 day streak!"; }
+    *:has(> img[src*="/num/967.png"])::after { content: "967 day streak!"; }
+    *:has(> img[src*="/num/968.png"])::after { content: "968 day streak!"; }
+    *:has(> img[src*="/num/969.png"])::after { content: "969 day streak!"; }
+    *:has(> img[src*="/num/970.png"])::after { content: "970 day streak!"; }
+    *:has(> img[src*="/num/971.png"])::after { content: "971 day streak!"; }
+    *:has(> img[src*="/num/972.png"])::after { content: "972 day streak!"; }
+    *:has(> img[src*="/num/973.png"])::after { content: "973 day streak!"; }
+    *:has(> img[src*="/num/974.png"])::after { content: "974 day streak!"; }
+    *:has(> img[src*="/num/975.png"])::after { content: "975 day streak!"; }
+    *:has(> img[src*="/num/976.png"])::after { content: "976 day streak!"; }
+    *:has(> img[src*="/num/977.png"])::after { content: "977 day streak!"; }
+    *:has(> img[src*="/num/978.png"])::after { content: "978 day streak!"; }
+    *:has(> img[src*="/num/979.png"])::after { content: "979 day streak!"; }
+    *:has(> img[src*="/num/980.png"])::after { content: "980 day streak!"; }
+    *:has(> img[src*="/num/981.png"])::after { content: "981 day streak!"; }
+    *:has(> img[src*="/num/982.png"])::after { content: "982 day streak!"; }
+    *:has(> img[src*="/num/983.png"])::after { content: "983 day streak!"; }
+    *:has(> img[src*="/num/984.png"])::after { content: "984 day streak!"; }
+    *:has(> img[src*="/num/985.png"])::after { content: "985 day streak!"; }
+    *:has(> img[src*="/num/986.png"])::after { content: "986 day streak!"; }
+    *:has(> img[src*="/num/987.png"])::after { content: "987 day streak!"; }
+    *:has(> img[src*="/num/988.png"])::after { content: "988 day streak!"; }
+    *:has(> img[src*="/num/989.png"])::after { content: "989 day streak!"; }
+    *:has(> img[src*="/num/990.png"])::after { content: "990 day streak!"; }
+    *:has(> img[src*="/num/991.png"])::after { content: "991 day streak!"; }
+    *:has(> img[src*="/num/992.png"])::after { content: "992 day streak!"; }
+    *:has(> img[src*="/num/993.png"])::after { content: "993 day streak!"; }
+    *:has(> img[src*="/num/994.png"])::after { content: "994 day streak!"; }
+    *:has(> img[src*="/num/995.png"])::after { content: "995 day streak!"; }
+    *:has(> img[src*="/num/996.png"])::after { content: "996 day streak!"; }
+    *:has(> img[src*="/num/997.png"])::after { content: "997 day streak!"; }
+    *:has(> img[src*="/num/998.png"])::after { content: "998 day streak!"; }
+    *:has(> img[src*="/num/999.png"])::after { content: "999 day streak!"; }
+
+    .streak-number:after {
+        font-family: var(--igs-streak-font);
+        font-weight: 100;
+        margin-top: 10px;
+        font-size: clamp(30px, 4vw, 50px);
+        font-style: italic;
+        color: var(--igs-heading);
+        text-shadow: 0 0 10px var(--igs-glow);
+    }
+
+    .streak-number {
+        flex: 1 1 auto;
+    }
+
+    .streak.streak .streak-number.streak-number {
+        justify-content: flex-start;
+    }
+
+    .streak::before {
+        opacity: .9;
+        margin-left: 40px;
+        font-size: 0;
+        content: '.';
+        width: clamp(64px, 10vw, 128px);
+        height: clamp(64px, 10vw, 128px);
+        background: var(--igs-streak-icon) center / contain no-repeat;
+        filter: drop-shadow(0 6px 20px var(--igs-glow));
+        pointer-events: none;
+    }
+
+    /* LECTURES TITLE */
+    .outer-container:has(> .filters-area) > .title-area > h3 {
+        font-size: 0;
+    }
+
+    .outer-container:has(> .filters-area) > .title-area > h3::after {
+        content: "Lectures";
+        font-size: 2rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* DAILY STREAK TITLE */
+    .diar {
+        display: none;
+    }
+
+    h1 {
+        font-size: 0;
+    }
+
+    /* FOOTER / MEMBERSHIP LINKS */
+    .active-membership.active-membership,
+    .gift-certificate-area > a,
+    .tos-area > ul > li > button {
+        color: var(--igs-text);
+        font-weight: 400;
+    }
+
+    /* FORMS */
+    input, select, textarea,
+    .igs-input, .form-control {
+        background-color: var(--igs-surface-2) !important;
+        color: var(--igs-text) !important;
+        border-color: var(--igs-border-strong) !important;
+    }
+
+    ::placeholder {
+        color: var(--igs-muted) !important;
+    }
+
+    hr {
+        border-color: var(--igs-border);
+    }
+
+    /* NATIVE CONTROLS (range sliders, checkboxes, radio buttons) */
+    html {
+        accent-color: var(--igs-accent-strong);
+    }
+
+    /* GO BOARD: slightly dimmed in the night themes */
+    .wgo-board,
+    img[src*="/lessonimg/"] {
+        filter: var(--igs-board-filter);
+    }
+
+    /* LECTURE PLAYER TITLE */
+    .lecture-container .title a {
+        color: var(--igs-heading) !important;
+    }
+
+    /* STORE: the plan you are on */
+    .s-card.current-plan {
+        background-color: var(--igs-selected) !important;
+        color: var(--igs-text) !important;
+        border-color: var(--igs-accent-strong) !important;
+    }
+
+    /* STATS: legend chips keep the site's pastel colors, so use dark text */
+    .hist-legend-swatch__past-due,
+    .hist-legend-swatch__future-due {
+        color: #1b1f1e !important;
+    }
+
+    /* TRAINING SETTINGS: help panels */
+    .training-expanders {
+        background-color: var(--igs-surface) !important;
+        color: var(--igs-text);
+        border: 1px solid var(--igs-border);
+    }
+}

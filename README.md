@@ -1,22 +1,53 @@
 # Internet Go School Custom Style
 
-Six custom themes for [internetgoschool.com](https://internetgoschool.com): the original Classic green theme plus five new ones, in light and dark.
+Six custom themes for [internetgoschool.com](https://internetgoschool.com): the original Classic green theme plus five new ones, in light and dark. Pick a day theme and a night theme, and the style switches between them with your system's light/dark setting.
 
-[![Theme preview screenshot](images/screenshot_new.png)](images/screenshot_new.png)
-
+[![The six themes on the dashboard](images/themes_overview.jpg)](images/themes_overview.jpg)
 
 > **⚠️ DISCLAIMER**: This is an **unofficial** user-created style modification for Internet Go School. It is **not affiliated with, endorsed by, or officially supported** by internetgoschool.com or its developers. This style is developed and maintained for personal use.
 
 ## Features
 
 - **Six Themes**: Classic green plus five new light and dark themes, all with readable contrast
+- **Day and Night**: Follows your system's light/dark setting, or stays on one theme
+- **Automatic Updates**: Installed from a link, Stylus keeps the style up to date
 - **Navigation**: Styled main menu with hover effects and active states
 - **Custom Background**: Each theme has its own page background (gradient or plain)
 - **Readable Menus and Tooltips**: Drop-down menus and hover tooltips follow the theme colors
 - **Improved Buttons**: Button styling with shadows and hover effects
 - **Custom Logo**: Replaces the default logo with a custom Go-themed design
-- **Streak Counter and Dashboard**: Customized streak counter and dashboard
-- **Lecture Viewer**: Customized style for Go lectures and problem discussions
+- **Streak Counter and Dashboard**: Streak text up to 999 days, with milestones at 1 week, 1 month, 100 days and 1 year
+- **Lecture Viewer**: Customized style for Go lectures and problem discussions, with a softer board in the night themes
+
+## Installation
+
+### Prerequisites
+
+Install the **Stylus** browser extension: [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) | [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
+
+### Install (recommended)
+
+1. Open **[igs-themes.user.css](https://raw.githubusercontent.com/rampichino/stylus-internetgoschool/main/igs-themes.user.css)**. Stylus shows an install page.
+2. Click **Install style**.
+3. Pick your themes: open the Stylus popup on internetgoschool.com and click the **gear icon** next to "Internet Go School Themes".
+
+| Setting | Options | Default |
+|---|---|---|
+| Day / night switching | Follow my system light/dark setting, Always use the day theme, Always use the night theme | Follow system |
+| Day theme | Any of the six themes | Classic green |
+| Night theme | Any of the six themes | Dark mode |
+
+Stylus checks the link for new versions and updates the style for you. Your theme choices are kept.
+
+If you installed an earlier version by copy and paste, delete that style in Stylus after installing this one, so the two don't mix their colors.
+
+### Install by copy and paste
+
+Use this if you want a single fixed theme and no automatic updates.
+
+1. In the Stylus popup, click **Write new style**.
+2. Copy the CSS of one theme from the [Themes](#themes) table and paste it into the editor.
+3. Name the style (e.g. "IGS - Dark mode") and click **Save**.
 
 ## Themes
 
@@ -37,42 +68,18 @@ Six custom themes for [internetgoschool.com](https://internetgoschool.com): the 
 | **Momiji**<br>[![Momiji theme](images/screenshot_momiji.jpg)](images/screenshot_momiji.jpg) | **Seigaiha sea**<br>[![Seigaiha sea theme](images/screenshot_seigaiha.jpg)](images/screenshot_seigaiha.jpg) |
 | **Dark mode**<br>[![Dark mode theme](images/screenshot_dark.jpg)](images/screenshot_dark.jpg) | **Midnight board**<br>[![Midnight board theme](images/screenshot_midnight.jpg)](images/screenshot_midnight.jpg) |
 
-Install one theme at a time, or install several and enable only one in Stylus. Two enabled themes will mix their colors.
-
-All theme files share the same structure:
-
-1. **Theme palette**: the `--igs-*` colors at the top. Edit these to customize a theme.
-2. **Site tokens**: maps the palette onto the site's own color variables (`--page-background-color`, `--button-primary-background-color`, ...), so pages the style doesn't target directly still follow the theme.
-3. **Components**: logo, streak counter, relabeled counters, button depth and other touches.
-
-A fix in section 3 can be copied unchanged into the other files.
-
-## Installation
-
-### Prerequisites
-
-You need to have a userscript manager extension installed in your browser. We recommend:
-
-- **Stylus** - [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) | [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
-
-### Install via Stylus
-
-1. **Install Stylus extension** in your browser if you haven't already
-2. **Click the Stylus icon** in your browser toolbar
-3. **Click "Write new style"**
-4. **Copy the CSS code** of the theme you want from the [Themes](#themes) table (for example [`styles/goschool_dark.css`](styles/goschool_dark.css))
-5. **Paste it** into the code editor
-6. **Give your style a name** (e.g., "IGS - Dark mode")
-7. **Set the domain** to `internetgoschool.com` (this should already be configured in the CSS)
-8. **Click "Save"**
-
-### Switching themes
-
-Install each theme you like as its own style, then open the Stylus popup on internetgoschool.com and tick only the one you want.
-
 ## Customization
 
-Each theme starts with a **theme palette** block of `--igs-*` variables (background, cards, menu, accent, text...). Change those values to adjust a theme's colors without touching the rest of the file. To make a new theme, copy any theme file and edit only its palette.
+[`igs-themes.user.css`](igs-themes.user.css) is the only file to edit. It has three parts:
+
+1. **Theme palettes**: in the header, one block of `--igs-*` colors per theme (background, cards, menu, accent, text...), listed under both "Day theme" and "Night theme". Change a theme's colors in both lists.
+2. **Site tokens**: maps the palette onto the site's own color variables (`--page-background-color`, `--button-primary-background-color`, ...), so pages the style doesn't target directly still follow the theme.
+3. **Components**: logo, streak counter, relabeled counters, button depth, page fixes and other touches.
+
+After editing:
+
+1. Raise `@version` in the header (for example `2.0.0` to `2.0.1`). Stylus only updates when the version goes up.
+2. Run `python3 tools/build.py` to regenerate the copy-and-paste files in `styles/`.
 
 ## Troubleshooting
 
@@ -80,6 +87,9 @@ Each theme starts with a **theme palette** block of `--igs-*` variables (backgro
 - Ensure Stylus is enabled and the style is active
 - Check that the domain is set to `internetgoschool.com`
 - Try refreshing the page or restarting your browser
+
+### Colors Look Mixed
+Only one Internet Go School style should be enabled. Open the Stylus popup on internetgoschool.com and turn off the others.
 
 ### Images Not Displaying
 The style uses images hosted on GitHub. If images don't load:

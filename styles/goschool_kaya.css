@@ -3,6 +3,7 @@
     /* =========================================================
        INTERNET GO SCHOOL - KAYA WOOD
        Pale kaya wood-tone background, cream paper cards, ink text, deep red accents.
+       Generated from igs-themes.user.css by tools/build.py - edit that file instead.
 
        1. THEME PALETTE   - edit these to customize the theme
        2. SITE TOKENS     - maps the palette onto the site's own
@@ -47,10 +48,10 @@
         --igs-btn-shadow:          0 2px 6px rgba(60,35,10,.2), 0 1px 2px rgba(60,35,10,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(60,35,10,.28), 0 3px 6px rgba(60,35,10,.16);
         --igs-bg-image:            none;
-        --igs-logo-filter:         invert(1) sepia(.4);   /* light logo on the dark ink menu */
+        --igs-logo-filter:         invert(1) sepia(.4);
         --igs-heading-font:        Georgia, "Times New Roman", serif;
         --igs-streak-font:         Georgia, "Times New Roman", serif;
-        --igs-on-fill:             #fff6ea   /* text on colored buttons/badges */;
+        --igs-on-fill:             #fff6ea;
         --igs-alert:               #b3261e;
         --igs-nav-text:            #e9d6b8;
         --igs-nav-text-hover:      #fff6ea;
@@ -67,10 +68,12 @@
         --igs-selected:            #f1dcb0;
         --igs-progress-extra:      #8a6a3a;
         --igs-progress-extra-text: var(--igs-on-fill);
-        --igs-secondary:     #b5523a;
-        --igs-secondary-hover: #9a4430;
-        --igs-ppage-bg:      var(--igs-surface-3);   /* problem viewer page */
+        --igs-secondary:           #b5523a;
+        --igs-secondary-hover:     #9a4430;
+        --igs-ppage-bg:            var(--igs-surface-3);
         --igs-scheme:              light;
+        --igs-streak-icon:         url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239e2b25' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>");
+        --igs-board-filter:        none;
 
     /* ---------- 2. SITE TOKENS ---------- */
         --page-background-color:            transparent;   /* let the body background show */
@@ -212,6 +215,7 @@
 
         color-scheme: var(--igs-scheme);
     }
+
 
     /* ---------- 3. COMPONENTS ---------- */
 
@@ -556,7 +560,7 @@
     .new-area > .smaller,
     .learn-area > .smaller,
     .review-area > .smaller {
-        font-size: 0;
+        font-size: 0 !important;   /* hide the site's own label; the replacement is in ::before */
     }
 
     .new-area > .smaller::before    { content: "New \A problems"; }
@@ -1722,17 +1726,17 @@
         content: '.';
         width: clamp(64px, 10vw, 128px);
         height: clamp(64px, 10vw, 128px);
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239e2b25' stroke-width='0.8'><path stroke-linecap='round' stroke-linejoin='round' d='M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z'/><path stroke-linecap='round' stroke-linejoin='round' d='M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z'/></svg>") center / contain no-repeat;
+        background: var(--igs-streak-icon) center / contain no-repeat;
         filter: drop-shadow(0 6px 20px var(--igs-glow));
         pointer-events: none;
     }
 
     /* LECTURES TITLE */
-    h3[data-v-be45341a] {
+    .outer-container:has(> .filters-area) > .title-area > h3 {
         font-size: 0;
     }
 
-    h3[data-v-be45341a]::after {
+    .outer-container:has(> .filters-area) > .title-area > h3::after {
         content: "Lectures";
         font-size: 2rem;
         display: block;
@@ -1771,5 +1775,41 @@
 
     hr {
         border-color: var(--igs-border);
+    }
+
+    /* NATIVE CONTROLS (range sliders, checkboxes, radio buttons) */
+    html {
+        accent-color: var(--igs-accent-strong);
+    }
+
+    /* GO BOARD: slightly dimmed in the night themes */
+    .wgo-board,
+    img[src*="/lessonimg/"] {
+        filter: var(--igs-board-filter);
+    }
+
+    /* LECTURE PLAYER TITLE */
+    .lecture-container .title a {
+        color: var(--igs-heading) !important;
+    }
+
+    /* STORE: the plan you are on */
+    .s-card.current-plan {
+        background-color: var(--igs-selected) !important;
+        color: var(--igs-text) !important;
+        border-color: var(--igs-accent-strong) !important;
+    }
+
+    /* STATS: legend chips keep the site's pastel colors, so use dark text */
+    .hist-legend-swatch__past-due,
+    .hist-legend-swatch__future-due {
+        color: #1b1f1e !important;
+    }
+
+    /* TRAINING SETTINGS: help panels */
+    .training-expanders {
+        background-color: var(--igs-surface) !important;
+        color: var(--igs-text);
+        border: 1px solid var(--igs-border);
     }
 }
