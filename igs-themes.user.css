@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.2.2
+@version        2.2.3
 @description    Six themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Dark mode, Midnight board) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -1228,6 +1228,172 @@ all
         color: var(--igs-muted) !important;
     }
 
+    /* LESSON DETAILS PAGE (course > lesson, Watch Lecture, comments) */
+    .page:has(> .pane-row > .watch-problems) section.pane {
+        border-radius: 12px !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) section.pane h3 {
+        text-shadow: none;
+    }
+
+    /* title: the course path muted, the lesson itself in full color */
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type h3 {
+        font-size: 1.5rem;
+        color: var(--igs-muted);
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type h3 > span {
+        font-size: 2rem;
+        color: var(--igs-heading);
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type hr {
+        display: none;
+    }
+
+    /* Prev / Next lesson as pills, the difficulty filter as a dashed chip */
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 6px;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .igs-btn-link {
+        padding: 4px 14px !important;
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 999px !important;
+        background-color: var(--igs-surface-2) !important;
+        color: var(--igs-text) !important;
+        font-size: 13px;
+        text-decoration: none !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .igs-btn-link:hover {
+        background-color: var(--igs-hover) !important;
+        color: var(--igs-text-strong) !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center > small {
+        padding: 3px 10px;
+        border: 1px dashed var(--igs-border-strong);
+        border-radius: 999px;
+        background-color: color-mix(in srgb, var(--igs-accent-strong) 8%, var(--igs-surface));
+        font-size: 12px;
+    }
+
+    /* left pane: author, then published / duration / difficulty as chips */
+    .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child h6 {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--igs-text-strong);
+    }
+
+    .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child p:has(> small) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child p:has(> small) > br {
+        display: none;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child p:has(> small) > small {
+        padding: 3px 10px;
+        border: 1px solid var(--igs-border);
+        border-radius: 999px;
+        background-color: var(--igs-surface-2);
+        color: var(--igs-text) !important;
+        font-size: 12px;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child p.pre {
+        font-weight: 600;
+        color: var(--igs-text-strong);
+    }
+
+    .page:has(> .pane-row > .watch-problems) .pane-row hr {
+        opacity: .6;
+    }
+
+    /* right pane: rounded buttons; "Remove from Training System" as a
+       quiet outline that turns red on hover, not a heavy dark block */
+    .page:has(> .pane-row > .watch-problems) .watch-problems .igs-btn {
+        height: 40px;
+        border-radius: 10px !important;
+        font-weight: 600;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .watch-problems select.igs-input {
+        height: 40px;
+        border-radius: 10px !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .watch-problems .igs-btn.igs-btn-info {
+        border: 1px solid var(--igs-border-strong) !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        color: var(--igs-text) !important;
+        font-weight: 500;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .watch-problems .igs-btn.igs-btn-info:hover {
+        border-color: var(--igs-danger) !important;
+        background-color: color-mix(in srgb, var(--igs-danger) 10%, var(--igs-surface)) !important;
+        color: var(--igs-danger) !important;
+    }
+
+    /* comments: rounded box, filled Add Comment, plain Cancel */
+    .page:has(> .pane-row > .watch-problems) > section.pane:last-child textarea.igs-input {
+        padding: 10px 12px;
+        border-radius: 10px !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:last-child .igs-btn-outline-success {
+        padding: 5px 18px !important;
+        border-color: var(--igs-accent-strong) !important;
+        border-radius: 999px !important;
+        background-color: var(--igs-accent-strong) !important;
+        color: var(--igs-on-fill) !important;
+        font-weight: 600;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:last-child .igs-btn-outline-success:hover {
+        background-color: var(--igs-accent-dark) !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:last-child .igs-btn-outline-info {
+        border-color: transparent !important;
+        border-radius: 999px !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        color: var(--igs-muted) !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:last-child .igs-btn-outline-info:hover {
+        background-color: var(--igs-hover) !important;
+        color: var(--igs-text) !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .comment-cont {
+        border-radius: 10px !important;
+        box-shadow: none !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .comment-cont__header {
+        border-bottom: 1px solid color-mix(in srgb, var(--igs-border) 60%, transparent) !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .comment-cont__header > span {
+        font-weight: 600;
+        color: var(--igs-text-strong);
+    }
+
     /* LECTURES VIEWER */
     div.view-port.view-port {
         background-color: var(--igs-bg);
@@ -1282,6 +1448,36 @@ all
         background-color: var(--igs-accent);
         -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5'/><path d='M9 18h6'/><path d='M10 22h4'/></svg>") center / contain no-repeat;
         mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5'/><path d='M9 18h6'/><path d='M10 22h4'/></svg>") center / contain no-repeat;
+    }
+
+    /* lesson name revealed by the hint: a small card linking to the
+       lesson; course path small and muted, lesson name bold below.
+       The header has a fixed height, so the card stays compact. */
+    .p-page > .header.info > div > div > a {
+        display: inline-block;   /* ::first-line only works on a block */
+        padding: 2px 14px 3px;
+        border: 1px solid var(--igs-border);
+        border-radius: 10px;
+        background-color: var(--igs-surface);
+        color: var(--igs-text-strong) !important;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+        white-space: nowrap;
+        text-decoration: none !important;
+        transition: border-color .15s ease, background-color .15s ease;
+    }
+
+    .p-page > .header.info > div > div > a::first-line {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: .02em;
+        color: var(--igs-muted);
+    }
+
+    .p-page > .header.info > div > div > a:hover {
+        border-color: var(--igs-accent-strong);
+        background-color: color-mix(in srgb, var(--igs-accent-strong) 6%, var(--igs-surface));
     }
 
     /* "problem: 1141_01 seen over 1 year ago": a quiet metadata line
@@ -1505,6 +1701,11 @@ all
 
     .p-page > .prog-cont > .text-block {
         color: var(--igs-text) !important;
+        text-shadow:   /* a light halo, so the text stays readable over the fill too */
+            0 0 2px var(--igs-surface),
+            0 0 2px var(--igs-surface),
+            0 0 4px var(--igs-surface),
+            0 0 6px var(--igs-surface);
         font-size: 12px !important;
         font-weight: 600;
         letter-spacing: .03em;
