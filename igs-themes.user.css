@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.2.1
+@version        2.2.2
 @description    Six themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Dark mode, Midnight board) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -927,7 +927,7 @@ all
         --button-info-focus-ring-color:        var(--igs-focus);
         --button-warning-background-color:     var(--igs-new);
         --button-warning-background-hover-color: var(--igs-new-hover);
-        --button-warning-text-color:           var(--igs-on-fill);
+        --button-warning-text-color:           #2a2112;   /* dark text: every theme's warning fill is light or mid-tone */
         --button-warning-focus-ring-color:     var(--igs-focus);
         --button-light-background-color:       var(--igs-light-btn);
         --button-white-background-color:       var(--igs-surface-2);
@@ -1258,6 +1258,64 @@ all
         background-color: var(--igs-ppage-bg);
     }
 
+    /* "Show lesson name (hint)": a quiet pill with a lightbulb, so it
+       reads as an optional hint rather than an action */
+    .p-page > .header.info .igs-btn.igs-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 4px 14px 4px 11px !important;
+        border: 1px solid var(--igs-border-strong) !important;
+        border-radius: 999px !important;
+        background-color: var(--igs-surface) !important;
+        box-shadow: none !important;
+        color: var(--igs-muted) !important;
+        font-size: 13px;
+        transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+    }
+
+    .p-page > .header.info .igs-btn.igs-btn::before {
+        content: "";
+        flex: none;
+        width: 15px;
+        height: 15px;
+        background-color: var(--igs-accent);
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5'/><path d='M9 18h6'/><path d='M10 22h4'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5'/><path d='M9 18h6'/><path d='M10 22h4'/></svg>") center / contain no-repeat;
+    }
+
+    /* "problem: 1141_01 seen over 1 year ago": a quiet metadata line
+       with a small clock */
+    .p-page > .header.info > small {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin: 8px 0 2px;
+        color: var(--igs-muted) !important;
+        font-size: 12px;
+        letter-spacing: .02em;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .p-page > .header.info > small::before {
+        content: "";
+        flex: none;
+        width: 13px;
+        height: 13px;
+        background-color: currentColor;
+        opacity: .75;
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 6v6l4 2'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 6v6l4 2'/></svg>") center / contain no-repeat;
+    }
+
+    .p-page > .header.info .igs-btn.igs-btn:hover {
+        background-color: color-mix(in srgb, var(--igs-accent-strong) 10%, var(--igs-surface)) !important;
+        border-color: var(--igs-accent-strong) !important;
+        color: var(--igs-text-strong) !important;
+        transform: none;
+    }
+
     .page {
         padding-top: 1.2rem;
     }
@@ -1296,6 +1354,161 @@ all
 
     .stone-container.stone-container {
         background-color: var(--igs-stone-bg);
+    }
+
+    /* PROBLEM TOOLBAR (to play / Back / Restart / Solution / Discuss):
+       rounded buttons with a small gap and a line icon each; the stone
+       tile says whose turn it is; Discuss is a soft accent button */
+    .p-page > .cont.navigation {
+        gap: 6px;
+    }
+
+    .p-page > .cont.navigation > .btn-margins {
+        flex: 1 1 0;
+        padding: 0 !important;
+    }
+
+    .p-page > .cont.navigation .igs-btn {
+        width: 100%;
+        height: 40px;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px !important;
+    }
+
+    .p-page > .cont.navigation .igs-btn::before {
+        content: "";
+        flex: none;
+        width: 16px;
+        height: 16px;
+        background-color: currentColor;
+        -webkit-mask: var(--igs-btn-icon);
+        mask: var(--igs-btn-icon);
+        opacity: .8;
+    }
+
+    /* undo arrow, restart, eye */
+    .p-page > .cont.navigation > .btn-margins:nth-child(2) .igs-btn {
+        --igs-btn-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M9 14 4 9l5-5'/><path d='M4 9h10.5a5.5 5.5 0 0 1 0 11H11'/></svg>") center / contain no-repeat;
+    }
+
+    .p-page > .cont.navigation > .btn-margins:nth-child(3) .igs-btn {
+        --igs-btn-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8'/><path d='M3 3v5h5'/></svg>") center / contain no-repeat;
+    }
+
+    .p-page > .cont.navigation > .btn-margins:nth-child(4) .igs-btn {
+        --igs-btn-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z'/><circle cx='12' cy='12' r='3'/></svg>") center / contain no-repeat;
+    }
+
+    /* Discuss: speech bubble */
+    .p-page > .cont.navigation .igs-btn.igs-btn-outline-primary {
+        --igs-btn-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7.9 20A9 9 0 1 0 4 16.1L2 22Z'/></svg>") center / contain no-repeat;
+        display: inline-flex;
+        border-color: color-mix(in srgb, var(--igs-accent-strong) 55%, transparent) !important;
+        background-color: color-mix(in srgb, var(--igs-accent-strong) 8%, var(--igs-surface)) !important;
+        color: var(--igs-accent) !important;
+        font-weight: 600;
+    }
+
+    .p-page > .cont.navigation .igs-btn.igs-btn-outline-primary:hover {
+        border-color: var(--igs-accent-strong) !important;
+        background-color: var(--igs-accent-strong) !important;
+        color: var(--igs-on-fill) !important;
+    }
+
+    .p-page > .cont.navigation .stone-container {
+        height: 40px;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--igs-border);
+        border-radius: 10px !important;
+        background-color: var(--igs-surface-3) !important;
+    }
+
+    .p-page > .cont.navigation .stone-container .stone-img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .p-page > .cont.navigation .stone-container::after {
+        content: "to play";
+        font-size: 13px;
+        color: var(--igs-muted);
+    }
+
+    /* RATING BUTTONS (forgot / hard / good / easy / more...): rounded,
+       with a gap; the rating word bold and the interval smaller below */
+    .p-page > .cont.ratings {
+        gap: 6px;
+    }
+
+    .p-page > .cont.ratings > .btn-margins {
+        flex: 1 1 0;
+        padding: 0 !important;
+    }
+
+    .p-page > .cont.ratings .igs-btn {
+        display: block !important;   /* ::first-line only works on a block */
+        width: 100%;
+        height: 50px;
+        padding: 7px 4px !important;
+        border-radius: 10px !important;
+        text-align: center;
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+    }
+
+    .p-page > .cont.ratings .igs-btn::first-line {
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: .01em;
+    }
+
+    .igs-btn.igs-btn-warning {
+        color: #2a2112 !important;
+    }
+
+    /* more...: soft accent button, like Discuss */
+    .p-page > .cont.ratings .igs-btn.igs-btn-outline-primary {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        border-color: color-mix(in srgb, var(--igs-accent-strong) 55%, transparent) !important;
+        background-color: color-mix(in srgb, var(--igs-accent-strong) 8%, var(--igs-surface)) !important;
+        color: var(--igs-accent) !important;
+        font-size: 14px !important;
+        font-weight: 600;
+    }
+
+    .p-page > .cont.ratings .igs-btn.igs-btn-outline-primary:hover {
+        border-color: var(--igs-accent-strong) !important;
+        background-color: var(--igs-accent-strong) !important;
+        color: var(--igs-on-fill) !important;
+    }
+
+    /* PROBLEM SET progress ("1 of 20"): rounded, like the Daily Goal bar */
+    .p-page > .prog-cont {
+        height: 22px;
+        overflow: hidden;
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 999px !important;
+        background-color: var(--igs-surface-2) !important;
+    }
+
+    .p-page > .prog-cont > .bar {
+        border-radius: 999px;
+        background-color: var(--igs-accent-strong) !important;
+        transition: width .3s ease;
+    }
+
+    .p-page > .prog-cont > .text-block {
+        color: var(--igs-text) !important;
+        font-size: 12px !important;
+        font-weight: 600;
+        letter-spacing: .03em;
+        font-variant-numeric: tabular-nums;
     }
 
     .bright-color.bright-color {
