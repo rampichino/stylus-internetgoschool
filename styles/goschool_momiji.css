@@ -907,6 +907,53 @@
         color: var(--igs-muted);
     }
 
+    /* forum main page: a tinted icon tile before each board. The boards
+       are plain text with no ids, so they are told apart by position
+       (Website, Everything else, Go discussions, Darrell says); any
+       other board gets the speech bubble. The tile is the row's
+       ::before, the icon the title's ::before, pulled back onto it. */
+    .page:has(> h1 + .forum-topic-cont) > .forum-topic-cont > .forum-topic-cont__first-row::before {
+        content: "";
+        flex: none;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background-color: color-mix(in srgb, var(--igs-accent) 12%, var(--igs-surface));
+    }
+
+    .page:has(> h1 + .forum-topic-cont) > .forum-topic-cont .title > .igs-btn::before {
+        content: "";
+        flex: none;
+        width: 20px;
+        height: 20px;
+        margin: 0 17px 0 -45px;
+        background-color: var(--igs-accent);
+        -webkit-mask: var(--igs-board-icon) center / contain no-repeat;
+        mask: var(--igs-board-icon) center / contain no-repeat;
+        --igs-board-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z'/></svg>");
+    }
+
+    .page:has(> h1 + .forum-topic-cont) > .forum-topic-cont:nth-child(2) .title > .igs-btn::before {
+        --igs-board-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M2 12h20'/><path d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/></svg>");
+    }
+
+    .page:has(> h1 + .forum-topic-cont) > .forum-topic-cont:nth-child(3) .title > .igs-btn::before {
+        --igs-board-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M10 2v2M14 2v2M6 2v2'/><path d='M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1'/></svg>");
+    }
+
+    .page:has(> h1 + .forum-topic-cont) > .forum-topic-cont:nth-child(4) .title > .igs-btn::before {
+        --igs-board-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2'><circle cx='8' cy='15' r='5.5' fill='black'/><circle cx='16.5' cy='8' r='4.5'/></svg>");
+    }
+
+    .page:has(> h1 + .forum-topic-cont) > .forum-topic-cont:nth-child(5) .title > .igs-btn::before {
+        --igs-board-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m16 18 6-6-6-6'/><path d='m8 6-6 6 6 6'/></svg>");
+    }
+
+    /* description lines up with the title, past the tile */
+    .page:has(> h1 + .forum-topic-cont) > .forum-topic-cont > .forum-topic-cont__description-row {
+        padding-left: 54px !important;
+    }
+
     /* "New topic": a filled button on the right, no card around it */
     .page > .forum-topic-cont:not(:has(.last-post-by)) {
         padding: 0 !important;
@@ -1115,6 +1162,185 @@
         color: var(--igs-muted);
         font-size: 13px;
         font-variant-numeric: tabular-nums;
+    }
+
+    /* PLAYER PROFILE (a name on the Leaderboard): the name back as a
+       header with an icon tile, quiet small-caps section headings,
+       information as label / value rows, and "Site use" as four stat
+       tiles. Labels and values are flat siblings in one grid; the four
+       Site use values get order 1 and their labels order 2, so the grid
+       lays the numbers in one row and the captions in the row under
+       them, and each column reads as one tile. */
+    .p-container > .p-card {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0 10px;
+        max-width: 720px;
+        padding: 26px 30px 30px;
+        background-color: var(--igs-surface) !important;
+        border: 1px solid var(--igs-border);
+        border-radius: 14px;
+        box-shadow: 0 1px 2px var(--igs-shadow-color);
+        color: var(--igs-text);
+    }
+
+    .p-container > .p-card > .header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-align: left;
+    }
+
+    .p-container > .p-card > .header::before {
+        content: "";
+        flex: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background-color: color-mix(in srgb, var(--igs-accent) 12%, var(--igs-surface));
+    }
+
+    .p-container > .p-card > .header > h1 {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        font-size: 1.45rem;
+        font-weight: 600;
+        color: var(--igs-heading);
+    }
+
+    /* the person icon, pulled back onto the tile */
+    .p-container > .p-card > .header > h1::before {
+        content: "";
+        flex: none;
+        width: 22px;
+        height: 22px;
+        margin: 0 25px 0 -47px;
+        background-color: var(--igs-accent);
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='8' r='4.5'/><path d='M4 21a8 8 0 0 1 16 0'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='8' r='4.5'/><path d='M4 21a8 8 0 0 1 16 0'/></svg>") center / contain no-repeat;
+    }
+
+    .p-container > .p-card > .category {
+        margin: 22px 0 6px;
+        text-align: left;
+        padding-top: 14px;
+        border-top: 1px solid var(--igs-border);
+    }
+
+    .p-container > .p-card > .category > h3 {
+        margin: 0;
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--igs-muted);
+        text-align: left;
+        text-shadow: none;
+    }
+
+    .p-container > .p-card > .info-label {
+        grid-column: 1;
+        padding: 6px 0;
+        font-size: 14px;
+        line-height: 24px;
+        color: var(--igs-muted);
+    }
+
+    .p-container > .p-card > .info-value {
+        grid-column: 2 / -1;
+        padding: 6px 0;
+        line-height: 24px;
+        font-weight: 500;
+        color: var(--igs-text-strong);
+    }
+
+    /* Site use: the four figures as tiles, icon and number on top */
+    .p-container > .p-card > .category ~ .category ~ .info-value {
+        order: 1;
+        grid-column: auto;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 4px;
+        padding: 14px 14px 2px;
+        border-radius: 10px 10px 0 0;
+        background-color: var(--igs-surface-2);
+        font-size: 1.45rem;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.2;
+    }
+
+    .p-container > .p-card > .category ~ .category ~ .info-label {
+        order: 2;
+        grid-column: auto;
+        padding: 0 14px 12px;
+        border-radius: 0 0 10px 10px;
+        background-color: var(--igs-surface-2);
+        font-size: 12.5px;
+    }
+
+    .p-container > .p-card > .category ~ .category ~ .info-value::before {
+        content: "";
+        flex: none;
+        width: 20px;
+        height: 20px;
+        background-color: var(--igs-accent);
+        -webkit-mask: var(--igs-stat-icon) center / contain no-repeat;
+        mask: var(--igs-stat-icon) center / contain no-repeat;
+        /* lectures watched */
+        --igs-stat-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M10 8l6 4-6 4z'/></svg>");
+    }
+
+    /* problems learned */
+    .p-container > .p-card > .category ~ .category + .info-label + .info-value + .info-label + .info-value::before {
+        --igs-stat-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='m9 12 2 2 4-4'/></svg>");
+    }
+
+    /* days in a row streak */
+    .p-container > .p-card > .category ~ .category + .info-label + .info-value + .info-label + .info-value + .info-label + .info-value::before {
+        --igs-stat-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z'/></svg>");
+    }
+
+    /* vacation days */
+    .p-container > .p-card > .category ~ .category + .info-label + .info-value + .info-label + .info-value + .info-label + .info-value + .info-label + .info-value::before {
+        --igs-stat-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='4'/><path d='M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41'/></svg>");
+    }
+
+    /* narrow screens: one column, each label above its value, and the
+       Site use figures as plain lines with their icons */
+    @media (max-width: 600px) {
+        .p-container > .p-card {
+            grid-template-columns: minmax(0, 1fr);
+            padding: 20px 18px 22px;
+        }
+
+        .p-container > .p-card > .info-label,
+        .p-container > .p-card > .info-value {
+            grid-column: 1;
+        }
+
+        .p-container > .p-card > .info-label {
+            padding-bottom: 0;
+        }
+
+        .p-container > .p-card > .category ~ .category ~ .info-label,
+        .p-container > .p-card > .category ~ .category ~ .info-value {
+            order: 0;
+            margin: 0;
+            border-radius: 0;
+            background: none;
+        }
+
+        .p-container > .p-card > .category ~ .category ~ .info-label {
+            padding: 6px 0 0;
+        }
+
+        .p-container > .p-card > .category ~ .category ~ .info-value {
+            padding: 2px 0 6px;
+            font-size: 1.1rem;
+        }
     }
 
     /* MY PROFILE (My Stuff > My Profile): "Site use" moved to the top as a
