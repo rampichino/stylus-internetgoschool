@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.2.10
+@version        2.2.11
 @description    Six themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Dark mode, Midnight board) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -4561,6 +4561,408 @@ all
         background-color: var(--igs-surface) !important;
         color: var(--igs-text);
         border: 1px solid var(--igs-border);
+    }
+
+    /* TRAINING SETTINGS (Training System > settings): the title back as
+       a header with an icon tile, the three slider groups in one card
+       with dividers, thicker sliders with a ringed handle that shows its
+       value while dragging, the help and advanced panels as a disclosure
+       list, intervals as aligned rows, formulas as code blocks */
+    .training-settings {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 8px 16px 40px !important;
+        box-sizing: content-box;
+    }
+
+    .training-settings > h1 {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 44px 0 4px;
+        font-size: 1.45rem;
+        font-weight: 600;
+        color: var(--igs-heading);
+    }
+
+    .training-settings > h1::before {
+        content: "";
+        flex: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background-color: color-mix(in srgb, var(--igs-accent) 12%, var(--igs-surface));
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--igs-accent) 18%, transparent);
+    }
+
+    /* the sliders icon, pulled back onto the tile */
+    .training-settings > h1::after {
+        content: "";
+        order: -1;
+        flex: none;
+        width: 22px;
+        height: 22px;
+        margin: 0 11px 0 -47px;
+        background-color: var(--igs-accent);
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6'/></svg>") center / contain no-repeat;
+    }
+
+    /* the tile is drawn first, the icon sits on it */
+    .training-settings > h1::before {
+        order: -2;
+    }
+
+    .training-settings > h1 + p {
+        margin: 0 0 18px 58px;
+        font-size: 13px;
+    }
+
+    .training-settings > h1 + p > a {
+        color: var(--igs-muted) !important;
+        text-decoration: none;
+    }
+
+    .training-settings > h1 + p > a:hover {
+        color: var(--igs-accent) !important;
+    }
+
+    /* the slider groups: one card, a divider between groups */
+    .training-settings > section {
+        margin: 0 !important;
+        padding: 18px 24px 20px !important;
+        background-color: var(--igs-surface);
+        border: 1px solid var(--igs-border);
+        border-top-width: 0;
+    }
+
+    .training-settings > section:not(:last-of-type) {
+        border-bottom-width: 0;
+    }
+
+    .training-settings > section:first-of-type {
+        border-top-width: 1px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .training-settings > section:last-of-type {
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 1px 2px var(--igs-shadow-color);
+    }
+
+    .training-settings > section + section {
+        border-top: 1px solid color-mix(in srgb, var(--igs-border) 70%, transparent);
+    }
+
+    .training-settings > section > h2 {
+        margin: 0 0 12px !important;
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--igs-muted);
+        text-shadow: none;
+    }
+
+    /* "Review Button click" shares the New section: a divider of its own */
+    .training-settings > section > h2.training-follow {
+        margin: 20px -24px 12px !important;
+        padding: 18px 24px 0;
+        border-top: 1px solid color-mix(in srgb, var(--igs-border) 70%, transparent);
+    }
+
+    .training-settings .training-slider-label {
+        margin: 0 0 6px !important;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--igs-text-strong);
+        font-variant-numeric: tabular-nums;
+    }
+
+    .training-settings .training-slider + .training-slider-label {
+        margin-top: 16px !important;
+    }
+
+    .training-settings .training-slider {
+        margin: 0 0 4px;
+        padding: 6px 9px !important;
+    }
+
+    .training-settings > section > .training-muted {
+        margin: 12px 0 0 !important;
+        font-size: 13px;
+        line-height: 1.5;
+        color: var(--igs-muted);
+    }
+
+    /* sliders: thicker rounded rail, accent fill, ringed handle */
+    .training-settings .vue-slider-rail {
+        height: 6px !important;
+        border-radius: 999px !important;
+        background-color: color-mix(in srgb, var(--igs-border-strong) 55%, transparent) !important;
+    }
+
+    .training-settings .vue-slider-process {
+        border-radius: 999px !important;
+        background-color: var(--igs-accent) !important;
+    }
+
+    .training-settings .vue-slider-dot {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .training-settings .vue-slider-dot-handle {
+        width: 20px !important;
+        height: 20px !important;
+        box-sizing: border-box;
+        border: 3px solid var(--igs-accent) !important;
+        border-radius: 50% !important;
+        background-color: var(--igs-surface) !important;
+        box-shadow: 0 1px 3px var(--igs-shadow-color) !important;
+        cursor: grab;
+        transition: box-shadow .15s ease, transform .15s ease;
+    }
+
+    .training-settings .vue-slider-dot-handle:hover,
+    .training-settings .vue-slider-dot-handle-focus {
+        box-shadow: 0 0 0 6px color-mix(in srgb, var(--igs-accent) 18%, transparent), 0 1px 3px var(--igs-shadow-color) !important;
+    }
+
+    .training-settings .vue-slider-dot-handle-focus {
+        cursor: grabbing;
+        transform: scale(1.1);
+    }
+
+    /* the value bubble: shown while the handle has focus or is dragged */
+    .training-settings .vue-slider-dot-focus .vue-slider-dot-tooltip,
+    .training-settings .vue-slider-dot-dragging .vue-slider-dot-tooltip {
+        visibility: visible !important;
+    }
+
+    .training-settings .vue-slider-dot-tooltip-inner {
+        padding: 3px 8px !important;
+        border: 0 !important;
+        border-radius: 6px !important;
+        background-color: var(--igs-accent) !important;
+        color: var(--igs-on-accent) !important;
+        font-size: 12px;
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .training-settings .vue-slider-dot-tooltip-inner::after {
+        border-top-color: var(--igs-accent) !important;
+    }
+
+    /* help and advanced panels: a disclosure list under the card */
+    .training-settings .training-expanders {
+        margin-top: 20px;
+        overflow: clip;
+        border-radius: 12px !important;
+        box-shadow: 0 1px 2px var(--igs-shadow-color);
+    }
+
+    .training-settings .training-disclosure > summary {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 18px !important;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--igs-text-strong);
+        cursor: pointer;
+        transition: background-color .15s ease;
+    }
+
+    .training-settings .training-disclosure > summary:hover {
+        background-color: var(--igs-surface-2);
+    }
+
+    .training-settings .training-disclosure > summary:focus-visible {
+        outline: 2px solid var(--igs-focus);
+        outline-offset: -2px;
+    }
+
+    .training-settings .training-expander__mark {
+        color: var(--igs-accent);
+    }
+
+    .training-settings .training-expander[open] > summary {
+        border-bottom: 1px solid color-mix(in srgb, var(--igs-border) 60%, transparent);
+    }
+
+    .training-settings .training-expander > p,
+    .training-settings .training-disclosure > p {
+        margin: 0 0 12px !important;
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--igs-text);
+    }
+
+    .training-settings .training-expander > p:first-of-type {
+        margin-top: 14px !important;
+    }
+
+    .training-settings .training-expander > p,
+    .training-settings .training-expander > details {
+        margin-left: 18px !important;
+        margin-right: 18px !important;
+    }
+
+    .training-settings .training-expander > :last-child {
+        margin-bottom: 16px !important;
+    }
+
+    /* nested disclosures (Learning intervals, Review intervals, Missed
+       reviews): small cards inside the advanced panel */
+    .training-settings .training-expander > details.training-disclosure {
+        margin-bottom: 10px !important;
+        border: 1px solid var(--igs-border);
+        border-radius: 10px;
+        background-color: var(--igs-surface-2);
+        overflow: clip;
+    }
+
+    .training-settings .training-expander > details.training-disclosure > summary {
+        padding: 11px 14px !important;
+        font-size: 14px;
+    }
+
+    .training-settings .training-expander > details.training-disclosure > summary:hover {
+        background-color: color-mix(in srgb, var(--igs-accent) 6%, var(--igs-surface-2));
+    }
+
+    .training-settings .training-expander > details.training-disclosure[open] > summary {
+        border-bottom: 1px solid var(--igs-border);
+    }
+
+    .training-settings .training-expander > details.training-disclosure > :not(summary) {
+        margin-left: 14px !important;
+        margin-right: 14px !important;
+    }
+
+    .training-settings .training-expander > details.training-disclosure > summary + * {
+        margin-top: 14px !important;
+    }
+
+    .training-settings .training-expander > details.training-disclosure > :last-child {
+        margin-bottom: 14px !important;
+    }
+
+    .training-settings .training-disclosure img {
+        display: block;
+        max-width: calc(100% - 28px);
+        height: auto;
+        margin-bottom: 12px !important;
+        border-radius: 8px;
+        border: 1px solid var(--igs-border);
+        filter: var(--igs-board-filter);
+    }
+
+    /* intervals: label, value and unit as aligned columns */
+    .training-settings .interval-row {
+        display: grid !important;
+        grid-template-columns: 9.5em 5.5em 1fr;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--igs-border) 60%, transparent);
+        font-size: 14px;
+    }
+
+    .training-settings .interval-row:last-of-type {
+        border-bottom: 0;
+    }
+
+    .training-settings .interval-row > span:first-child {
+        font-weight: 600;
+        color: var(--igs-text-strong);
+    }
+
+    .training-settings .interval-input,
+    .training-settings .interval-fixed {
+        width: 100% !important;
+        box-sizing: border-box;
+        margin: 0 !important;
+        padding: 5px 9px !important;
+        border-radius: 8px !important;
+        font-variant-numeric: tabular-nums;
+        text-align: center;
+    }
+
+    .training-settings .interval-fixed {
+        border: 1px dashed var(--igs-border);
+        color: var(--igs-muted);
+    }
+
+    .training-settings .interval-row > .training-muted {
+        font-size: 13px;
+        color: var(--igs-muted);
+    }
+
+    /* formulas: a monospace code block */
+    .training-settings .formula {
+        padding: 9px 12px !important;
+        border-left: 3px solid var(--igs-accent);
+        border-radius: 0 8px 8px 0;
+        background-color: var(--igs-surface);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 13px !important;
+        line-height: 1.5;
+        color: var(--igs-text-strong) !important;
+        overflow-x: auto;
+    }
+
+    /* advanced sliders: inside the card, the value line above as a label */
+    .training-settings .training-expander > details.training-disclosure > .training-slider {
+        width: auto !important;
+        margin-bottom: 12px !important;
+    }
+
+    .training-settings .training-expander > details.training-disclosure > p:has(+ .training-slider) {
+        margin-bottom: 4px !important;
+        font-weight: 600;
+        color: var(--igs-text-strong);
+        font-variant-numeric: tabular-nums;
+    }
+
+    .training-settings .training-expander > details.training-disclosure > p:has(+ .training-slider) > .training-muted {
+        font-weight: 400;
+    }
+
+    .training-settings .training-disclosure .training-muted {
+        color: var(--igs-muted);
+    }
+
+    .training-settings select.method {
+        width: calc(100% - 28px) !important;
+        box-sizing: border-box;
+        padding: 7px 10px !important;
+        border-radius: 8px !important;
+    }
+
+    @media (max-width: 560px) {
+        .training-settings > section {
+            padding: 16px 16px 18px !important;
+        }
+
+        .training-settings > section > h2.training-follow {
+            margin-left: -16px !important;
+            margin-right: -16px !important;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .training-settings .interval-row {
+            grid-template-columns: 1fr 5.5em;
+        }
+
+        .training-settings .interval-row > .training-muted {
+            grid-column: 1 / -1;
+            margin-top: -6px;
+        }
     }
 
     /* STUDY STATS CHART */
