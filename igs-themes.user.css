@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.2.0
+@version        2.2.1
 @description    Six themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Dark mode, Midnight board) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -1059,9 +1059,10 @@ all
         color: var(--igs-on-accent) !important;
     }
 
-    /* menu items: no dotted dividers; hover and the current page show as
-       a pill inset in the bar (drawn by ::before, so the item keeps its
-       full height and the drop-downs stay where they were) */
+    /* menu items: no dotted dividers; hover, an open menu and the current
+       page show as a pill inset in the bar (drawn by ::after, so the item
+       keeps its full height and the drop-downs stay where they were;
+       ::before is the site's triangle pointing at an open submenu) */
     .nav__main-menu__container ul > li {
         border: 0 !important;
         background: transparent !important;
@@ -1072,7 +1073,7 @@ all
         transition: color .15s ease;
     }
 
-    .nav__main-menu__container ul > li::before {
+    .nav__main-menu__container ul > li::after {
         content: "";
         position: absolute;
         inset: 9px 6px;
@@ -1085,7 +1086,8 @@ all
         color: var(--igs-nav-text-hover) !important;
     }
 
-    .nav__main-menu__container ul > li:hover::before {
+    .nav__main-menu__container ul > li:hover::after,
+    .nav__main-menu__container ul > li.expanded-main::after {
         background-color: var(--igs-nav-hover);
     }
 
@@ -1093,7 +1095,7 @@ all
         color: var(--igs-on-accent) !important;
     }
 
-    .nav__main-menu__container ul > li.active-main::before {
+    .nav__main-menu__container ul > li.active-main::after {
         background-color: var(--igs-accent-strong);
         box-shadow:
             inset 0 1px 0 rgb(255 255 255 / .15),
@@ -1136,6 +1138,37 @@ all
     .nav__sub-menu li:hover,
     .nav__sub-menu li:hover a {
         color: var(--igs-text-strong) !important;
+    }
+
+    /* submenu bar (My Stuff, Help...): items sized to their text on one
+       line, no dividers, a pill on hover, and a soft shadow under the bar */
+    .nav__sub-menu.nav__sub-menu {
+        border-bottom: 1px solid var(--igs-border) !important;
+        box-shadow: 0 6px 16px -10px rgb(0 0 0 / .35);
+    }
+
+    .nav__sub-menu.nav__sub-menu ul {
+        align-items: center !important;
+        gap: 4px;
+    }
+
+    .nav__sub-menu.nav__sub-menu ul li {
+        flex: 0 0 auto !important;
+        max-width: none !important;
+        height: 32px !important;
+        margin: 0 !important;
+        padding: 0 16px !important;
+        border: 0 !important;
+        border-radius: 999px;
+        background-color: transparent;
+        font-size: 15px;
+        white-space: nowrap;
+        align-items: center;
+        transition: background-color .15s ease, color .15s ease;
+    }
+
+    .nav__sub-menu.nav__sub-menu ul li:hover {
+        background-color: var(--igs-hover) !important;
     }
 
     /* CARDS: dashboard boxes, lesson panes, comments, popups */
