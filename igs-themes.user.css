@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.2.3
+@version        2.2.7
 @description    Six themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Dark mode, Midnight board) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -1392,6 +1392,681 @@ all
     .page:has(> .pane-row > .watch-problems) .comment-cont__header > span {
         font-weight: 600;
         color: var(--igs-text-strong);
+    }
+
+    /* NEWS PAGE (Info > News): a feed of rounded cards, each with a small
+       type label (announcement / study cards / lecture), a tidy header,
+       the board framed, and no empty spacers. The kind of post is told
+       apart by its header: two h5 lines = lecture, h5 + difficulty =
+       study cards, no header block = announcement. */
+    .page:has(> .cont.pane > .image-cont) {
+        justify-items: center;
+        row-gap: 18px;
+    }
+
+    .page > .cont.pane:has(> .image-cont) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: min(640px, 100%);
+        padding: 22px 28px 26px !important;
+        background-color: var(--igs-surface) !important;
+        color: var(--igs-text);
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 12px !important;
+        box-shadow: var(--igs-card-shadow) !important;
+        transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .page > .cont.pane:has(> .image-cont):hover {
+        transform: translateY(-2px);
+    }
+
+    /* type label */
+    .page > .cont.pane:has(> .image-cont)::before {
+        content: "Announcement";
+        margin-bottom: 10px;
+        padding: 3px 10px;
+        border: 1px solid var(--igs-border);
+        border-radius: 999px;
+        background-color: var(--igs-surface-2);
+        color: var(--igs-muted);
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+    }
+
+    .page > .cont.pane:has(> .image-cont):has(> div > h5 + div)::before {
+        content: "Study cards";
+        border-color: color-mix(in srgb, var(--igs-accent-strong) 35%, var(--igs-border));
+        background-color: color-mix(in srgb, var(--igs-accent-strong) 10%, var(--igs-surface));
+        color: var(--igs-accent-strong);
+    }
+
+    .page > .cont.pane:has(> .image-cont):has(> div > h5 + h5)::before {
+        content: "New lecture";
+        border-color: color-mix(in srgb, var(--igs-accent) 35%, var(--igs-border));
+        background-color: color-mix(in srgb, var(--igs-accent) 10%, var(--igs-surface));
+        color: var(--igs-accent);
+    }
+
+    .page > .cont.pane:has(> .image-cont) > h4 {
+        margin: 0 0 6px;
+        font-size: 1.45rem;
+        font-weight: 600;
+        line-height: 1.25;
+        color: var(--igs-heading);
+        text-shadow: none;
+    }
+
+    /* lecture: course path muted, lesson name emphasized */
+    .page > .cont.pane:has(> .image-cont) > div > h5 {
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--igs-text-strong);
+    }
+
+    .page > .cont.pane:has(> .image-cont) > div > h5:has(+ h5) {
+        font-size: .9rem;
+        font-weight: 500;
+        color: var(--igs-muted);
+    }
+
+    /* study cards: "Difficulty: 8" as a chip */
+    .page > .cont.pane:has(> .image-cont) > div > h5 + div {
+        display: inline-block;
+        margin-top: 6px;
+        padding: 2px 10px;
+        border: 1px dashed var(--igs-border-strong);
+        border-radius: 999px;
+        font-size: 12px;
+        color: var(--igs-text);
+    }
+
+    /* sent date: small and quiet, close to the header */
+    .page > .cont.pane:has(> .image-cont) > small {
+        margin: 6px 0 16px !important;
+        font-size: 12px;
+        color: var(--igs-muted) !important;
+    }
+
+    .page > .cont.pane:has(> .image-cont) > div > p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.55;
+        color: var(--igs-text-strong);
+    }
+
+    /* the board, framed */
+    .page > .cont.pane > .image-cont {
+        margin: 18px 0 4px;
+    }
+
+    .page > .cont.pane > .image-cont > img {
+        display: block;
+        border-radius: 6px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.15), 0 6px 16px rgba(0,0,0,.14);
+    }
+
+    /* drop empty spacers: no image, empty paragraph, no button */
+    .page > .cont.pane > .image-cont:has(> img[src=""]),
+    .page > .cont.pane:has(> .image-cont) > div:has(> p:only-child:empty),
+    .page > .cont.pane > .button-container:empty {
+        display: none;
+    }
+
+    .page > .cont.pane > .button-container {
+        margin: 18px 0 0;
+    }
+
+    .page > .cont.pane > .button-container > .igs-btn {
+        padding: 9px 22px;
+        border-radius: 10px !important;
+        font-weight: 600;
+    }
+
+    /* FORUM (Info > Forum): boards and topics as clean list rows - the
+       title as a left-aligned link instead of an outlined box, the latest
+       post on the right - and threads as rounded post cards */
+    .page:has(> .forum-topic-cont) {
+        justify-items: center;
+        row-gap: 0;
+    }
+
+    .page > .igs-breadcrumb {
+        margin-bottom: 6px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--igs-text-strong);
+    }
+
+    .page > .igs-breadcrumb > a {
+        font-weight: 500;
+        color: var(--igs-muted) !important;
+        text-decoration: none;
+    }
+
+    .page > .igs-breadcrumb > a:hover {
+        color: var(--igs-accent) !important;
+        text-decoration: underline;
+    }
+
+    .page > .forum-topic-cont {
+        width: min(800px, 100%);
+        margin: 4px 0 !important;
+        padding: 12px 18px !important;
+        background-color: var(--igs-surface) !important;
+        border: 1px solid var(--igs-border);
+        border-radius: 12px !important;
+        box-shadow: 0 1px 2px var(--igs-shadow-color) !important;
+        transition: background-color .15s ease, border-color .15s ease;
+    }
+
+    /* forum main page has no breadcrumb: keep the list off the menu bar */
+    .page > h1 + .forum-topic-cont {
+        margin-top: 14px !important;
+    }
+
+    /* the whole row opens the topic: the title button covers it */
+    .page > .forum-topic-cont:has(.last-post-by) {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .page > .forum-topic-cont:has(.last-post-by) .title > .igs-btn {
+        position: static !important;
+    }
+
+    .page > .forum-topic-cont:has(.last-post-by) .title > .igs-btn::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+    }
+
+    .page > .forum-topic-cont:has(.last-post-by):hover {
+        background-color: var(--igs-hover) !important;
+        border-color: var(--igs-border-strong);
+    }
+
+    .page > .forum-topic-cont > .forum-topic-cont__first-row {
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+    }
+
+    /* title: a plain link, the reply count as a small pill */
+    .page > .forum-topic-cont .title {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .page > .forum-topic-cont:has(.last-post-by) .title > .igs-btn {
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        height: auto;
+        padding: 4px 0 !important;
+        background: none !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        color: var(--igs-heading) !important;
+        font-size: 1.05rem;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .page > .forum-topic-cont:has(.last-post-by) .title > .igs-btn:hover > span:not(:empty) {
+        color: var(--igs-accent);
+        text-decoration: underline;
+    }
+
+    .page > .forum-topic-cont .title > .igs-btn > span:empty {
+        display: none;
+    }
+
+    .page > .forum-topic-cont .title > .igs-btn > small {
+        flex: none;
+        padding: 1px 8px;
+        border-radius: 999px;
+        background-color: color-mix(in srgb, var(--igs-accent) 12%, var(--igs-surface));
+        color: var(--igs-accent);
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    /* latest post: right-aligned, name in bold, caption and date quiet */
+    .page > .forum-topic-cont .last-post-by {
+        flex: none;
+        align-items: flex-end;
+        width: auto !important;
+        min-width: 150px;
+        text-align: right;
+    }
+
+    .page > .forum-topic-cont .last-post-by > small {
+        color: var(--igs-muted);
+        font-size: 11.5px;
+    }
+
+    .page > .forum-topic-cont .last-post-by > span {
+        font-weight: 600;
+        color: var(--igs-text-strong);
+    }
+
+    /* board description, under the title */
+    .page > .forum-topic-cont > .forum-topic-cont__description-row {
+        padding: 0 !important;
+        text-align: left;
+    }
+
+    .page > .forum-topic-cont > .forum-topic-cont__description-row > small {
+        color: var(--igs-muted);
+    }
+
+    /* "New topic": a filled button on the right, no card around it */
+    .page > .forum-topic-cont:not(:has(.last-post-by)) {
+        padding: 0 !important;
+        background: none !important;
+        border: 0;
+        box-shadow: none !important;
+    }
+
+    .page > .forum-topic-cont:not(:has(.last-post-by)) > .forum-topic-cont__first-row {
+        margin-bottom: 6px;
+        justify-content: flex-end;
+    }
+
+    .page > .forum-topic-cont:not(:has(.last-post-by)) .title {
+        flex: none;
+    }
+
+    .page > .forum-topic-cont:not(:has(.last-post-by)) .title > .igs-btn {
+        padding: 8px 20px !important;
+        border-radius: 10px !important;
+        background-color: var(--igs-accent) !important;
+        border-color: var(--igs-accent) !important;
+        color: var(--igs-on-accent) !important;
+        font-weight: 600;
+    }
+
+    /* threads: posts as rounded cards, author in bold, date quiet */
+    .page:has(> .igs-breadcrumb + .comment-cont) {
+        justify-items: center;
+    }
+
+    .page:has(> .igs-breadcrumb + .comment-cont) > .comment-cont {
+        width: min(800px, 100%);
+        margin: 6px 0 !important;
+        padding: 6px 4px 4px !important;
+        background-color: var(--igs-surface) !important;
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 1px 2px var(--igs-shadow-color) !important;
+    }
+
+    .page:has(> .igs-breadcrumb + .comment-cont) .comment-cont__header {
+        align-items: baseline;
+        border-bottom: 1px solid color-mix(in srgb, var(--igs-border) 60%, transparent) !important;
+    }
+
+    .page:has(> .igs-breadcrumb + .comment-cont) .comment-cont__header > span {
+        font-weight: 600;
+        color: var(--igs-text-strong);
+    }
+
+    .page:has(> .igs-breadcrumb + .comment-cont) .comment-cont__body {
+        line-height: 1.6;
+        color: var(--igs-text);
+    }
+
+    .page:has(> .igs-breadcrumb + .comment-cont) .comment-cont__body a {
+        color: var(--igs-accent);
+        overflow-wrap: anywhere;
+    }
+
+    /* reply box */
+    .page > .comment-cont.reply-box {
+        padding: 12px !important;
+        gap: 10px;
+    }
+
+    .page > .comment-cont.reply-box > .reply-box__input {
+        min-height: 90px;
+        border-radius: 10px !important;
+        background-color: var(--igs-surface-2) !important;
+    }
+
+    .page > .comment-cont.reply-box .igs-btn {
+        padding: 8px 20px;
+        border-radius: 10px !important;
+        font-weight: 600;
+    }
+
+    /* LECTURE HISTORY (My Stuff > Lecture History): the filters as one
+       compact bar, the list as a clean table - date, lecture name left
+       aligned, ID on the right - with dividers and a hover highlight */
+    .cont:has(> .search-cont + .igs-table) {
+        padding-top: 24px !important;
+    }
+
+    .cont > .search-cont:has(+ .igs-table) {
+        justify-content: center;
+        gap: 10px 22px;
+        margin: 8px 0 16px !important;
+        padding: 12px 20px !important;
+        background-color: var(--igs-surface);
+        border: 1px solid var(--igs-border);
+        border-radius: 12px;
+        box-shadow: 0 1px 2px var(--igs-shadow-color);
+    }
+
+    .cont > .search-cont:has(+ .igs-table) > span {
+        gap: 8px;
+        margin: 0 !important;
+    }
+
+    .cont > .search-cont:has(+ .igs-table) label {
+        margin: 0 !important;
+        color: var(--igs-muted);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+    }
+
+    .cont > .search-cont:has(+ .igs-table) .igs-input {
+        height: 34px;
+        padding: 4px 10px !important;
+        border-radius: 8px !important;
+        background-color: var(--igs-surface-2) !important;
+        font-size: 14px;
+    }
+
+    .cont > .search-cont:has(+ .igs-table) #search3 {
+        width: 9ch;
+    }
+
+    .cont > .search-cont + .igs-table {
+        padding: 6px 0 !important;
+        background-color: var(--igs-surface) !important;
+        border: 1px solid var(--igs-border);
+        border-radius: 12px !important;
+        box-shadow: 0 1px 2px var(--igs-shadow-color) !important;
+    }
+
+    .cont > .search-cont + .igs-table tr {
+        grid-template-columns: 120px minmax(0, 1fr) 64px !important;
+        align-items: center;
+        column-gap: 16px;
+        padding: 7px 20px;
+    }
+
+    .cont > .search-cont + .igs-table tr > * {
+        justify-self: stretch !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left;
+    }
+
+    .cont > .search-cont + .igs-table tr > .col3 {
+        text-align: right;
+    }
+
+    /* header row */
+    .cont > .search-cont + .igs-table tr:has(> th) {
+        padding-top: 8px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--igs-border);
+    }
+
+    .cont > .search-cont + .igs-table th {
+        color: var(--igs-muted) !important;
+        font-size: 12px;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+    }
+
+    /* rows */
+    .cont > .search-cont + .igs-table tr.clickable {
+        border-bottom: 1px solid color-mix(in srgb, var(--igs-border) 55%, transparent);
+        transition: background-color .12s ease;
+    }
+
+    .cont > .search-cont + .igs-table tr.clickable:last-child {
+        border-bottom: 0;
+    }
+
+    .cont > .search-cont + .igs-table tr.clickable:hover {
+        background-color: var(--igs-hover);
+    }
+
+    .cont > .search-cont + .igs-table tr.clickable:hover > .col2 {
+        color: var(--igs-accent);
+    }
+
+    .cont > .search-cont + .igs-table tr.clickable:hover,
+    .cont > .search-cont + .igs-table tr.clickable:hover > :not(.col2) {
+        text-decoration: none;
+    }
+
+    .cont > .search-cont + .igs-table tr.clickable:hover > .col2 {
+        text-decoration: underline;
+    }
+
+    .cont > .search-cont + .igs-table td.col1 {
+        color: var(--igs-muted);
+        font-size: 14px;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .cont > .search-cont + .igs-table td.col2 {
+        overflow: hidden;
+        color: var(--igs-text-strong);
+        font-weight: 500;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .cont > .search-cont + .igs-table td.col3 {
+        color: var(--igs-muted);
+        font-size: 13px;
+        font-variant-numeric: tabular-nums;
+    }
+
+    /* MY PROFILE (My Stuff > My Profile): "Site use" moved to the top as a
+       short centered summary, then the form with tighter fields, rounded
+       inputs and Save as the main button. The figures are bare text
+       lines, so they are placed with flex order around the heading and
+       the form. */
+    .page > .pane:has(#input-username) {
+        padding: 26px 64px 32px !important;
+        line-height: 1.75;
+        border: 1px solid var(--igs-border);
+        border-radius: 12px !important;
+        box-shadow: 0 1px 2px var(--igs-shadow-color) !important;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
+        color: var(--igs-text-strong);
+    }
+
+    .page > .pane:has(#input-username) > h3 {
+        order: -1;
+        margin: 0 0 6px !important;
+        font-family: inherit !important;
+        font-size: 12px !important;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--igs-muted);
+        text-shadow: none;
+    }
+
+    .page > .pane:has(#input-username) > form {
+        order: 1;
+        margin-top: 22px;
+        padding-top: 8px;
+        font-weight: 400;
+        line-height: normal;
+        border-top: 1px solid var(--igs-border);
+        font-size: 16px;
+        text-align: left;
+        color: var(--igs-text);
+    }
+
+    .page > .pane:has(#input-username) .igs-field {
+        margin: 14px 0 0 !important;
+    }
+
+    .page > .pane:has(#input-username) .igs-field > label,
+    .page > .pane:has(#input-username) .form-radio-group > label.title {
+        padding-left: 0 !important;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--igs-text-strong);
+    }
+
+    .page > .pane:has(#input-username) .igs-input {
+        border-radius: 8px !important;
+    }
+
+    .page > .pane:has(#input-username) .validation:not(:has(:not(:empty))) {
+        min-height: 0;
+        height: 6px;
+    }
+
+    .page > .pane:has(#input-username) .form-radio-group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 6px 0 !important;
+        padding: 10px 14px;
+        border: 1px solid var(--igs-border);
+        border-radius: 10px;
+        background-color: var(--igs-surface-2);
+    }
+
+    .page > .pane:has(#input-username) .form-radio-group > .validation,
+    .page > .pane:has(#input-username) .auto-complete-message.hide {
+        display: none;
+    }
+
+    .page > .pane:has(#input-username) .form-radio-group > label.title {
+        margin: 0 16px 0 0 !important;
+        padding: 0 !important;
+    }
+
+    .page > .pane:has(#input-username) .form-radio-group > label:not(.title) {
+        margin: 0 12px 0 0 !important;
+    }
+
+    .page > .pane:has(#input-username) .info {
+        color: var(--igs-muted);
+    }
+
+    .page > .pane:has(#input-username) .slider-legend {
+        color: var(--igs-muted);
+    }
+
+    .page > .pane:has(#input-username) .button-cont {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 18px;
+    }
+
+    .page > .pane:has(#input-username) .button-cont > .igs-btn {
+        margin: 0 !important;
+        padding: 8px 22px;
+        border-radius: 10px !important;
+        font-weight: 600;
+    }
+
+    /* Reset: quiet outline next to Save */
+    .page > .pane:has(#input-username) .button-cont > .igs-btn + .igs-btn {
+        order: -1;
+        background-color: transparent !important;
+        border: 1px solid var(--igs-border-strong) !important;
+        color: var(--igs-text) !important;
+    }
+
+    /* STATS (My Stuff > Stats): legend as small chips with a colored dot,
+       a full-width chart, no floating legend box over it */
+    .page-container--one-col:has(> .hist-legend) {
+        border: 1px solid var(--igs-border);
+        border-radius: 12px !important;
+        box-shadow: 0 1px 2px var(--igs-shadow-color) !important;
+        padding: 22px 28px 24px !important;
+    }
+
+    .page-container--one-col:has(> .hist-legend) > h2 {
+        margin: 0 0 4px !important;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--igs-heading);
+        text-shadow: none;
+    }
+
+    .page-container--one-col > .hist-legend {
+        gap: 8px;
+        margin: 6px 0 14px !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .page-container--one-col > .hist-legend > .hist-legend-swatch {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 3px 12px 3px 10px !important;
+        border: 1px solid var(--igs-border);
+        border-radius: 999px;
+        background: var(--igs-surface-2) !important;
+        color: var(--igs-text) !important;
+        font-size: 12px;
+    }
+
+    .page-container--one-col > .hist-legend > .hist-legend-swatch::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background-color: rgb(251, 175, 152);
+    }
+
+    .page-container--one-col > .hist-legend > .hist-legend-swatch__future-due::before {
+        background-color: rgb(127, 203, 72);
+    }
+
+    /* the middle "Legend" caption */
+    .page-container--one-col > .hist-legend > .hist-legend-swatch:not([class*="__"]) {
+        display: none;
+    }
+
+    .page-container--one-col:has(> .hist-legend) > .ct-chart {
+        align-self: stretch;
+        width: auto !important;
+        height: 260px !important;
+    }
+
+    .page-container--one-col:has(> .hist-legend) > .ct-chart > svg {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .page-container--one-col > .hist-bin-selector {
+        margin-top: 14px;
+        border-radius: 8px !important;
+        width: auto;
     }
 
     /* LECTURES VIEWER */
