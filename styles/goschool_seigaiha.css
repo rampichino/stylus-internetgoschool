@@ -185,11 +185,11 @@
         --study-chart-review-color:         var(--igs-chart-series-review);
         --study-chart-lecture-color:        var(--igs-chart-lecture);
 
-        --lesson-tree-1-background-color:       var(--igs-surface-2);
+        --lesson-tree-1-background-color:       transparent;
         --lesson-tree-1-background-hover-color: var(--igs-hover);
-        --lesson-tree-2-background-color:       var(--igs-surface-3);
+        --lesson-tree-2-background-color:       transparent;
         --lesson-tree-2-background-hover-color: var(--igs-hover);
-        --lesson-tree-3-background-color:       var(--igs-surface);
+        --lesson-tree-3-background-color:       transparent;
         --lesson-tree-3-background-hover-color: var(--igs-hover);
         --lesson-tree-leaf-background-color:    var(--igs-leaf);
         --lesson-tree-leaf-background-hover-color: var(--igs-hover);
@@ -270,6 +270,58 @@
 
     .active-main.active-main .lucide-icon {
         color: var(--igs-on-accent) !important;
+    }
+
+    /* menu items: no dotted dividers; hover and the current page show as
+       a pill inset in the bar (drawn by ::before, so the item keeps its
+       full height and the drop-downs stay where they were) */
+    .nav__main-menu__container ul > li {
+        border: 0 !important;
+        background: transparent !important;
+        isolation: isolate;
+        justify-content: center;
+        gap: 8px;
+        letter-spacing: .01em;
+        transition: color .15s ease;
+    }
+
+    .nav__main-menu__container ul > li::before {
+        content: "";
+        position: absolute;
+        inset: 9px 6px;
+        border-radius: 999px;
+        z-index: -1;
+        transition: background-color .15s ease, box-shadow .15s ease;
+    }
+
+    .nav__main-menu__container ul > li:hover {
+        color: var(--igs-nav-text-hover) !important;
+    }
+
+    .nav__main-menu__container ul > li:hover::before {
+        background-color: var(--igs-nav-hover);
+    }
+
+    .nav__main-menu__container ul > li.active-main {
+        color: var(--igs-on-accent) !important;
+    }
+
+    .nav__main-menu__container ul > li.active-main::before {
+        background-color: var(--igs-accent-strong);
+        box-shadow:
+            inset 0 1px 0 rgb(255 255 255 / .15),
+            0 2px 6px rgb(0 0 0 / .25);
+    }
+
+    .nav__main-menu__container .menu-icon {
+        width: 19px;
+        height: 19px;
+        opacity: .85;
+    }
+
+    .nav__main-menu__container ul > li:hover .menu-icon,
+    .nav__main-menu__container ul > li.active-main .menu-icon {
+        opacity: 1;
     }
 
     /* drop-down menus */
@@ -502,6 +554,12 @@
         border-color: var(--igs-border-strong) !important;
     }
 
+    /* the Filters panel is 1px tall when closed, so its top border showed
+       as a stray line above the framed lectures list */
+    .filters-area {
+        border-top: 0 !important;
+    }
+
     .vue-slider-rail {
         background-color: var(--igs-border-strong) !important;
     }
@@ -530,6 +588,40 @@
         color: var(--igs-heading);
     }
 
+    /* LECTURES LIST: one framed list with thin dividers instead of a
+       stack of separate boxes; an open folder becomes the list header,
+       and its sub-folders are indented */
+    span:has(> .level-tree1) {
+        display: block;
+        overflow: hidden;
+        border: 1px solid var(--igs-border);
+        border-radius: 10px;
+        background-color: var(--igs-surface);
+    }
+
+    .level-tree1, .level-tree2, .level-tree3, .level-leaf {
+        border: 0 !important;
+        border-bottom: 1px solid color-mix(in srgb, var(--igs-border) 55%, transparent) !important;
+        border-radius: 0 !important;
+        transition: background-color .12s ease;
+    }
+
+    span:has(> .level-tree1) > :last-child {
+        border-bottom: 0 !important;
+    }
+
+    .level-tree1:has(+ .level-tree2) {
+        background-color: var(--igs-surface-2) !important;
+        font-weight: 600;
+    }
+
+    .level-tree2 > .lesson-list_left-column { padding-left: 14px; }
+    .level-tree3 > .lesson-list_left-column { padding-left: 28px; }
+
+    .ckbox--folder .icon {
+        opacity: .6;
+    }
+
     .icon-green {
         color: var(--igs-accent) !important;
     }
@@ -543,6 +635,80 @@
     .igs-badge-primary   { background-color: var(--igs-blue) !important; }
     .igs-badge-secondary { background-color: var(--igs-rose) !important; }
     .igs-badge-success   { background-color: var(--igs-green) !important; }
+
+    /* LECTURES LIST counts: soft tinted pills with colored numbers, the
+       same width in each column, instead of solid blocks */
+    .badge-cell > .igs-badge-primary   { --igs-col: var(--igs-blue); }
+    .badge-cell > .igs-badge-secondary { --igs-col: var(--igs-rose); }
+    .badge-cell > .igs-badge-success   { --igs-col: var(--igs-green); }
+
+    .badge-cell > .igs-badge {
+        min-width: 46px;
+        padding: 2px 9px !important;
+        background-color: color-mix(in srgb, var(--igs-col) 13%, var(--igs-surface)) !important;
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--igs-col) 22%, transparent);
+        color: color-mix(in srgb, var(--igs-col) 75%, var(--igs-text)) !important;
+        font-weight: 700 !important;
+        font-variant-numeric: tabular-nums;
+        text-align: center;
+    }
+
+    /* LECTURES TOTALS (Lectures / Problems / Mine): each caption and its
+       total joined into one tinted tile, in the color of its column.
+       Caption and total sit in two separate rows, so the tile is drawn
+       as a top half (caption) and a bottom half (total). */
+    .legend-area > .badge-cell:nth-child(2),
+    .subtitle-area > .badge-cell:nth-child(2) { --igs-col: var(--igs-blue); }
+    .legend-area > .badge-cell:nth-child(3),
+    .subtitle-area > .badge-cell:nth-child(3) { --igs-col: var(--igs-rose); }
+    .legend-area > .badge-cell:nth-child(4),
+    .subtitle-area > .badge-cell:nth-child(4) { --igs-col: var(--igs-green); }
+
+    .legend-area > .badge-cell,
+    .subtitle-area > .badge-cell {
+        margin: 0 3px;
+        background-color: color-mix(in srgb, var(--igs-col) 9%, var(--igs-surface));
+        border: 1px solid color-mix(in srgb, var(--igs-col) 22%, transparent);
+    }
+
+    .legend-area > .badge-cell {
+        padding-top: 6px;
+        border-bottom: 0;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .subtitle-area > .badge-cell {
+        align-self: flex-start;
+        padding: 1px 0 6px;
+        border-top: 0;
+        border-radius: 0 0 10px 10px;
+    }
+
+    /* Filters / My decks: lifted by the caption row's height, so the
+       buttons sit on the same line as the tiles */
+    .subtitle-area > .subtitle_left-column {
+        align-self: flex-start;
+        margin-top: -25px !important;
+    }
+
+    .legend-area .legend {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+    }
+
+    .subtitle-area > .badge-cell > .igs-badge {
+        min-width: 0;
+        padding: 0 !important;
+        box-shadow: none;
+        background: transparent !important;
+        color: color-mix(in srgb, var(--igs-col) 70%, var(--igs-text)) !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        font-variant-numeric: tabular-nums;
+        line-height: 1.25;
+    }
 
     /* PROBLEMS STREAK */
     .msg-text.msg-text {
@@ -562,24 +728,26 @@
         display: none;
     }
 
+    /* the site's label under each tile is replaced by a caption inside it */
     .new-area > .smaller,
     .learn-area > .smaller,
     .review-area > .smaller {
-        font-size: 0 !important;   /* hide the site's own label; the replacement is in ::before */
+        display: none !important;
     }
 
-    .new-area > .smaller::before    { content: "New \A problems"; }
-    .learn-area > .smaller::before  { content: "Learning \A problems"; }
-    .review-area > .smaller::before { content: "Review \A problems"; }
+    .new-area > .igs-border::before   { content: "New"; }
+    .learn-area > .igs-border::before { content: "Learning"; }
+    .review-area > .igs-border::before { content: "Review"; }
 
-    .new-area > .smaller::before,
-    .learn-area > .smaller::before,
-    .review-area > .smaller::before {
+    .new-area > .igs-border::before,
+    .learn-area > .igs-border::before,
+    .review-area > .igs-border::before {
         display: block;
-        margin-top: 4px;
-        white-space: pre;
-        font-size: 13px;
-        line-height: 1.3;
+        font-size: 10px;
+        font-weight: 600;
+        line-height: 1.4;
+        letter-spacing: .08em;
+        text-transform: uppercase;
         color: var(--igs-muted);
     }
 
@@ -587,14 +755,14 @@
     .learn-area > .igs-border,
     .review-area > .igs-border {
         --tile: var(--igs-new);
-        padding: 4px 0;
+        padding: 5px 0 6px;
         border-radius: 10px !important;
-        border: 1px solid var(--tile) !important;
-        background-color: color-mix(in srgb, var(--tile) 28%, var(--igs-surface)) !important;
+        border: 1px solid color-mix(in srgb, var(--tile) 70%, transparent) !important;
+        background-color: color-mix(in srgb, var(--tile) 18%, var(--igs-surface)) !important;
         color: var(--igs-text-strong);
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 700;
-        line-height: 1.3;
+        line-height: 1.25;
         font-variant-numeric: tabular-nums;
     }
 
@@ -603,7 +771,7 @@
 
     /* curly brackets linking the counters to the buttons */
     img.bracket {
-        opacity: .45;
+        opacity: .28;
     }
 
     /* New / Review buttons: filled when there is something to do */
@@ -619,10 +787,15 @@
         border-color: var(--igs-accent-dark) !important;
     }
 
+    /* nothing to do: a quiet pill with a light dashed edge (solid fill,
+       readable text, unlike the site's faded look) */
     .new-review-btn:disabled {
-        opacity: .45;
+        opacity: 1;
         box-shadow: none !important;
         border-style: dashed !important;
+        border-color: var(--igs-border-strong) !important;
+        background-color: var(--igs-surface-2) !important;
+        color: var(--igs-muted) !important;
     }
 
     /* DAILY GOAL progress bar: taller and rounded, striped "extra" part */
@@ -693,8 +866,8 @@
         display: flex;
         width: fit-content;
         gap: 2px;
-        margin: 0 auto 12px;
-        padding: 3px;
+        margin: 0 auto 12px !important;
+        padding: 3px !important;
         list-style: none;
         background-color: var(--igs-surface-2);
         border: 1px solid var(--igs-border) !important;
@@ -805,8 +978,26 @@
         color: var(--igs-text-strong);
     }
 
+    /* Show less / Show more: small soft pills, centered side by side */
     .outer-container .inner-container > .button-row {
         margin-top: 10px;
+        justify-content: center !important;
+        gap: 10px;
+    }
+
+    .outer-container .inner-container > .button-row > .igs-btn {
+        padding: 3px 14px !important;
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 999px !important;
+        background-color: var(--igs-surface-2) !important;
+        box-shadow: none !important;
+        color: var(--igs-text) !important;
+        font-size: 13px !important;
+    }
+
+    .outer-container .inner-container > .button-row > .igs-btn:hover {
+        background-color: var(--igs-hover) !important;
+        color: var(--igs-text-strong) !important;
     }
 
     /* LOGO */
@@ -1871,10 +2062,66 @@
 
     .outer-container:has(> .filters-area) > .title-area > h3::after {
         content: "Lectures";
-        font-size: 2rem;
+        font-size: 1.75rem;
         display: block;
         width: 100%;
         text-align: center;
+    }
+
+    /* DASHBOARD CARD TITLES: a line icon before Lectures, Daily Goal,
+       Study Stats and Leaderboard */
+    .outer-container:has(> .filters-area) > .title-area > h3,
+    .outer-container:has(> .progress-area) > .title-area > h3,
+    .outer-container:has(.ct-chart) > .header > h3,
+    .outer-container:has(ul.tabs) > .header > h3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .6rem;
+    }
+
+    /* card titles: crisp text (no glow), a little smaller than the site's 2rem */
+    .outer-container > .title-area > h3,
+    .outer-container > .header > h3 {
+        font-size: 1.75rem;
+        text-shadow: none;
+    }
+
+    .outer-container:has(> .filters-area) > .title-area > h3::before,
+    .outer-container:has(> .progress-area) > .title-area > h3::before,
+    .outer-container:has(.ct-chart) > .header > h3::before,
+    .outer-container:has(ul.tabs) > .header > h3::before {
+        content: "";
+        flex: none;
+        width: 1.7rem;
+        height: 1.7rem;
+        background-color: var(--igs-accent-strong);
+        -webkit-mask: var(--igs-title-icon);
+        mask: var(--igs-title-icon);
+    }
+
+    .outer-container:has(> .filters-area) > .title-area > h3::after {
+        width: auto;
+    }
+
+    /* book */
+    .outer-container:has(> .filters-area) > .title-area > h3 {
+        --igs-title-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'><path d='M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z'/><path d='M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z'/></svg>") center / contain no-repeat;
+    }
+
+    /* target */
+    .outer-container:has(> .progress-area) > .title-area > h3 {
+        --igs-title-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='6'/><circle cx='12' cy='12' r='2'/></svg>") center / contain no-repeat;
+    }
+
+    /* bar chart */
+    .outer-container:has(.ct-chart) > .header > h3 {
+        --igs-title-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'><path d='M3 3v18h18'/><path d='M8 17v-5'/><path d='M13 17V8'/><path d='M18 17v-3'/></svg>") center / contain no-repeat;
+    }
+
+    /* trophy */
+    .outer-container:has(ul.tabs) > .header > h3 {
+        --igs-title-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9H4.5a2.5 2.5 0 0 1 0-5H6'/><path d='M18 9h1.5a2.5 2.5 0 0 0 0-5H18'/><path d='M4 22h16'/><path d='M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22'/><path d='M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22'/><path d='M18 2H6v7a6 6 0 0 0 12 0V2Z'/></svg>") center / contain no-repeat;
     }
 
     /* DAILY STREAK TITLE */
@@ -1952,13 +2199,33 @@
         stroke-dasharray: 2 4;
     }
 
+    /* zero line: solid, so the bars stand on a baseline */
+    .ct-chart .ct-grids .ct-grid.ct-vertical:first-child {
+        stroke: var(--igs-border) !important;
+        stroke-dasharray: none;
+        stroke-width: 1.5px;
+    }
+
     .ct-chart .ct-label {
         color: var(--igs-muted);
         fill: var(--igs-muted);
         font-size: 11px;
     }
 
+    /* y-axis numbers: centered on their gridline instead of sitting above it */
+    .ct-chart foreignObject {
+        overflow: visible;
+    }
+
+    .ct-chart .ct-label.ct-vertical.ct-start {
+        transform: translateY(.55em);
+    }
+
+    /* bars: slightly rounded tops, with a thin gap between stacked segments
+       (the site does not group segments by day, so each one is rounded) */
     .ct-chart .ct-bar {
+        stroke-width: 7% !important;
+        clip-path: inset(1.5px 0 0 0 round 3px 3px 0 0) stroke-box;
         transition: opacity .15s ease;
     }
 
@@ -2021,10 +2288,15 @@
         display: none !important;
     }
 
+    .outer-container:has(> .streak) {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+
     .outer-container:has(> .streak) > .vday {
         display: flex;
         justify-content: center;
-        margin: -4px 0 16px;
+        margin: -4px 0 4px;
     }
 
     .outer-container:has(> .streak) > .vday > small {
