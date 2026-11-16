@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.4.13
+@version        2.4.14
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -5482,6 +5482,41 @@ all
     }
 
     .progress-area .igs-bg-success   { background-color: var(--igs-accent-strong) !important; }
+
+    /* under 20% the fill is too short for "0 of 10 done": the count moves
+       just past the fill, in dark text on the empty track (it was white
+       on the light track). text-indent in % is the bar's own width.
+       The site writes the width inline ("width: 10%;"), which is what
+       these attribute selectors read; "width: 1" covers 1% and 10-19% */
+    .progress-area .igs-bg-success[style*="width: 0%"],
+    .progress-area .igs-bg-success[style*="width: 0."],
+    .progress-area .igs-bg-success[style*="width: 1%"],
+    .progress-area .igs-bg-success[style*="width: 1."],
+    .progress-area .igs-bg-success[style*="width: 2%"],
+    .progress-area .igs-bg-success[style*="width: 2."],
+    .progress-area .igs-bg-success[style*="width: 3%"],
+    .progress-area .igs-bg-success[style*="width: 3."],
+    .progress-area .igs-bg-success[style*="width: 4%"],
+    .progress-area .igs-bg-success[style*="width: 4."],
+    .progress-area .igs-bg-success[style*="width: 5%"],
+    .progress-area .igs-bg-success[style*="width: 5."],
+    .progress-area .igs-bg-success[style*="width: 6%"],
+    .progress-area .igs-bg-success[style*="width: 6."],
+    .progress-area .igs-bg-success[style*="width: 7%"],
+    .progress-area .igs-bg-success[style*="width: 7."],
+    .progress-area .igs-bg-success[style*="width: 8%"],
+    .progress-area .igs-bg-success[style*="width: 8."],
+    .progress-area .igs-bg-success[style*="width: 9%"],
+    .progress-area .igs-bg-success[style*="width: 9."],
+    .progress-area .igs-bg-success[style*="width: 1"]:not([style*="width: 100"]) {
+        display: block !important;
+        overflow: visible !important;
+        color: var(--igs-text) !important;
+        text-align: left !important;
+        text-indent: calc(100% + 10px);
+        line-height: 20px;
+        white-space: nowrap;
+    }
     .progress-area .igs-bg-secondary {
         background-color: var(--igs-progress-extra) !important;
         background-image: repeating-linear-gradient(135deg, transparent 0 7px, rgba(255, 255, 255, .13) 7px 14px);
