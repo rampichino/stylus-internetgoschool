@@ -1,6 +1,6 @@
 # Internet Go School Custom Style
 
-Six custom themes for [internetgoschool.com](https://internetgoschool.com): the original Classic green theme plus five new ones, in light and dark. Pick a day theme and a night theme, and the style switches between them with your system's light/dark setting.
+Seven custom themes for [internetgoschool.com](https://internetgoschool.com): the original Classic green theme plus six new ones, in light and dark. Pick a day theme and a night theme, and the style switches between them with your system's light/dark setting.
 
 [![The six themes on the dashboard](images/themes_overview.jpg)](images/themes_overview.jpg)
 
@@ -8,7 +8,7 @@ Six custom themes for [internetgoschool.com](https://internetgoschool.com): the 
 
 ## Features
 
-- **Six Themes**: Classic green plus five new light and dark themes, all with readable contrast
+- **Seven Themes**: Classic green plus six new light and dark themes, all with readable contrast
 - **Day and Night**: Follows your system's light/dark setting, or stays on one theme
 - **Automatic Updates**: Installed from a link, Stylus keeps the style up to date
 - **Navigation**: Styled main menu with hover effects and active states
@@ -34,8 +34,8 @@ Install the **Stylus** browser extension: [Chrome](https://chrome.google.com/web
 | Setting | Options | Default |
 |---|---|---|
 | Day / night switching | Follow my system light/dark setting, Always use the day theme, Always use the night theme | Follow system |
-| Day theme | Any of the six themes | Classic green |
-| Night theme | Any of the six themes | Dark mode |
+| Day theme | Any of the seven themes | Classic green |
+| Night theme | Any of the seven themes | Dark mode |
 
 Stylus checks the link for new versions and updates the style for you. Your theme choices are kept.
 
@@ -57,6 +57,7 @@ Use this if you want a single fixed theme and no automatic updates.
 | Kaya wood | Light | [`styles/goschool_kaya.css`](styles/goschool_kaya.css) | Pale kaya wood-tone background, cream cards, deep red accents |
 | Momiji | Light | [`styles/goschool_momiji.css`](styles/goschool_momiji.css) | Autumn maple: sand page, cream cards, dark bark menu, burnt orange and moss green |
 | Seigaiha sea | Light | [`styles/goschool_seigaiha.css`](styles/goschool_seigaiha.css) | Light ocean blues, white cards, sea-teal menu, coral accents |
+| Kaki persimmon | Light | [`styles/goschool_kaki.css`](styles/goschool_kaki.css) | Persimmon (柿): warm sand page, cream cards, coral menu, leaf green and sky blue touches, close to the site's own colors |
 | Dark mode | Dark | [`styles/goschool_dark.css`](styles/goschool_dark.css) | Charcoal background, slate cards, soft teal accents |
 | Midnight board | Dark | [`styles/goschool_midnight.css`](styles/goschool_midnight.css) | Dark navy background, slate-blue cards, gold accents |
 

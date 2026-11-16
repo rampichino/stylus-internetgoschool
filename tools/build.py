@@ -21,6 +21,7 @@ DESCRIPTIONS = {
     "kaya": "Pale kaya wood-tone background, cream paper cards, ink text, deep red accents.",
     "momiji": "Autumn maple: sand page, cream cards, dark bark menu, burnt orange and moss green.",
     "seigaiha": "Calm ocean blues, white cards, deep sea-teal menu, coral accents.",
+    "kaki": "Persimmon: warm sand page, cream cards, coral menu and headings, leaf green and sky blue touches.",
     "dark": "Charcoal background, slate cards, soft teal accents.",
     "midnight": "Dark navy background, slate-blue cards, gold accents like board lines under lamplight.",
 }
