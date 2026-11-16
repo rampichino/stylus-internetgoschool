@@ -48,6 +48,9 @@
         --igs-btn-shadow:          0 2px 6px rgba(60,35,10,.2), 0 1px 2px rgba(60,35,10,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(60,35,10,.28), 0 3px 6px rgba(60,35,10,.16);
         --igs-bg-image:            none;
+        --igs-bg-size:             cover;
+        --igs-bg-position:         0 0;
+        --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         invert(1) sepia(.4);
         --igs-heading-font:        Georgia, "Times New Roman", serif;
         --igs-streak-font:         Georgia, "Times New Roman", serif;
@@ -246,8 +249,9 @@
     body, html {
         background-color: var(--igs-bg);
         background-image: var(--igs-bg-image);
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-repeat: var(--igs-bg-repeat, no-repeat);
+        background-size: var(--igs-bg-size, cover);
+        background-position: var(--igs-bg-position, 0 0);
         background-attachment: fixed;
     }
 

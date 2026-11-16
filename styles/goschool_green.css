@@ -48,6 +48,9 @@
         --igs-btn-shadow:          0 2px 6px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.08);
         --igs-btn-shadow-hover:    0 6px 16px rgba(0,0,0,.20), 0 3px 6px rgba(0,0,0,.12);
         --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/turquoise_gradient.png");
+        --igs-bg-size:             cover;
+        --igs-bg-position:         0 0;
+        --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         none;
         --igs-heading-font:        inherit;
         --igs-streak-font:         cursive;
@@ -246,8 +249,9 @@
     body, html {
         background-color: var(--igs-bg);
         background-image: var(--igs-bg-image);
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-repeat: var(--igs-bg-repeat, no-repeat);
+        background-size: var(--igs-bg-size, cover);
+        background-position: var(--igs-bg-position, 0 0);
         background-attachment: fixed;
     }
 

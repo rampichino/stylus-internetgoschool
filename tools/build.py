@@ -22,8 +22,11 @@ DESCRIPTIONS = {
     "momiji": "Autumn maple: sand page, cream cards, dark bark menu, burnt orange and moss green.",
     "seigaiha": "Calm ocean blues, white cards, deep sea-teal menu, coral accents.",
     "kaki": "Persimmon: warm sand page, cream cards, coral menu and headings, leaf green and sky blue touches.",
+    "fuji": "Mount Fuji at dawn: peach-to-indigo sky, Prussian-blue menu, washi-white cards, vermilion accents.",
+    "sakura": "Cherry blossom: blush page with an asanoha pattern and a blossoming branch, plum menu, sakura pink and matcha green.",
+    "karesansui": "Dry rock garden: raked gravel with stones, stone-grey menu, moss-green accents.",
     "dark": "Charcoal background, slate cards, soft teal accents.",
-    "midnight": "Dark navy background, slate-blue cards, gold accents like board lines under lamplight.",
+    "chochin": "Paper lanterns at night: sumi-black page, glowing red and amber lanterns, vermilion and amber accents.",
 }
 
 
