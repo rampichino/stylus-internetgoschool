@@ -169,6 +169,7 @@
         --tab-border-active-color:          var(--igs-accent-strong);
         --switch-track-color:               var(--igs-border-strong);
         --switch-track-on-color:            var(--igs-accent-strong);
+        --nav-menu-arrow-color:             var(--igs-surface);   /* pointer from the open menu item to its submenu bar */
         --tooltip-background-color:         var(--igs-nav);
         --tooltip-text-color:               var(--igs-nav-text);
         --info-icon-color:                  var(--igs-accent);
@@ -312,12 +313,6 @@
     .nav__main-menu__container ul > li:hover::after,
     .nav__main-menu__container ul > li.expanded-main::after {
         background-color: var(--igs-nav-hover);
-    }
-
-    /* the pointer from the open item down to its submenu bar: a border
-       triangle the site paints cream, so it matches the bar instead */
-    .nav__main-menu__container ul > li.expanded-main::before {
-        border-bottom-color: var(--igs-surface) !important;
     }
 
     .nav__main-menu__container ul > li.active-main {
@@ -5951,6 +5946,51 @@
 
     .ct-chart .ct-bar:hover {
         opacity: 1;
+    }
+
+    /* info popups (Earning points and the like): compact text, left-aligned
+       small-caps section headings, accent bullets; the site sets everything
+       at 1.2rem with centered headings, so a short list fills the screen */
+    .info-panel__title {
+        font-size: 15px !important;
+    }
+
+    .info-body {
+        font-size: 14px !important;
+        line-height: 1.45 !important;
+    }
+
+    .info-body h5 {
+        margin: 4px 0 !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        line-height: 1.35 !important;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        text-align: left !important;
+        text-wrap: balance;   /* break "Bonus multiplier for / "days-in-a-row"" between words, not at a hyphen */
+        color: var(--igs-heading) !important;
+    }
+
+    .info-body ul + h5 {
+        margin-top: 10px !important;
+        padding-top: 10px !important;
+        border-top: 1px solid var(--igs-border);
+    }
+
+    .info-body ul {
+        margin: 0 !important;
+        padding-left: 1.15em !important;
+    }
+
+    .info-body li {
+        margin: 2px 0 !important;
+        padding-left: 2px !important;
+        font-size: inherit !important;
+    }
+
+    .info-body li::marker {
+        color: var(--igs-accent);
     }
 
     /* chart legend (info popup): color swatch + readable text */
