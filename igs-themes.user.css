@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.4.12
+@version        2.4.13
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -2291,17 +2291,42 @@ all
         row-gap: 0;
     }
 
+    /* breadcrumb ("Main page > Everything else"): a small pill on the
+       page surface, so it reads over the background pattern; a speech
+       bubble marks the forum home link */
     .page > .igs-breadcrumb {
-        margin-bottom: 6px;
-        font-size: 1.1rem;
+        display: inline-flex !important;
+        align-items: center;
+        gap: 6px;
+        margin: 8px 0 12px !important;
+        padding: 6px 16px 6px 12px;
+        border: 1px solid var(--igs-border);
+        border-radius: 999px;
+        background-color: var(--igs-surface);
+        box-shadow: 0 1px 2px var(--igs-shadow-color);
+        font-size: 15px !important;
         font-weight: 600;
+        line-height: 1.3;
         color: var(--igs-text-strong);
     }
 
     .page > .igs-breadcrumb > a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         font-weight: 500;
         color: var(--igs-muted) !important;
         text-decoration: none;
+    }
+
+    .page > .igs-breadcrumb > a:first-child::before {
+        content: "";
+        flex: none;
+        width: 15px;
+        height: 15px;
+        background-color: var(--igs-accent);
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7.9 20A9 9 0 1 0 4 16.1L2 22Z'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7.9 20A9 9 0 1 0 4 16.1L2 22Z'/></svg>") center / contain no-repeat;
     }
 
     .page > .igs-breadcrumb > a:hover {
