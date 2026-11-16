@@ -110,6 +110,15 @@ Feel free to submit issues and enhancement requests!
 
 This project is open source and available under the [MIT License](LICENSE).
 
+The background scenes, patterns and theme palettes are original work for this project; the asanoha and seigaiha motifs are traditional Japanese patterns.
+
+### Third-party material
+
+- **[Lucide](https://lucide.dev)** icons (ISC License, © Lucide Contributors, portions © Cole Bemis as part of Feather): most of the inline icons are taken from or based on Lucide.
+- **[Heroicons](https://heroicons.com)** "fire" icon (MIT License, © Tailwind Labs, Inc.): the streak flame.
+
+The full license texts are in [LICENSE](LICENSE).
+
 ---
 
 **Note**: This is an unofficial style modification for internetgoschool.com and is not affiliated with the official website.

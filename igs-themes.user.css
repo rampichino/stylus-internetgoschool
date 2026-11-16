@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.4.0
+@version        2.4.1
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -1459,6 +1459,12 @@ all
        2. SITE TOKENS     - maps the palette onto the site's own
                             color variables, so every page follows
        3. COMPONENTS      - extra touches (logo, streak, buttons...)
+
+       License: MIT, see LICENSE in the repository.
+       Icons: from or based on Lucide (ISC, (c) Lucide Contributors,
+       portions (c) Cole Bemis / Feather) and Heroicons "fire"
+       (MIT, (c) Tailwind Labs, Inc.). Full notices in LICENSE:
+       https://github.com/rampichino/stylus-internetgoschool/blob/main/LICENSE
        ========================================================= */
 
     /* ---------- 1. THEME PALETTE ---------- */
