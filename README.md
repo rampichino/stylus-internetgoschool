@@ -67,7 +67,8 @@ Use this if you want a single fixed theme and no automatic updates.
 |---|---|
 | **Classic green**<br>[![Classic green theme](images/screenshot_green.jpg)](images/screenshot_green.jpg) | **Kaya wood**<br>[![Kaya wood theme](images/screenshot_kaya.jpg)](images/screenshot_kaya.jpg) |
 | **Momiji**<br>[![Momiji theme](images/screenshot_momiji.jpg)](images/screenshot_momiji.jpg) | **Seigaiha sea**<br>[![Seigaiha sea theme](images/screenshot_seigaiha.jpg)](images/screenshot_seigaiha.jpg) |
-| **Dark mode**<br>[![Dark mode theme](images/screenshot_dark.jpg)](images/screenshot_dark.jpg) | **Midnight board**<br>[![Midnight board theme](images/screenshot_midnight.jpg)](images/screenshot_midnight.jpg) |
+| **Kaki persimmon**<br>[![Kaki persimmon theme](images/screenshot_kaki.jpg)](images/screenshot_kaki.jpg) | **Dark mode**<br>[![Dark mode theme](images/screenshot_dark.jpg)](images/screenshot_dark.jpg) |
+| **Midnight board**<br>[![Midnight board theme](images/screenshot_midnight.jpg)](images/screenshot_midnight.jpg) | |
 
 ## Customization
 
