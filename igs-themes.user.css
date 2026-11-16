@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.4.2
+@version        2.4.3
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -6731,10 +6731,12 @@ all
         list-style: none;
     }
 
+    /* plain text flow, the icon in the left padding: as a flex row the
+       text and the Terms of Use link became separate items with a gap */
     .store-container > .tos-area > ul > li {
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
+        position: relative;
+        display: block;
+        padding-left: 25px;
         font-size: 13px;
         line-height: 19px;
         color: var(--igs-muted);
@@ -6742,10 +6744,11 @@ all
 
     .store-container > .tos-area > ul > li::before {
         content: "";
-        flex: none;
+        position: absolute;
+        top: 2px;
+        left: 0;
         width: 15px;
         height: 15px;
-        margin-top: 2px;
         background-color: var(--igs-muted);
         -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='11' width='16' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/></svg>") center / contain no-repeat;
         mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='11' width='16' height='10' rx='2'/><path d='M8 11V7a4 4 0 0 1 8 0v4'/></svg>") center / contain no-repeat;
@@ -6756,7 +6759,9 @@ all
         mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><path d='M14 2v6h6M8 13h8M8 17h5'/></svg>");
     }
 
+    /* the site makes the link a block; keep it in the sentence */
     .store-container > .tos-area a {
+        display: inline !important;
         color: var(--igs-accent) !important;
         text-decoration: underline;
         text-underline-offset: 2px;
