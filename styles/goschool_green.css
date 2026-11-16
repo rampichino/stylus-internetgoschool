@@ -3237,9 +3237,13 @@
         background-color: var(--igs-surface-3) !important;
     }
 
+    /* thin dark rim + soft shadow so the white stone stands out
+       on the light tile */
     .p-page > .cont.navigation .stone-container .stone-img {
         width: 24px;
         height: 24px;
+        filter: drop-shadow(0 0 .6px rgba(0, 0, 0, .75))
+                drop-shadow(0 1px 1.5px rgba(0, 0, 0, .35));
     }
 
     .p-page > .cont.navigation .stone-container::after {
