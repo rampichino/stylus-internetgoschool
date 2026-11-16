@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.4.10
+@version        2.4.11
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -4713,13 +4713,24 @@ all
         transition: width .3s ease;
     }
 
+    /* "7 of 10" on a small light pill centered on the bar, so it reads
+       the same over the fill and over the empty track (the old halo
+       turned muddy over the green) */
     .p-page > .prog-cont > .text-block {
+        top: 50% !important;
+        left: 50% !important;
+        width: max-content !important;
+        height: 16px !important;
+        padding: 0 9px;
+        align-items: center;
+        transform: translate(-50%, -50%);
+        border-radius: 999px;
+        background-color: color-mix(in srgb, var(--igs-surface) 92%, transparent);
+        box-shadow: 0 0 0 1px color-mix(in srgb, var(--igs-border) 70%, transparent);
         color: var(--igs-text) !important;
-        text-shadow:   /* a light halo, so the text stays readable over the fill too */
-            0 0 2px var(--igs-surface),
-            0 0 2px var(--igs-surface),
-            0 0 4px var(--igs-surface),
-            0 0 6px var(--igs-surface);
+        text-shadow: none !important;
+        line-height: 16px !important;
+        white-space: nowrap;
         font-size: 12px !important;
         font-weight: 600;
         letter-spacing: .03em;
