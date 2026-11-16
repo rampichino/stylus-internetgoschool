@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.4.8
+@version        2.4.9
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -4819,6 +4819,146 @@ all
     .vue-slider-dot-handle {
         background-color: var(--igs-text) !important;
         border-color: var(--igs-accent) !important;
+    }
+
+    /* LECTURES FILTERS (Home > Lectures > Filters): a soft inset card;
+       the difficulty slider like the Search page one (thick rail, ringed
+       handles) with Easy / range / Hard under it; tidy checkboxes */
+    .filters-area.filters-area--show {
+        align-items: start;
+        column-gap: 28px !important;
+        row-gap: 12px !important;
+        margin-bottom: 10px;
+        padding: 14px 18px 16px !important;
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 10px;
+        background-color: var(--igs-surface-2);
+    }
+
+    .filters-area > .filters-help {
+        margin: 0 !important;
+        color: var(--igs-muted);
+        font-size: 12.5px !important;
+        text-align: left !important;
+    }
+
+    .filters-area > .filter-element.one-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filters-area .slider-title {
+        margin: 0 0 4px;
+        color: var(--igs-heading);
+        font-size: 14px !important;
+        font-weight: 600;
+        text-align: left !important;
+    }
+
+    .filters-area .slider-text {
+        order: 1;
+        justify-content: space-between;
+        margin-top: 2px;
+        color: var(--igs-muted);
+        font-size: 11px !important;
+        letter-spacing: .03em;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .filters-area .slider-text > span:nth-child(2) {
+        color: var(--igs-accent);
+        font-size: 12.5px;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+
+    .filters-area .vue-slider {
+        width: auto !important;
+        margin: 0 9px !important;
+        padding: 8px 0 !important;
+    }
+
+    .filters-area .vue-slider-rail {
+        height: 6px !important;
+        border-radius: 999px !important;
+        background-color: color-mix(in srgb, var(--igs-border-strong) 55%, transparent) !important;
+    }
+
+    .filters-area .vue-slider-process {
+        border-radius: 999px !important;
+        background-color: var(--igs-accent) !important;
+    }
+
+    .filters-area .vue-slider-dot {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .filters-area .vue-slider-dot-handle {
+        width: 18px !important;
+        height: 18px !important;
+        box-sizing: border-box;
+        border: 3px solid var(--igs-accent) !important;
+        border-radius: 50% !important;
+        background-color: var(--igs-surface) !important;
+        box-shadow: 0 1px 3px var(--igs-shadow-color) !important;
+        cursor: grab;
+        transition: box-shadow .15s ease;
+    }
+
+    .filters-area .vue-slider-dot-handle:hover,
+    .filters-area .vue-slider-dot-handle-focus {
+        box-shadow: 0 0 0 6px color-mix(in srgb, var(--igs-accent) 18%, transparent), 0 1px 3px var(--igs-shadow-color) !important;
+    }
+
+    .filters-area .vue-slider-dot-tooltip-inner {
+        padding: 3px 8px !important;
+        border: 0 !important;
+        border-radius: 6px !important;
+        background-color: var(--igs-accent) !important;
+        color: var(--igs-on-accent) !important;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .filters-area .vue-slider-dot-tooltip-inner::after {
+        border-top-color: var(--igs-accent) !important;
+    }
+
+    .filters-area > .filter-element.two-rows {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 2px;
+    }
+
+    .filters-area .form-check-group {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .filters-area .form-check-group > .igs-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        margin: 0 !important;
+        color: var(--igs-text);
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .filters-area .form-check-group input[type="checkbox"] {
+        flex: none;
+        width: 16px;
+        height: 16px;
+        margin: 2px 0 0 !important;
+        accent-color: var(--igs-accent);
+        cursor: pointer;
+    }
+
+    .filters-area .form-check-group label {
+        margin: 0 !important;
+        cursor: pointer;
     }
 
     .lesson-container_error {
