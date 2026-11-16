@@ -3013,6 +3013,14 @@
         background-color: var(--igs-bg);
     }
 
+    /* "Click a move to jump there..." under the move tree: same flat
+       background as the tree, so the page pattern doesn't show through */
+    .tree > p.tree-tip {
+        margin: 0;
+        background-color: var(--igs-bg);
+        color: var(--igs-muted);
+    }
+
     div.control-bar__body.control-bar__body {
         background-color: var(--igs-surface);
         color: var(--igs-text);
