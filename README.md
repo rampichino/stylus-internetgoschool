@@ -12,11 +12,11 @@ Ten custom themes for [internetgoschool.com](https://internetgoschool.com): the 
 - **Day and Night**: Follows your system's light/dark setting, or stays on one theme
 - **Automatic Updates**: Installed from a link, Stylus keeps the style up to date
 - **Navigation**: Styled main menu with hover effects and active states
-- **Custom Background**: Each theme has its own page background: a gradient, a pattern, or a Japanese scene (Mount Fuji, a cherry branch, a rock garden, paper lanterns)
+- **Custom Background**: Each theme has its own page background: contour lines, a pattern, or a Japanese scene (Mount Fuji, a cherry branch, a rock garden, paper lanterns)
 - **Readable Menus and Tooltips**: Drop-down menus and hover tooltips follow the theme colors
 - **Improved Buttons**: Button styling with shadows and hover effects
 - **Custom Logo**: Replaces the default logo with a custom Go-themed design
-- **Streak Counter and Dashboard**: Streak text up to 999 days, with milestones at 1 week, 1 month, 100 days and 1 year
+- **Streak Counter and Dashboard**: Handwritten streak text (Caveat) up to 999 days, with milestones at 1 week, 1 month, 100 days and 1 year
 - **Lecture Viewer**: Customized style for Go lectures and problem discussions, with a softer board in the night themes
 
 ## Installation
@@ -53,7 +53,7 @@ Use this if you want a single fixed theme and no automatic updates.
 
 | Theme | Mode | File | Look |
 |---|---|---|---|
-| Classic green | Light | [`styles/goschool_green.css`](styles/goschool_green.css) | Teal and green over a turquoise gradient (the original theme) |
+| Classic green | Light | [`styles/goschool_green.css`](styles/goschool_green.css) | Sage green and teal over moss-green contour lines (the original theme, refreshed) |
 | Kaya wood | Light | [`styles/goschool_kaya.css`](styles/goschool_kaya.css) | Pale kaya wood-tone background, cream cards, deep red accents |
 | Momiji | Light | [`styles/goschool_momiji.css`](styles/goschool_momiji.css) | Autumn maple: sand page, cream cards, dark bark menu, burnt orange and moss green |
 | Seigaiha sea | Light | [`styles/goschool_seigaiha.css`](styles/goschool_seigaiha.css) | Light ocean blues, white cards, sea-teal menu, coral accents |
@@ -116,6 +116,7 @@ The background scenes, patterns and theme palettes are original work for this pr
 
 - **[Lucide](https://lucide.dev)** icons (ISC License, © Lucide Contributors, portions © Cole Bemis as part of Feather): most of the inline icons are taken from or based on Lucide.
 - **[Heroicons](https://heroicons.com)** "fire" icon (MIT License, © Tailwind Labs, Inc.): the streak flame.
+- **[Caveat](https://github.com/googlefonts/caveat)** font (SIL Open Font License 1.1, © The Caveat Project Authors): the streak text, served from `fonts/`.
 
 The full license texts are in [LICENSE](LICENSE).
 

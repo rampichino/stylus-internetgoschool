@@ -59,7 +59,7 @@
         --igs-bg-repeat:            no-repeat, repeat;
         --igs-logo-filter:          invert(1);
         --igs-heading-font:         inherit;
-        --igs-streak-font:          Georgia, "Times New Roman", serif;
+        --igs-streak-font:          "Caveat", "Segoe Print", cursive;
         --igs-on-fill:              #ffffff;
         --igs-alert:                #c8263e;
         --igs-nav-text:             #f3dce4;
@@ -5338,12 +5338,22 @@
     *:has(> img[src*="/num/998.png"])::after { content: "998 day streak!"; }
     *:has(> img[src*="/num/999.png"])::after { content: "999 day streak!"; }
 
+    /* Caveat (SIL Open Font License 1.1, (c) The Caveat Project Authors),
+       latin subset, served from this repository */
+    @font-face {
+        font-family: "Caveat";
+        font-style: normal;
+        font-weight: 400 700;
+        font-display: swap;
+        src: local("Caveat"), url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/fonts/caveat-latin.woff2") format("woff2");
+    }
+
     .streak-number:after {
         font-family: var(--igs-streak-font);
-        font-weight: 100;
+        font-weight: 600;
         margin-top: 10px;
-        font-size: clamp(30px, 4vw, 50px);
-        font-style: italic;
+        font-size: clamp(36px, 4.8vw, 60px);
+        font-style: normal;
         color: var(--igs-heading);
         text-shadow: 0 0 10px var(--igs-glow);
     }
