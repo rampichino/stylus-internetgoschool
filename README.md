@@ -54,10 +54,10 @@ Use this if you want a single fixed theme and no automatic updates.
 | Theme | Mode | File | Look |
 |---|---|---|---|
 | Classic green | Light | [`styles/goschool_green.css`](styles/goschool_green.css) | Sage green and teal over moss-green contour lines with Go calligraphy: 碁, a proverb and a seal (the original theme, refreshed) |
-| Kaya wood | Light | [`styles/goschool_kaya.css`](styles/goschool_kaya.css) | Pale kaya wood-tone background, cream cards, deep red accents |
-| Momiji | Light | [`styles/goschool_momiji.css`](styles/goschool_momiji.css) | Autumn maple: sand page, cream cards, dark bark menu, burnt orange and moss green |
-| Seigaiha sea | Light | [`styles/goschool_seigaiha.css`](styles/goschool_seigaiha.css) | Light ocean blues, white cards, sea-teal menu, coral accents |
-| Kaki persimmon | Light | [`styles/goschool_kaki.css`](styles/goschool_kaki.css) | Persimmon (柿): warm sand page, cream cards, coral menu, leaf green and sky blue touches, close to the site's own colors |
+| Kaya wood | Light | [`styles/goschool_kaya.css`](styles/goschool_kaya.css) | Kaya wood grain flowing around knots, with a brushed 榧, a Go proverb and a seal; cream cards, deep red accents |
+| Momiji | Light | [`styles/goschool_momiji.css`](styles/goschool_momiji.css) | Autumn maple: leaves on a flowing stream (竜田川) with a brushed 楓, a Go proverb and a seal; cream cards, dark bark menu, burnt orange and moss green |
+| Seigaiha sea | Light | [`styles/goschool_seigaiha.css`](styles/goschool_seigaiha.css) | Seigaiha (青海波) waves with a brushed 波, a Go proverb and a seal; light ocean blues, white cards, sea-teal menu, coral accents |
+| Kaki persimmon | Light | [`styles/goschool_kaki.css`](styles/goschool_kaki.css) | Persimmon (柿): pencil-sketched persimmons with a brushed 柿, a Go proverb and a seal; warm sand page, cream cards, coral menu, leaf green and sky blue touches, close to the site's own colors |
 | Fuji at dawn | Light | [`styles/goschool_fuji.css`](styles/goschool_fuji.css) | Mount Fuji (富士) at dawn: peach-to-indigo sky, Prussian-blue menu, washi-white cards, vermilion accents |
 | Sakura | Light | [`styles/goschool_sakura.css`](styles/goschool_sakura.css) | Cherry blossom (桜): blush page with an asanoha pattern and a blossoming branch, plum menu, sakura pink and matcha green |
 | Karesansui | Light | [`styles/goschool_karesansui.css`](styles/goschool_karesansui.css) | Dry rock garden (枯山水): raked gravel with stones, stone-grey menu, moss-green accents |
@@ -117,7 +117,7 @@ The background scenes, patterns and theme palettes are original work for this pr
 - **[Lucide](https://lucide.dev)** icons (ISC License, © Lucide Contributors, portions © Cole Bemis as part of Feather): most of the inline icons are taken from or based on Lucide.
 - **[Heroicons](https://heroicons.com)** "fire" icon (MIT License, © Tailwind Labs, Inc.): the streak flame.
 - **[Caveat](https://github.com/googlefonts/caveat)** font (SIL Open Font License 1.1, © The Caveat Project Authors): the streak text, served from `fonts/`.
-- **[Yuji Syuku](https://github.com/Kinutafontfactory/Yuji)** font (SIL Open Font License 1.1, © Kinuta Font Factory): the brush lettering in the Classic green background, drawn as outlines in `images/bg_moss.svg`.
+- **[Yuji Syuku](https://github.com/Kinutafontfactory/Yuji)** font (SIL Open Font License 1.1, © Kinuta Font Factory): the brush lettering in the Classic green, Kaya wood, Momiji, Seigaiha sea and Kaki persimmon backgrounds, drawn as outlines in the `images/bg_*.svg` files.
 - **[Libre Baskerville](https://github.com/impallari/Libre-Baskerville)** font (SIL Open Font License 1.1, © The Libre Baskerville Project Authors): the IGS lettering in the logo, drawn as outlines in `images/logo_enso.svg`.
 
 The full license texts are in [LICENSE](LICENSE).

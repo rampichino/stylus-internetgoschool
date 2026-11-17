@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.5.5
+@version        2.6.0
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -129,9 +129,9 @@ all
         --igs-card-shadow:         0 2px 0 rgba(0,0,0,.06), 0 10px 24px rgba(60,35,10,.18);
         --igs-btn-shadow:          0 2px 6px rgba(60,35,10,.2), 0 1px 2px rgba(60,35,10,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(60,35,10,.28), 0 3px 6px rgba(60,35,10,.16);
-        --igs-bg-image:            none;
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/bg_kaya.svg?v=2.6.0");
         --igs-bg-size:             cover;
-        --igs-bg-position:         0 0;
+        --igs-bg-position:         center;
         --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         invert(1) sepia(.4);
         --igs-heading-font:        Georgia, "Times New Roman", serif;
@@ -200,9 +200,9 @@ all
         --igs-card-shadow:         0 2px 0 rgba(0,0,0,.05), 0 10px 24px rgba(80,40,10,.16);
         --igs-btn-shadow:          0 2px 6px rgba(80,40,10,.2), 0 1px 2px rgba(80,40,10,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(80,40,10,.28), 0 3px 6px rgba(80,40,10,.16);
-        --igs-bg-image:            none;
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/bg_momiji.svg?v=2.6.0");
         --igs-bg-size:             cover;
-        --igs-bg-position:         0 0;
+        --igs-bg-position:         center;
         --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         invert(1) sepia(.3);
         --igs-heading-font:        Georgia, "Times New Roman", serif;
@@ -271,9 +271,9 @@ all
         --igs-card-shadow:         0 2px 0 rgba(0,0,0,.04), 0 8px 22px rgba(15,76,92,.14);
         --igs-btn-shadow:          0 2px 6px rgba(15,76,92,.2), 0 1px 2px rgba(15,76,92,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(15,76,92,.28), 0 3px 6px rgba(15,76,92,.16);
-        --igs-bg-image:            linear-gradient(180deg, #e4f2f5 0%, var(--igs-bg) 100%);
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/bg_seigaiha.svg?v=2.6.0");
         --igs-bg-size:             cover;
-        --igs-bg-position:         0 0;
+        --igs-bg-position:         center;
         --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         invert(1);
         --igs-heading-font:        inherit;
@@ -342,9 +342,9 @@ all
         --igs-card-shadow:         0 2px 0 rgba(0,0,0,.04), 0 8px 22px rgba(120,80,20,.14);
         --igs-btn-shadow:          0 2px 6px rgba(120,80,20,.2), 0 1px 2px rgba(120,80,20,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(120,80,20,.28), 0 3px 6px rgba(120,80,20,.16);
-        --igs-bg-image:            linear-gradient(180deg, #fdf6e0 0%, var(--igs-bg) 100%);
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/bg_kaki.svg?v=2.6.0");
         --igs-bg-size:             cover;
-        --igs-bg-position:         0 0;
+        --igs-bg-position:         center;
         --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         none;
         --igs-heading-font:        inherit;
@@ -842,9 +842,9 @@ all
         --igs-card-shadow:         0 2px 0 rgba(0,0,0,.06), 0 10px 24px rgba(60,35,10,.18);
         --igs-btn-shadow:          0 2px 6px rgba(60,35,10,.2), 0 1px 2px rgba(60,35,10,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(60,35,10,.28), 0 3px 6px rgba(60,35,10,.16);
-        --igs-bg-image:            none;
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/bg_kaya.svg?v=2.6.0");
         --igs-bg-size:             cover;
-        --igs-bg-position:         0 0;
+        --igs-bg-position:         center;
         --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         invert(1) sepia(.4);
         --igs-heading-font:        Georgia, "Times New Roman", serif;
@@ -913,9 +913,9 @@ all
         --igs-card-shadow:         0 2px 0 rgba(0,0,0,.05), 0 10px 24px rgba(80,40,10,.16);
         --igs-btn-shadow:          0 2px 6px rgba(80,40,10,.2), 0 1px 2px rgba(80,40,10,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(80,40,10,.28), 0 3px 6px rgba(80,40,10,.16);
-        --igs-bg-image:            none;
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/bg_momiji.svg?v=2.6.0");
         --igs-bg-size:             cover;
-        --igs-bg-position:         0 0;
+        --igs-bg-position:         center;
         --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         invert(1) sepia(.3);
         --igs-heading-font:        Georgia, "Times New Roman", serif;
@@ -984,9 +984,9 @@ all
         --igs-card-shadow:         0 2px 0 rgba(0,0,0,.04), 0 8px 22px rgba(15,76,92,.14);
         --igs-btn-shadow:          0 2px 6px rgba(15,76,92,.2), 0 1px 2px rgba(15,76,92,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(15,76,92,.28), 0 3px 6px rgba(15,76,92,.16);
-        --igs-bg-image:            linear-gradient(180deg, #e4f2f5 0%, var(--igs-bg) 100%);
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/bg_seigaiha.svg?v=2.6.0");
         --igs-bg-size:             cover;
-        --igs-bg-position:         0 0;
+        --igs-bg-position:         center;
         --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         invert(1);
         --igs-heading-font:        inherit;
@@ -1055,9 +1055,9 @@ all
         --igs-card-shadow:         0 2px 0 rgba(0,0,0,.04), 0 8px 22px rgba(120,80,20,.14);
         --igs-btn-shadow:          0 2px 6px rgba(120,80,20,.2), 0 1px 2px rgba(120,80,20,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(120,80,20,.28), 0 3px 6px rgba(120,80,20,.16);
-        --igs-bg-image:            linear-gradient(180deg, #fdf6e0 0%, var(--igs-bg) 100%);
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/bg_kaki.svg?v=2.6.0");
         --igs-bg-size:             cover;
-        --igs-bg-position:         0 0;
+        --igs-bg-position:         center;
         --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         none;
         --igs-heading-font:        inherit;

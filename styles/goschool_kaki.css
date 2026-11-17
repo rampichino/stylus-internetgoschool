@@ -2,7 +2,7 @@
 
     /* =========================================================
        INTERNET GO SCHOOL - KAKI PERSIMMON
-       Persimmon: warm sand page, cream cards, coral menu and headings, leaf green and sky blue touches.
+       Persimmon: pencil-sketched persimmons with a brushed 柿 and a Go proverb, warm sand page, cream cards, coral menu and headings, leaf green and sky blue touches.
        Generated from igs-themes.user.css by tools/build.py - edit that file instead.
 
        1. THEME PALETTE   - edit these to customize the theme
@@ -53,9 +53,9 @@
         --igs-card-shadow:         0 2px 0 rgba(0,0,0,.04), 0 8px 22px rgba(120,80,20,.14);
         --igs-btn-shadow:          0 2px 6px rgba(120,80,20,.2), 0 1px 2px rgba(120,80,20,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(120,80,20,.28), 0 3px 6px rgba(120,80,20,.16);
-        --igs-bg-image:            linear-gradient(180deg, #fdf6e0 0%, var(--igs-bg) 100%);
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/bg_kaki.svg?v=2.6.0");
         --igs-bg-size:             cover;
-        --igs-bg-position:         0 0;
+        --igs-bg-position:         center;
         --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         none;
         --igs-heading-font:        inherit;

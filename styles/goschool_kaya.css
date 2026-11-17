@@ -2,7 +2,7 @@
 
     /* =========================================================
        INTERNET GO SCHOOL - KAYA WOOD
-       Pale kaya wood-tone background, cream paper cards, ink text, deep red accents.
+       Kaya wood grain with knots, a brushed 榧 and a Go proverb, cream paper cards, ink text, deep red accents.
        Generated from igs-themes.user.css by tools/build.py - edit that file instead.
 
        1. THEME PALETTE   - edit these to customize the theme
@@ -53,9 +53,9 @@
         --igs-card-shadow:         0 2px 0 rgba(0,0,0,.06), 0 10px 24px rgba(60,35,10,.18);
         --igs-btn-shadow:          0 2px 6px rgba(60,35,10,.2), 0 1px 2px rgba(60,35,10,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(60,35,10,.28), 0 3px 6px rgba(60,35,10,.16);
-        --igs-bg-image:            none;
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/bg_kaya.svg?v=2.6.0");
         --igs-bg-size:             cover;
-        --igs-bg-position:         0 0;
+        --igs-bg-position:         center;
         --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         invert(1) sepia(.4);
         --igs-heading-font:        Georgia, "Times New Roman", serif;

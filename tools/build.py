@@ -18,10 +18,10 @@ SOURCE = ROOT / "igs-themes.user.css"
 
 DESCRIPTIONS = {
     "green": "Sage green and teal over moss-green contour lines with Go calligraphy (the original theme, refreshed).",
-    "kaya": "Pale kaya wood-tone background, cream paper cards, ink text, deep red accents.",
-    "momiji": "Autumn maple: sand page, cream cards, dark bark menu, burnt orange and moss green.",
-    "seigaiha": "Calm ocean blues, white cards, deep sea-teal menu, coral accents.",
-    "kaki": "Persimmon: warm sand page, cream cards, coral menu and headings, leaf green and sky blue touches.",
+    "kaya": "Kaya wood grain with knots, a brushed 榧 and a Go proverb, cream paper cards, ink text, deep red accents.",
+    "momiji": "Autumn maple: leaves on a flowing stream with a brushed 楓 and a Go proverb, sand page, cream cards, dark bark menu, burnt orange and moss green.",
+    "seigaiha": "Seigaiha waves with a brushed 波 and a Go proverb, calm ocean blues, white cards, deep sea-teal menu, coral accents.",
+    "kaki": "Persimmon: pencil-sketched persimmons with a brushed 柿 and a Go proverb, warm sand page, cream cards, coral menu and headings, leaf green and sky blue touches.",
     "fuji": "Mount Fuji at dawn: peach-to-indigo sky, Prussian-blue menu, washi-white cards, vermilion accents.",
     "sakura": "Cherry blossom: blush page with an asanoha pattern and a blossoming branch, plum menu, sakura pink and matcha green.",
     "karesansui": "Dry rock garden: raked gravel with stones, stone-grey menu, moss-green accents.",

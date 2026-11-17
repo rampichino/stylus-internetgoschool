@@ -2,7 +2,7 @@
 
     /* =========================================================
        INTERNET GO SCHOOL - SEIGAIHA SEA
-       Calm ocean blues, white cards, deep sea-teal menu, coral accents.
+       Seigaiha waves with a brushed 波 and a Go proverb, calm ocean blues, white cards, deep sea-teal menu, coral accents.
        Generated from igs-themes.user.css by tools/build.py - edit that file instead.
 
        1. THEME PALETTE   - edit these to customize the theme
@@ -53,9 +53,9 @@
         --igs-card-shadow:         0 2px 0 rgba(0,0,0,.04), 0 8px 22px rgba(15,76,92,.14);
         --igs-btn-shadow:          0 2px 6px rgba(15,76,92,.2), 0 1px 2px rgba(15,76,92,.12);
         --igs-btn-shadow-hover:    0 6px 16px rgba(15,76,92,.28), 0 3px 6px rgba(15,76,92,.16);
-        --igs-bg-image:            linear-gradient(180deg, #e4f2f5 0%, var(--igs-bg) 100%);
+        --igs-bg-image:            url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/bg_seigaiha.svg?v=2.6.0");
         --igs-bg-size:             cover;
-        --igs-bg-position:         0 0;
+        --igs-bg-position:         center;
         --igs-bg-repeat:           no-repeat;
         --igs-logo-filter:         invert(1);
         --igs-heading-font:        inherit;
