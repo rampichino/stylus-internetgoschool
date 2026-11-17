@@ -3317,22 +3317,169 @@
         color: #2a2112 !important;
     }
 
-    /* more...: soft accent button, like Discuss */
+    /* more...: a utility button, not a sixth answer: neutral like Back /
+       Restart, a bit narrower than the ratings, with a dots icon */
+    .p-page > .cont.ratings > .btn-margins:has(> .igs-btn-outline-primary) {
+        flex: .75 1 0;
+    }
+
     .p-page > .cont.ratings .igs-btn.igs-btn-outline-primary {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        border-color: color-mix(in srgb, var(--igs-accent-strong) 55%, transparent) !important;
-        background-color: color-mix(in srgb, var(--igs-accent-strong) 8%, var(--igs-surface)) !important;
-        color: var(--igs-accent) !important;
+        gap: 6px;
+        border-color: var(--igs-border) !important;
+        background-color: var(--igs-surface-2) !important;
+        color: var(--igs-text) !important;
         font-size: 14px !important;
-        font-weight: 600;
+        font-weight: 500;
+    }
+
+    .p-page > .cont.ratings .igs-btn.igs-btn-outline-primary::before {
+        content: "";
+        flex: none;
+        width: 16px;
+        height: 16px;
+        background-color: currentColor;
+        opacity: .8;
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='1'/><circle cx='19' cy='12' r='1'/><circle cx='5' cy='12' r='1'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='1'/><circle cx='19' cy='12' r='1'/><circle cx='5' cy='12' r='1'/></svg>") center / contain no-repeat;
     }
 
     .p-page > .cont.ratings .igs-btn.igs-btn-outline-primary:hover {
-        border-color: var(--igs-accent-strong) !important;
-        background-color: var(--igs-accent-strong) !important;
-        color: var(--igs-on-fill) !important;
+        background-color: var(--igs-hover) !important;
+    }
+
+    /* MORE ACTIONS (problem viewer, "more..."): the site wraps seven
+       fixed-width buttons around two rules, so the reset buttons break
+       over three lines and look like ordinary actions. Here the everyday
+       actions sit in a 2x2 grid, the resets get their own "Reset progress"
+       group as danger-outlined rows, and Close becomes a quiet button.
+       Same rounded, neutral buttons as the problem toolbar */
+    .igs-modal .modal__pane:has(> .orderly) {
+        max-width: 27rem !important;
+        padding: 24px 24px 18px !important;
+        border-radius: 14px !important;
+        box-shadow: var(--igs-card-shadow);
+    }
+
+    .igs-modal .modal__pane:has(> .orderly) > h3 {
+        margin: 0 !important;
+        font-size: 22px !important;
+        text-align: center;
+    }
+
+    .igs-modal .orderly {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 18px !important;
+    }
+
+    .igs-modal .orderly > .igs-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto !important;
+        min-height: 46px;
+        margin: 0 !important;
+        padding: 6px 12px !important;
+        border-radius: 10px !important;
+        background-color: var(--igs-surface-2) !important;
+        border: 1px solid var(--igs-border) !important;
+        color: var(--igs-text) !important;
+        font-size: 14px !important;
+        font-weight: 500;
+        line-height: 1.25 !important;
+        text-wrap: balance;
+    }
+
+    .igs-modal .orderly > .igs-btn:hover {
+        background-color: var(--igs-hover) !important;
+    }
+
+    /* the rule between the groups becomes the group heading */
+    .igs-modal .orderly > hr {
+        grid-column: 1 / -1;
+        justify-self: stretch;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: auto !important;
+        height: auto;
+        margin: 10px 0 0 !important;
+        border: 0 !important;
+        background: none !important;
+        color: var(--igs-muted);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        opacity: 1;
+    }
+
+    .igs-modal .orderly > hr::before {
+        content: "Reset progress";
+    }
+
+    .igs-modal .orderly > hr::after {
+        content: "";
+        flex: 1;
+        border-top: 1px solid var(--igs-border);
+    }
+
+    /* resets: one row each, outlined in the danger color, fill on hover */
+    .igs-modal .orderly > hr ~ .igs-btn {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        gap: 10px;
+        min-height: 40px;
+        background-color: transparent !important;
+        border: 1px solid color-mix(in srgb, var(--igs-danger) 45%, transparent) !important;
+        color: var(--igs-danger) !important;
+        box-shadow: none !important;
+        text-align: left;
+    }
+
+    .igs-modal .orderly > hr ~ .igs-btn:hover,
+    .igs-modal .orderly > hr ~ .igs-btn:focus-visible {
+        background-color: var(--igs-danger) !important;
+        border-color: var(--igs-danger) !important;
+        color: var(--igs-on-accent) !important;
+    }
+
+    /* rotate-ccw icon (Lucide) */
+    .igs-modal .orderly > hr ~ .igs-btn::before {
+        content: "";
+        flex: none;
+        width: 16px;
+        height: 16px;
+        background-color: currentColor;
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8'/><path d='M3 3v5h5'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8'/><path d='M3 3v5h5'/></svg>") center / contain no-repeat;
+    }
+
+    /* Close: the rule above it goes, the button turns into a quiet link */
+    .igs-modal .modal__pane:has(> .orderly) > hr {
+        display: none;
+    }
+
+    .igs-modal .modal__pane:has(> .orderly) > .igs-btn {
+        align-self: center;
+        width: auto !important;
+        min-width: 8rem;
+        margin: 16px auto 0 !important;
+        padding: 7px 16px !important;
+        border-radius: 10px !important;
+        background-color: transparent !important;
+        border: 1px solid var(--igs-border-strong) !important;
+        color: var(--igs-text) !important;
+        box-shadow: none !important;
+        font-size: 14px !important;
+    }
+
+    .igs-modal .modal__pane:has(> .orderly) > .igs-btn:hover {
+        background-color: var(--igs-hover) !important;
     }
 
     /* PROBLEM SET progress ("1 of 20"): a thin rounded bar with the count
