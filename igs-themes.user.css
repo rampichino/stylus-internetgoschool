@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.6.2
+@version        2.6.3
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -1993,15 +1993,36 @@ all
         text-shadow: none;
     }
 
-    /* title: the course path muted, the lesson itself in full color */
+    /* title: the course path as a small muted breadcrumb, the lesson
+       name below it as the heading; the ">" in front of the name is
+       its first letter, so it is hidden (the margin takes back the
+       space after it, so the name stays centered) */
     .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type h3 {
-        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        font-family: inherit !important;
+        font-size: 14px !important;
+        font-weight: 500;
+        letter-spacing: .02em;
+        text-align: center;
         color: var(--igs-muted);
     }
 
     .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type h3 > span {
+        display: block;
+        margin-left: -.25em;
+        font-family: var(--igs-heading-font);
         font-size: 2rem;
+        letter-spacing: 0;
+        text-wrap: balance;
         color: var(--igs-heading);
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type h3 > span::first-letter {
+        font-size: 0;
+        color: transparent;
     }
 
     .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type hr {
@@ -2040,8 +2061,10 @@ all
         font-size: 12px;
     }
 
-    /* left pane: author, then published / duration / difficulty as chips */
+    /* left pane: author, then published / duration / difficulty as a
+       quiet metadata line, each with a small accent icon */
     .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child h6 {
+        margin-bottom: 0;
         font-size: 16px;
         font-weight: 600;
         color: var(--igs-text-strong);
@@ -2051,8 +2074,8 @@ all
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 6px;
-        margin-top: 8px;
+        gap: 4px 18px;
+        margin-top: 6px;
     }
 
     .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child p:has(> small) > br {
@@ -2060,12 +2083,34 @@ all
     }
 
     .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child p:has(> small) > small {
-        padding: 3px 10px;
-        border: 1px solid var(--igs-border);
-        border-radius: 999px;
-        background-color: var(--igs-surface-2);
-        color: var(--igs-text) !important;
-        font-size: 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--igs-muted) !important;
+        font-size: 13px;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child p:has(> small) > small::before {
+        content: "";
+        flex: none;
+        width: 14px;
+        height: 14px;
+        background-color: var(--igs-accent);
+        -webkit-mask: var(--igs-meta-icon);
+        mask: var(--igs-meta-icon);
+    }
+
+    /* calendar, clock, signal bars */
+    .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child p:has(> small) > small:nth-of-type(1) {
+        --igs-meta-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='18' height='18' x='3' y='4' rx='2'/><path d='M16 2v4M8 2v4M3 10h18'/></svg>") center / contain no-repeat;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child p:has(> small) > small:nth-of-type(2) {
+        --igs-meta-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><path d='M12 6v6l4 2'/></svg>") center / contain no-repeat;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child p:has(> small) > small:nth-of-type(3) {
+        --igs-meta-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 20h.01M7 20v-4M12 20v-8M17 20V8M22 4v16'/></svg>") center / contain no-repeat;
     }
 
     .page:has(> .pane-row > .watch-problems) .pane-row > section.pane:first-child p.pre {
@@ -4485,22 +4530,27 @@ all
         mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5'/><path d='M9 18h6'/><path d='M10 22h4'/></svg>") center / contain no-repeat;
     }
 
-    /* lesson name revealed by the hint: a small card linking to the
-       lesson; course path small and muted, lesson name bold below.
-       The header has a fixed height, so the card stays compact. */
+    /* lesson name revealed by the hint: two centered lines linking to
+       the lesson, the course path small and muted, the lesson name bold
+       below. No box: Chrome sizes a shrink-to-fit box as if every line
+       had the smaller ::first-line font, so the name spilled out of it.
+       Here the link spans the header and the text centers itself */
+    .p-page > .header.info > div:has(> div > a) {
+        align-self: stretch;
+    }
+
     .p-page > .header.info > div > div > a {
-        display: inline-block;   /* ::first-line only works on a block */
-        padding: 2px 14px 3px;
-        border: 1px solid var(--igs-border);
-        border-radius: 10px;
-        background-color: var(--igs-surface);
+        display: block;   /* ::first-line only works on a block */
         color: var(--igs-text-strong) !important;
         font-size: 14px;
         font-weight: 600;
-        line-height: 1.3;
+        line-height: 1.35;
+        text-align: center;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         text-decoration: none !important;
-        transition: border-color .15s ease, background-color .15s ease;
+        transition: color .15s ease;
     }
 
     .p-page > .header.info > div > div > a::first-line {
@@ -4511,8 +4561,10 @@ all
     }
 
     .p-page > .header.info > div > div > a:hover {
-        border-color: var(--igs-accent-strong);
-        background-color: color-mix(in srgb, var(--igs-accent-strong) 6%, var(--igs-surface));
+        color: var(--igs-accent) !important;
+        text-decoration: underline !important;
+        text-decoration-thickness: 1px !important;
+        text-underline-offset: 3px;
     }
 
     /* "problem: 1141_01 seen over 1 year ago": a quiet metadata line
