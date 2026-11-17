@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.6.6
+@version        2.6.7
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -4666,27 +4666,48 @@ all
         mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5'/><path d='M9 18h6'/><path d='M10 22h4'/></svg>") center / contain no-repeat;
     }
 
-    /* lesson name revealed by the hint: two centered lines linking to
-       the lesson, the course path small and muted, the lesson name bold
-       below. No box: Chrome sizes a shrink-to-fit box as if every line
-       had the smaller ::first-line font, so the name spilled out of it.
-       Here the link spans the header and the text centers itself */
+    /* lesson name revealed by the hint: a soft card that links to the
+       lesson, with an open-book icon, the course path small and muted
+       and the lesson name bold below. It stays a block with a max-width,
+       not a shrink-to-fit box: Chrome sizes a shrink-to-fit box as if
+       every line had the smaller ::first-line font, so the name spilled
+       out of it. The site fixes the header at 96px, so the card is kept
+       compact and the metadata line below moves up to make room. On
+       hover the card lights up; no underline, which ran under both lines */
     .p-page > .header.info > div:has(> div > a) {
         align-self: stretch;
     }
 
     .p-page > .header.info > div > div > a {
         display: block;   /* ::first-line only works on a block */
+        max-width: 560px;
+        margin: 0 auto;
+        padding: 4px 16px 5px;
+        border: 1px solid var(--igs-border);
+        border-radius: 10px;
+        background-color: var(--igs-surface);
         color: var(--igs-text-strong) !important;
         font-size: 14px;
         font-weight: 600;
-        line-height: 1.35;
+        line-height: 1.3;
         text-align: center;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         text-decoration: none !important;
-        transition: color .15s ease;
+        transition: border-color .15s ease, background-color .15s ease, color .15s ease;
+    }
+
+    .p-page > .header.info > div > div > a::before {
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 6px;
+        vertical-align: -1px;
+        background-color: var(--igs-accent);
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 7v14'/><path d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 7v14'/><path d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/></svg>") center / contain no-repeat;
     }
 
     .p-page > .header.info > div > div > a::first-line {
@@ -4697,10 +4718,13 @@ all
     }
 
     .p-page > .header.info > div > div > a:hover {
+        border-color: var(--igs-accent-strong);
+        background-color: color-mix(in srgb, var(--igs-accent-strong) 8%, var(--igs-surface));
         color: var(--igs-accent) !important;
-        text-decoration: underline !important;
-        text-decoration-thickness: 1px !important;
-        text-underline-offset: 3px;
+    }
+
+    .p-page > .header.info:has(> div > div > a) > small {
+        margin-top: 4px;
     }
 
     /* "problem: 1141_01 seen over 1 year ago": a quiet metadata line
