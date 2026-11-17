@@ -3244,20 +3244,18 @@
         --igs-btn-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z'/><circle cx='12' cy='12' r='3'/></svg>") center / contain no-repeat;
     }
 
-    /* Discuss: speech bubble */
+    /* Discuss: speech bubble, neutral like Back / Restart / Solution */
     .p-page > .cont.navigation .igs-btn.igs-btn-outline-primary {
         --igs-btn-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M7.9 20A9 9 0 1 0 4 16.1L2 22Z'/></svg>") center / contain no-repeat;
         display: inline-flex;
-        border-color: color-mix(in srgb, var(--igs-accent-strong) 55%, transparent) !important;
-        background-color: color-mix(in srgb, var(--igs-accent-strong) 8%, var(--igs-surface)) !important;
-        color: var(--igs-accent) !important;
-        font-weight: 600;
+        border-color: var(--igs-border) !important;
+        background-color: var(--igs-surface-2) !important;
+        color: var(--igs-text) !important;
+        font-weight: 500;
     }
 
     .p-page > .cont.navigation .igs-btn.igs-btn-outline-primary:hover {
-        border-color: var(--igs-accent-strong) !important;
-        background-color: var(--igs-accent-strong) !important;
-        color: var(--igs-on-fill) !important;
+        background-color: var(--igs-hover) !important;
     }
 
     .p-page > .cont.navigation .stone-container {
@@ -3579,34 +3577,251 @@
         transform: translateY(0);
     }
 
-    /* PROBLEMS DISCUSSIONS */
+    /* PROBLEM DISCUSSION PAGE (Discuss): a quiet Back pill, the course
+       path as a muted breadcrumb over the problem name, one rounded card
+       with the board edge to edge, toolbar-style move buttons with
+       chevrons, a rounded comment box, and threads as cards with the
+       replies indented under a thin accent line */
+    .disc-container > div > section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 0 16px 80px;
+    }
+
+    .disc-container .title-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        width: min(600px, 100%);
+        margin: 0 auto;
+        padding: 8px 0 14px !important;
+    }
+
+    .disc-container .title-area > br {
+        display: none;
+    }
+
+    /* "<< Go Back" -> "Back" with an arrow */
+    .disc-container .title-area > .igs-btn {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin: 0 0 6px !important;
+        padding: 5px 14px 5px 10px !important;
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 999px !important;
+        background-color: var(--igs-surface-2) !important;
+        color: var(--igs-text) !important;
+        box-shadow: none !important;
+        font-size: 0 !important;
+    }
+
+    .disc-container .title-area > .igs-btn::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-color: currentColor;
+        opacity: .8;
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m12 19-7-7 7-7'/><path d='M19 12H5'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m12 19-7-7 7-7'/><path d='M19 12H5'/></svg>") center / contain no-repeat;
+    }
+
+    .disc-container .title-area > .igs-btn::after {
+        content: "Back";
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .disc-container .title-area > .igs-btn:hover {
+        background-color: var(--igs-hover) !important;
+    }
+
+    .disc-container .title-area > div > .link {
+        color: var(--igs-muted) !important;
+        font-size: 14px;
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    .disc-container .title-area > .link {
+        color: var(--igs-heading) !important;
+        font-family: var(--igs-heading-font);
+        font-size: 24px;
+    }
+
+    .disc-container .title-area .link:hover {
+        color: var(--igs-accent) !important;
+    }
+
+    /* the card: rows size to their content (the site fixes the board row
+       at 400px, so the 600px board ran under the buttons) */
     .d-card.d-card {
-        margin-bottom: 100px;
-        width: 600px;
+        grid-template-rows: auto !important;
+        grid-auto-rows: max-content;
+        row-gap: 8px;
+        width: min(600px, 100%);
         height: auto;
+        margin: 0 !important;
+        padding-bottom: 12px;
+        overflow: hidden;
         background-color: var(--igs-surface);
         color: var(--igs-text);
         border: 1px solid var(--igs-border);
-        border-radius: 15px;
+        border-radius: 14px;
+        box-shadow: var(--igs-card-shadow) !important;
+    }
+
+    .d-card__node-comment.d-card__node-comment {
+        min-height: 48px;
+        padding: 10px 16px;
+        border-bottom: 1px solid var(--igs-border);
+        background-color: var(--igs-surface-2);
+        color: var(--igs-text-strong);
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .d-card__goban.d-card__goban {
+        margin-top: -8px;   /* board flush under the comment strip */
     }
 
     div.d-card__buttons-area.d-card__buttons-area {
-        margin-top: 200px;
-        padding: 5px 0;
-        background-color: var(--igs-surface);
+        gap: 6px;
+        margin: 4px 0 0 !important;
+        padding: 0;
+        background: none;
     }
 
-    .title-area .link.link {
+    .d-card__buttons-area > .igs-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 34px;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 10px !important;
+        background-color: var(--igs-surface-2) !important;
+        color: var(--igs-text) !important;
+        font-size: 0 !important;
+    }
+
+    .d-card__buttons-area > .igs-btn:hover {
+        background-color: var(--igs-hover) !important;
+    }
+
+    .d-card__buttons-area > .igs-btn::before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        background-color: currentColor;
+        -webkit-mask: var(--igs-btn-icon);
+        mask: var(--igs-btn-icon);
+    }
+
+    /* first, previous, next, last */
+    .d-card__buttons-area > .igs-btn:nth-child(1) {
+        --igs-btn-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m11 17-5-5 5-5'/><path d='m18 17-5-5 5-5'/></svg>") center / contain no-repeat;
+    }
+
+    .d-card__buttons-area > .igs-btn:nth-child(2) {
+        --igs-btn-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m15 18-6-6 6-6'/></svg>") center / contain no-repeat;
+    }
+
+    .d-card__buttons-area > .igs-btn:nth-child(3) {
+        --igs-btn-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m9 18 6-6-6-6'/></svg>") center / contain no-repeat;
+    }
+
+    .d-card__buttons-area > .igs-btn:nth-child(4) {
+        --igs-btn-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m6 17 5-5-5-5'/><path d='m13 17 5-5-5-5'/></svg>") center / contain no-repeat;
+    }
+
+    /* new comment / reply box, question and replies */
+    .d-card__question.d-card__question,
+    .d-card__answer.d-card__answer {
+        margin: 0 12px;
+        padding: 10px 12px;
+        border: 1px solid var(--igs-border);
+        border-radius: 10px;
+        background-color: var(--igs-surface-2);
         color: var(--igs-text);
+        line-height: 1.5;
     }
 
-    .disc-container > div > section {
+    .d-card__answer.d-card__answer {
+        margin-left: 0;
+        border-left: 3px solid color-mix(in srgb, var(--igs-accent) 55%, transparent);
+    }
+
+    .d-card__question > .header,
+    .d-card__answer > .header {
         display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 4px;
     }
 
-    .title-area > div > .link,
-    .title-area > .link {
-        color: var(--igs-heading) !important;
+    .d-card__question .author,
+    .d-card__answer .author {
+        font-weight: 600;
+        color: var(--igs-text-strong);
+    }
+
+    .d-card__question .date,
+    .d-card__answer .date {
+        font-size: 12px;
+        color: var(--igs-muted);
+    }
+
+    .d-card textarea.igs-input {
+        display: block;
+        width: 100%;
+        min-height: 84px;
+        padding: 8px 10px;
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 8px !important;
+        background-color: var(--igs-surface) !important;
+        color: var(--igs-text) !important;
+        text-align: left;
+        resize: vertical;
+    }
+
+    .d-card textarea.igs-input::placeholder {
+        color: var(--igs-muted);
+        text-align: center;
+    }
+
+    .d-card textarea.igs-input:focus {
+        outline: 2px solid color-mix(in srgb, var(--igs-accent) 45%, transparent);
+        outline-offset: 1px;
+    }
+
+    /* Add Comment / Add Reply filled, Cancel quiet */
+    .d-card .igs-btn-success.igs-mt-1,
+    .d-card .igs-btn-info.igs-mt-1 {
+        margin: 10px 8px 0 0 !important;
+        padding: 7px 18px !important;
+        border-radius: 10px !important;
+        font-size: 14px !important;
+        font-weight: 600;
+    }
+
+    .d-card .igs-btn-info.igs-mt-1 {
+        border: 1px solid var(--igs-border-strong) !important;
+        background-color: transparent !important;
+        color: var(--igs-text) !important;
+        box-shadow: none !important;
+        font-weight: 500;
+    }
+
+    .d-card .igs-btn-info.igs-mt-1:hover {
+        background-color: var(--igs-hover) !important;
     }
 
     /* LECTURES MENU */
