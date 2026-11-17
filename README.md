@@ -15,7 +15,7 @@ Ten custom themes for [internetgoschool.com](https://internetgoschool.com): the 
 - **Custom Background**: Each theme has its own page background: contour lines, a pattern, or a Japanese scene (Mount Fuji, a cherry branch, a rock garden, paper lanterns)
 - **Readable Menus and Tooltips**: Drop-down menus and hover tooltips follow the theme colors
 - **Improved Buttons**: Button styling with shadows and hover effects
-- **Custom Logo**: Replaces the default logo with a custom Go-themed design
+- **Custom Logo**: Replaces the default logo with a Go-themed design: a brushed ensō circle around a black stone
 - **Streak Counter and Dashboard**: Handwritten streak text (Caveat) up to 999 days, with milestones at 1 week, 1 month, 100 days and 1 year
 - **Lecture Viewer**: Customized style for Go lectures and problem discussions, with a softer board in the night themes
 
@@ -118,6 +118,7 @@ The background scenes, patterns and theme palettes are original work for this pr
 - **[Heroicons](https://heroicons.com)** "fire" icon (MIT License, © Tailwind Labs, Inc.): the streak flame.
 - **[Caveat](https://github.com/googlefonts/caveat)** font (SIL Open Font License 1.1, © The Caveat Project Authors): the streak text, served from `fonts/`.
 - **[Yuji Syuku](https://github.com/Kinutafontfactory/Yuji)** font (SIL Open Font License 1.1, © Kinuta Font Factory): the brush lettering in the Classic green background, drawn as outlines in `images/bg_moss.svg`.
+- **[Libre Baskerville](https://github.com/impallari/Libre-Baskerville)** font (SIL Open Font License 1.1, © The Libre Baskerville Project Authors): the IGS lettering in the logo, drawn as outlines in `images/logo_enso.svg`.
 
 The full license texts are in [LICENSE](LICENSE).
 

@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.5.2
+@version        2.5.3
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -5714,7 +5714,7 @@ all
         content: "";
         position: absolute;
         inset: 0;
-        background: url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/go-logo_IGS.png") no-repeat center center;
+        background: url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/logo_enso.svg") no-repeat center center;
         background-size: contain;
         filter: var(--igs-logo-filter);
         pointer-events: none;
