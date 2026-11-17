@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.6.3
+@version        2.6.4
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -2053,6 +2053,46 @@ all
         color: var(--igs-text-strong) !important;
     }
 
+    /* "<< Prev Lesson" / "Next Lesson >>" -> chevron + "Previous lesson"
+       / "Next lesson" + chevron */
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center > .igs-btn-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 0 !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center > .igs-btn-link::before,
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center > .igs-btn-link::after {
+        font-size: 13px;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center > .igs-btn-link:first-child::before,
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center > .igs-btn-link:last-child::after {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background-color: currentColor;
+        -webkit-mask: var(--igs-chevron);
+        mask: var(--igs-chevron);
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center > .igs-btn-link:first-child {
+        --igs-chevron: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m15 18-6-6 6-6'/></svg>") center / contain no-repeat;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center > .igs-btn-link:last-child {
+        --igs-chevron: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m9 18 6-6-6-6'/></svg>") center / contain no-repeat;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center > .igs-btn-link:first-child::after {
+        content: "Previous lesson";
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center > .igs-btn-link:last-child::before {
+        content: "Next lesson";
+    }
+
     .page:has(> .pane-row > .watch-problems) > section.pane:first-of-type .center > small {
         padding: 3px 10px;
         border: 1px dashed var(--igs-border-strong);
@@ -2135,6 +2175,58 @@ all
         border-radius: 10px !important;
     }
 
+    /* the site spreads the right pane with space-around, which left big
+       empty gaps; here the groups sit together in the middle, each label
+       right above its button */
+    .page:has(> .pane-row > .watch-problems) .watch-problems {
+        justify-content: center !important;
+        gap: 20px;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .watch-problems > hr {
+        width: 70%;
+        margin: 4px 0 !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .watch-problems > div:has(> h5) {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .watch-problems > div > h5 {
+        margin: 0 0 -10px !important;
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--igs-text-strong);
+        text-align: center;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .watch-problems .action-slot {
+        margin-bottom: 0 !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .watch-problems small {
+        font-size: 12px;
+        color: var(--igs-muted);
+    }
+
+    .page:has(> .pane-row > .watch-problems) .watch-problems .center:has(> small) {
+        margin-bottom: 4px;
+    }
+
+    .page:has(> .pane-row > .watch-problems) .watch-problems small.how-many {
+        margin-top: 4px;
+        text-align: center;
+    }
+
+    /* no subtitles at all ("0 languages available"): the menu only has
+       its "No subtitles selected" entry, so hide it and the count */
+    .page:has(> .pane-row > .watch-problems) .watch-problems .width-a:has(> select option:only-child) > select,
+    .page:has(> .pane-row > .watch-problems) .watch-problems .width-a:has(> select option:only-child) > small.how-many {
+        display: none;
+    }
+
     .page:has(> .pane-row > .watch-problems) .watch-problems .igs-btn.igs-btn-info {
         border: 1px solid var(--igs-border-strong) !important;
         background-color: transparent !important;
@@ -2179,6 +2271,50 @@ all
     .page:has(> .pane-row > .watch-problems) > section.pane:last-child .igs-btn-outline-info:hover {
         background-color: var(--igs-hover) !important;
         color: var(--igs-text) !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:last-child .igs-btn-outline-success {
+        margin: 10px 8px 0 0 !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:last-child .igs-btn-outline-info {
+        margin-top: 10px !important;
+    }
+
+    /* empty comment box: Add Comment and Cancel are disabled; the site
+       fades them to 65%, which made Add Comment a washed-out orange.
+       Here a disabled Add Comment is a plain neutral button */
+    .page:has(> .pane-row > .watch-problems) > section.pane:last-child .igs-btn:disabled {
+        opacity: 1 !important;
+        border-color: var(--igs-border) !important;
+        background-color: var(--igs-surface-2) !important;
+        color: var(--igs-muted) !important;
+        box-shadow: none !important;
+        cursor: default;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:last-child .igs-btn-outline-info:disabled {
+        border-color: transparent !important;
+        background-color: transparent !important;
+    }
+
+    /* "No comments have been left for this lecture yet": an empty state
+       in a dashed box, not a stray line of body text */
+    .page:has(> .pane-row > .watch-problems) > section.pane:last-child .igs-card:has(.igs-card-text) {
+        margin-top: 14px;
+        border: 0 !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    .page:has(> .pane-row > .watch-problems) > section.pane:last-child .igs-card-text > p {
+        margin: 0;
+        padding: 14px;
+        border: 1px dashed var(--igs-border);
+        border-radius: 10px;
+        color: var(--igs-muted);
+        font-size: 14px;
+        text-align: center;
     }
 
     .page:has(> .pane-row > .watch-problems) .comment-cont {
