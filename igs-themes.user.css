@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.4.14
+@version        2.4.15
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -4723,36 +4723,42 @@ all
         color: var(--igs-on-fill) !important;
     }
 
-    /* PROBLEM SET progress ("1 of 20"): a thin rounded bar with the count
-       in muted text at its right end, so nothing overlaps. The site scales
-       the fill with transform: scaleX(var(--end-width)); here it gets a
-       real width from the same variable instead, so its ends stay round */
+    /* PROBLEM SET progress ("1 of 20"): a centered capsule on the same
+       axis as the hint pill below it, holding a thin rounded bar with the
+       count in muted text at its right end. The site scales the fill with
+       transform: scaleX(var(--end-width)); here it gets a real width from
+       the same variable instead, so its ends stay round */
     .p-page > .prog-cont {
         --igs-count-w: 76px;   /* room for "123 of 141" */
-        height: 18px !important;
+        --igs-cap-pad: 6px;    /* gap between the capsule edge and the track */
+        position: relative;
+        box-sizing: border-box;
+        width: auto !important;
+        max-width: min(420px, 100%);
+        height: 24px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
         overflow: visible !important;
-        border: 0 !important;
-        border-radius: 0 !important;
-        background: none !important;
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 999px !important;
+        background: var(--igs-surface) !important;
     }
 
     .p-page > .prog-cont::before {   /* the track */
         content: "";
         position: absolute;
-        top: 5px;
-        left: 0;
+        top: 6px;
+        left: var(--igs-cap-pad);
         right: var(--igs-count-w);
-        height: 8px;
-        box-sizing: border-box;
-        border: 1px solid var(--igs-border);
+        height: 10px;
         border-radius: 999px;
         background-color: var(--igs-surface-2);
     }
 
     .p-page > .prog-cont > .bar {
-        inset: 5px auto auto 0 !important;
-        height: 8px;
-        width: calc((100% - var(--igs-count-w)) * var(--end-width)) !important;
+        inset: 6px auto auto var(--igs-cap-pad) !important;
+        height: 10px;
+        width: calc((100% - var(--igs-cap-pad) - var(--igs-count-w)) * var(--end-width)) !important;
         transform: none !important;
         border-radius: 999px;
         background-color: var(--igs-accent-strong) !important;
@@ -4760,19 +4766,19 @@ all
     }
 
     .p-page > .prog-cont > .bar.start-width {
-        width: calc((100% - var(--igs-count-w)) * var(--start-width)) !important;
+        width: calc((100% - var(--igs-cap-pad) - var(--igs-count-w)) * var(--start-width)) !important;
     }
 
     .p-page > .prog-cont > .text-block {
         inset: 0 0 0 auto !important;
-        width: calc(var(--igs-count-w) - 10px) !important;
+        width: calc(var(--igs-count-w) - 14px) !important;
         padding: 0 !important;
         justify-content: flex-end;
         align-items: center;
         background: none !important;
         color: var(--igs-muted) !important;
         text-shadow: none !important;
-        line-height: 18px !important;
+        line-height: 22px !important;
         white-space: nowrap;
         font-size: 12px !important;
         font-weight: 600;
