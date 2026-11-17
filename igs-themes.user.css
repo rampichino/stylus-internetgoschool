@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.6.4
+@version        2.6.6
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -6014,6 +6014,18 @@ all
         color: var(--igs-muted) !important;
     }
 
+    /* DAILY GOAL info icon ("About the New and Review buttons"): in the
+       top-right corner like the other cards' info icons, mirroring the
+       settings gear, not floating beside the Review button. In a grid
+       an absolute child is placed in its grid area, so that is reset */
+    .outer-container > .info-panel.review-info {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        grid-area: auto;
+        margin: 0;
+    }
+
     /* DAILY GOAL progress bar: taller and rounded, striped "extra" part */
     .progress-area.igs-progress {
         height: 22px;
@@ -7430,8 +7442,43 @@ all
     }
 
     /* LECTURE PLAYER TITLE */
-    .lecture-container .title a {
-        color: var(--igs-heading) !important;
+    /* lesson name above the lecture: it links back to the lesson page,
+       so it is a pill with an open-book icon that lights up on hover,
+       not loose heading text. The site sends the course path and the
+       lesson name as one string, so they can't be styled apart */
+    .lecture-container .title > a.link {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 10px;
+        max-width: 100%;
+        padding: 8px 18px 8px 14px;
+        border: 1px solid var(--igs-border);
+        border-radius: 999px;
+        background-color: var(--igs-surface-2);
+        color: var(--igs-text) !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        line-height: 1.35;
+        text-align: left;
+        text-wrap: balance;
+        text-decoration: none !important;
+        transition: border-color .15s ease, background-color .15s ease, color .15s ease;
+    }
+
+    .lecture-container .title > a.link::before {
+        content: "";
+        flex: none;
+        width: 18px;
+        height: 18px;
+        background-color: var(--igs-accent);
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 7v14'/><path d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 7v14'/><path d='M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'/></svg>") center / contain no-repeat;
+    }
+
+    .lecture-container .title > a.link:hover {
+        border-color: var(--igs-accent-strong);
+        background-color: color-mix(in srgb, var(--igs-accent-strong) 8%, var(--igs-surface));
+        color: var(--igs-accent) !important;
     }
 
     /* STORE: the plan you are on */
