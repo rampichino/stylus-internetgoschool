@@ -53,7 +53,7 @@ Use this if you want a single fixed theme and no automatic updates.
 
 | Theme | Mode | File | Look |
 |---|---|---|---|
-| Classic green | Light | [`styles/goschool_green.css`](styles/goschool_green.css) | Sage green and teal over moss-green contour lines (the original theme, refreshed) |
+| Classic green | Light | [`styles/goschool_green.css`](styles/goschool_green.css) | Sage green and teal over moss-green contour lines with Go calligraphy: 碁, a proverb and a seal (the original theme, refreshed) |
 | Kaya wood | Light | [`styles/goschool_kaya.css`](styles/goschool_kaya.css) | Pale kaya wood-tone background, cream cards, deep red accents |
 | Momiji | Light | [`styles/goschool_momiji.css`](styles/goschool_momiji.css) | Autumn maple: sand page, cream cards, dark bark menu, burnt orange and moss green |
 | Seigaiha sea | Light | [`styles/goschool_seigaiha.css`](styles/goschool_seigaiha.css) | Light ocean blues, white cards, sea-teal menu, coral accents |
@@ -117,6 +117,7 @@ The background scenes, patterns and theme palettes are original work for this pr
 - **[Lucide](https://lucide.dev)** icons (ISC License, © Lucide Contributors, portions © Cole Bemis as part of Feather): most of the inline icons are taken from or based on Lucide.
 - **[Heroicons](https://heroicons.com)** "fire" icon (MIT License, © Tailwind Labs, Inc.): the streak flame.
 - **[Caveat](https://github.com/googlefonts/caveat)** font (SIL Open Font License 1.1, © The Caveat Project Authors): the streak text, served from `fonts/`.
+- **[Yuji Syuku](https://github.com/Kinutafontfactory/Yuji)** font (SIL Open Font License 1.1, © Kinuta Font Factory): the brush lettering in the Classic green background, drawn as outlines in `images/bg_moss.svg`.
 
 The full license texts are in [LICENSE](LICENSE).
 

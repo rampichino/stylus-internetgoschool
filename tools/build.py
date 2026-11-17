@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "igs-themes.user.css"
 
 DESCRIPTIONS = {
-    "green": "Sage green and teal over moss-green contour lines (the original theme, refreshed).",
+    "green": "Sage green and teal over moss-green contour lines with Go calligraphy (the original theme, refreshed).",
     "kaya": "Pale kaya wood-tone background, cream paper cards, ink text, deep red accents.",
     "momiji": "Autumn maple: sand page, cream cards, dark bark menu, burnt orange and moss green.",
     "seigaiha": "Calm ocean blues, white cards, deep sea-teal menu, coral accents.",
