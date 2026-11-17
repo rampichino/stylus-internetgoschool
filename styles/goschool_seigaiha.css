@@ -4326,7 +4326,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool/images/logo_enso.svg?v=2.5.4") no-repeat center center;
+        background: url("https://cdn.jsdelivr.net/gh/rampichino/stylus-internetgoschool@04671a3/images/logo_enso.svg") no-repeat center center;
         background-size: contain;
         filter: var(--igs-logo-filter);
         pointer-events: none;
