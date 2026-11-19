@@ -102,6 +102,16 @@ The style uses images hosted on GitHub. If images don't load:
 - Check your internet connection
 - Ensure the GitHub URLs are accessible from your network
 
+## Checking after a site update
+
+The style targets the site's own classes, so a redesign on internetgoschool.com can break parts of it. `snapshots/pages/` holds the structure of every page as it was when the style last looked right: elements, classes and a few attributes, with all text and personal data removed.
+
+1. On the site, open the browser console (F12 > Console) and paste `tools/capture.js`. It downloads `igs-<page>.html` to your Downloads folder. The site is a single-page app: click to another page and type `igsCapture()` to capture that one too.
+2. Run `python3 tools/snapshot.py check` (needs `pip install beautifulsoup4`). For each page it lists the rules that matched before and match nothing now, with their line in `igs-themes.user.css`, and the classes that disappeared or appeared, which is usually the rename to fix. It also flags site color variables the style sets that the site no longer uses.
+3. Once the style is fixed, run `python3 tools/snapshot.py import` to make the new captures the baseline.
+
+`python3 tools/snapshot.py coverage` lists the rules no captured page matches: open menus and popups, pages not captured yet, or rules the site no longer needs. Reference screenshots go in `snapshots/screenshots/`, which is kept out of git because they show account details.
+
 ## Contributing
 
 Feel free to submit issues and enhancement requests!
