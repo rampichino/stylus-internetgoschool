@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Internet Go School Themes
 @namespace      github.com/rampichino/stylus-internetgoschool
-@version        2.6.7
+@version        2.6.8
 @description    Ten themes for internetgoschool.com (Classic green, Kaya wood, Momiji, Seigaiha sea, Kaki persimmon, Fuji at dawn, Sakura, Karesansui, Dark mode, Chōchin lanterns) with automatic day/night switching.
 @author         rampichino
 @homepageURL    https://github.com/rampichino/stylus-internetgoschool
@@ -1982,6 +1982,64 @@ all
     .how-many,
     section.pane small {
         color: var(--igs-muted) !important;
+    }
+
+    /* "Including archived lectures and problems ..." line under the
+       Lectures toolbar (shown when Archived is on): a tinted notice with
+       an archive icon and a small Clear pill, instead of the site's
+       bright orange text and underlined link */
+    .outer-container > .filters-line {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 4px 0 8px;
+        padding: 5px 6px 5px 10px !important;
+        border: 1px solid color-mix(in srgb, var(--igs-accent) 28%, transparent);
+        border-radius: 8px;
+        background-color: color-mix(in srgb, var(--igs-accent) 8%, var(--igs-surface));
+        color: var(--igs-text) !important;
+        font-size: 13px !important;
+        line-height: 1.35;
+    }
+
+    .outer-container > .filters-line::before {
+        content: "";
+        flex: none;
+        width: 15px;
+        height: 15px;
+        background-color: var(--igs-accent);
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='20' height='5' x='2' y='3' rx='1'/><path d='M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8'/><path d='M10 12h4'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='20' height='5' x='2' y='3' rx='1'/><path d='M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8'/><path d='M10 12h4'/></svg>") center / contain no-repeat;
+    }
+
+    .outer-container > .filters-line > .filters-line__text {
+        flex: 1;
+        color: inherit !important;
+    }
+
+    .outer-container > .filters-line > .filters-line__clear {
+        flex: none;
+        padding: 2px 10px !important;
+        border: 1px solid var(--igs-border) !important;
+        border-radius: 999px;
+        background-color: var(--igs-surface) !important;
+        color: var(--igs-text) !important;
+        font-size: 12px !important;
+        font-weight: 600;
+        text-decoration: none !important;
+        cursor: pointer;
+        transition: background-color .12s ease, color .12s ease, border-color .12s ease;
+    }
+
+    .outer-container > .filters-line > .filters-line__clear:hover {
+        border-color: var(--igs-accent) !important;
+        background-color: var(--igs-hover) !important;
+        color: var(--igs-text-strong) !important;
+    }
+
+    .outer-container > .filters-line > .filters-line__clear:focus-visible {
+        outline: 2px solid var(--igs-focus);
+        outline-offset: 2px;
     }
 
     /* LESSON DETAILS PAGE (course > lesson, Watch Lecture, comments) */
